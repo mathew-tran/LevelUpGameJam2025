@@ -18,6 +18,8 @@ var SubStatDamage : Resource
 var CharacterLevel = 1
 var Penetration = 0
 var Bounces = 0
+
+var MaxMovementSpeed = 1
 			
 			
 func GetNextUpgrade():
@@ -81,13 +83,17 @@ func _process(delta: float) -> void:
 	var followObjectPosition = get_global_mouse_position()
 	if FollowObject:
 		followObjectPosition = FollowObject.global_position
+		
+
+		
 	if global_position.distance_to(followObjectPosition) > 50:
 		var dir = (followObjectPosition - global_position).normalized()
-		Velocity = Vector2.ZERO
 		Velocity += dir * Speed * delta
 		$Sprite2D.flip_h = Velocity.x <= 0
-	else:
-		Velocity = Vector2.ZERO
+	
+	if Velocity.length() > MaxMovementSpeed:
+		Velocity = Velocity.normalized() * MaxMovementSpeed
+	print(Velocity.length())
 	move_and_collide(Velocity)
 	
 
