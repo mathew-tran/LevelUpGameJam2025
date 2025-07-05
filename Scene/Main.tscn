@@ -19,3 +19,5 @@ position = Vector2(5, -59)
 
 [node name="Area2D" parent="EnemyGroup" instance=ExtResource("3_djkur")]
 position = Vector2(202, -15)
+
+[node name="EffectGroup" type="Node2D" parent="." groups=["EffectGroup"]]

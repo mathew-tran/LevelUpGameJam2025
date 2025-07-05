@@ -12,4 +12,13 @@ script = ExtResource("1_b43ah")
 [node name="RigidBody2D" parent="Workers" instance=ExtResource("1_x3d5u")]
 CharacterDataRef = ExtResource("2_b43ah")
 
-[node name="Camera2D" type="Camera2D" parent="Workers/RigidBody2D"]
+[node name="RigidBody2D2" parent="Workers" instance=ExtResource("1_x3d5u")]
+CharacterDataRef = ExtResource("2_b43ah")
+
+[node name="RigidBody2D3" parent="Workers" instance=ExtResource("1_x3d5u")]
+CharacterDataRef = ExtResource("2_b43ah")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="child_entered_tree" from="Workers" to="." method="_on_workers_child_entered_tree"]
+[connection signal="child_exiting_tree" from="Workers" to="." method="_on_workers_child_exiting_tree"]

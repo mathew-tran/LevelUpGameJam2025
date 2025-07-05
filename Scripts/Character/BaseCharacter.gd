@@ -2,8 +2,9 @@ extends RigidBody2D
 
 @export var CharacterDataRef : CharacterData
 
+signal OnCharacterDeath
 var Speed = 100
-@export var bIsHead = true
+var FollowObject = null
 
 var Velocity = Vector2.ZERO
 			
@@ -16,7 +17,8 @@ func OnTakeDamage(_amount):
 	$Healthbar.value = float($HealthComponent.CurrentHealth) / float($HealthComponent.MaxHealth)
 
 func OnDeath():
-	get_tree().reload_current_scene()
+	OnCharacterDeath.emit()
+	queue_free()
 
 func Setup():
 	$Sprite2D.texture = CharacterDataRef.Picture
@@ -36,13 +38,19 @@ func _process(delta: float) -> void:
 		for area in areas:
 			if area is Enemy:
 				$HealthComponent.TakeDamage(area.Damage)
-				$HitTimer.start()
-	if bIsHead:
-		
-		if global_position.distance_to(get_global_mouse_position()) > 50:
-			var dir = (get_global_mouse_position() - global_position).normalized()
-			Velocity = Vector2.ZERO
-			Velocity += dir * Speed * delta
-		else:
-			Velocity = Vector2.ZERO
-		move_and_collide(Velocity)
+				$HitTimer.start()	
+	var followObjectPosition = get_global_mouse_position()
+	if FollowObject:
+		followObjectPosition = FollowObject.global_position
+	if global_position.distance_to(followObjectPosition) > 50:
+		var dir = (followObjectPosition - global_position).normalized()
+		Velocity = Vector2.ZERO
+		Velocity += dir * Speed * delta
+		$Sprite2D.flip_h = Velocity.x <= 0
+	else:
+		Velocity = Vector2.ZERO
+	move_and_collide(Velocity)
+	
+
+func Enable():
+	$Camera2D.make_current()

@@ -3,6 +3,10 @@ extends Node
 func GetBulletsGroup():
 	return get_tree().get_nodes_in_group("Bullets")[0]
 
+func GetEffectGroup():
+	return get_tree().get_nodes_in_group("EffectGroup")[0]
+
+
 func GetEnemyGroup():
 	return get_tree().get_nodes_in_group("EnemyGroup")[0]
 

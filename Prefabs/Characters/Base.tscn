@@ -18,6 +18,7 @@ size = Vector2(40, 40)
 size = Vector2(40, 40)
 
 [node name="RigidBody2D" type="RigidBody2D"]
+collision_layer = 2
 gravity_scale = 0.0
 script = ExtResource("1_su17a")
 

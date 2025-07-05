@@ -13,12 +13,21 @@ func _ready() -> void:
 func OnTakeDamage(amount):
 	$AnimationPlayer.stop()
 	$AnimationPlayer.play("hit")
+	var damageClass = load("res://Prefabs/UI/DamageText.tscn")
+	var instance = damageClass.instantiate()
+	instance.global_position = global_position
+	var data = {}
+	data["text"] = str(amount)
+	data["color"] = Color.RED
+	instance.data = data
+	Finder.GetEffectGroup().add_child(instance)
 	
 func OnDeath():
 	queue_free()
 	
 func _process(delta: float) -> void:
 	global_position += Direction * Speed * delta
+	$Sprite2D.flip_h = Direction.x <= 0
 	
 func _on_area_entered(area: Area2D) -> void:
 	if area is BaseProjectile:
