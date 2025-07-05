@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=12 format=3 uid="uid://cj6fpl8v47hn3"]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=17 format=3 uid="uid://cj6fpl8v47hn3"]
 
 [ext_resource type="Texture2D" uid="uid://cj0tuc0njq1l3" path="res://Art/Character/Mark.png" id="1_tk5wi"]
 [ext_resource type="PackedScene" uid="uid://csm5aoidl1x0s" path="res://Prefabs/Projectiles/BaseProjectile.tscn" id="2_eoqc0"]
@@ -28,6 +28,31 @@ script = ExtResource("4_sr8xb")
 Amount = 10.0
 metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
 
+[sub_resource type="Resource" id="Resource_viqu8"]
+script = ExtResource("4_sr8xb")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_86ash"]
+script = ExtResource("4_sr8xb")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_n5akq"]
+script = ExtResource("5_viqu8")
+AttackRateIncrease = 40.0
+metadata/_custom_type_script = "uid://civl0ns7ngbc6"
+
+[sub_resource type="Resource" id="Resource_4s1jd"]
+script = ExtResource("4_sr8xb")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_tnret"]
+script = ExtResource("4_sr8xb")
+Amount = 300.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
 [resource]
 script = ExtResource("5_6070i")
 Name = "Mark"
@@ -36,5 +61,5 @@ Cost = 4
 Description = "Has extra pencils to throw around."
 Picture = ExtResource("1_tk5wi")
 Projectile = ExtResource("2_eoqc0")
-Upgrades = Array[ExtResource("3_x2yx5")]([SubResource("Resource_ia558"), SubResource("Resource_8w7eq"), SubResource("Resource_i4kpn"), SubResource("Resource_sr8xb"), SubResource("Resource_ia558")])
+Upgrades = Array[ExtResource("3_x2yx5")]([SubResource("Resource_ia558"), SubResource("Resource_8w7eq"), SubResource("Resource_i4kpn"), SubResource("Resource_sr8xb"), SubResource("Resource_ia558"), SubResource("Resource_viqu8"), SubResource("Resource_86ash"), SubResource("Resource_n5akq"), SubResource("Resource_4s1jd"), SubResource("Resource_tnret")])
 metadata/_custom_type_script = "uid://dadt4pa7kewb"
