@@ -8,7 +8,7 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hi2hd"]
 bg_color = Color(5.77569e-07, 0.669015, 0.796826, 1)
 
-[node name="EXPBar" type="ProgressBar"]
+[node name="EXPBar" type="ProgressBar" groups=["EXPBar"]]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0

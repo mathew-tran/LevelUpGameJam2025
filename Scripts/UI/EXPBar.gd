@@ -1,5 +1,7 @@
 extends ProgressBar
 
+class_name EXPBar
+
 var EXPCache = 0
 var GameRef : Game
 
@@ -7,7 +9,8 @@ var EXP = 0
 var MaxEXP = 100
 var Level = 0
 
-signal LevelUp
+signal OnLevelUp
+
 func _ready() -> void:
 	Finder.GetGame().OnEXPUpdate.connect(OnEXPUpdate)
 	Update()
@@ -23,7 +26,7 @@ func _process(delta: float) -> void:
 			EXP = 0
 			MaxEXP *= 1.2
 			Level += 1
-			LevelUp.emit()
+			OnLevelUp.emit()
 		Update()
 
 func Update():

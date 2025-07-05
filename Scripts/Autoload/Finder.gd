@@ -3,6 +3,9 @@ extends Node
 func GetPlayer() -> Player:
 	return get_tree().get_nodes_in_group("Player")[0]
 	
+func GetEXPBar() -> EXPBar:
+	return get_tree().get_nodes_in_group("EXPBar")[0]
+	
 func GetBulletsGroup():
 	return get_tree().get_nodes_in_group("Bullets")[0]
 

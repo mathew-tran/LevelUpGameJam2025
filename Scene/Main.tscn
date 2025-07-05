@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cq0pg18wpqef1"]
+[gd_scene load_steps=9 format=3 uid="uid://cq0pg18wpqef1"]
 
 [ext_resource type="PackedScene" uid="uid://bqy51bgry7fi5" path="res://Prefabs/Environment/Desk.tscn" id="1_djkur"]
 [ext_resource type="Script" uid="uid://dokag847w5cfs" path="res://Scripts/Game.gd" id="1_togfq"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bf85xq505mf43" path="res://Scripts/Spawner.gd" id="4_h3nmf"]
 [ext_resource type="PackedScene" uid="uid://wxay2kx6dg3m" path="res://Prefabs/UI/EXPBar.tscn" id="6_aan6j"]
 [ext_resource type="PackedScene" uid="uid://drny8xxvq6ide" path="res://Prefabs/Pickups/EXP.tscn" id="6_h3nmf"]
+[ext_resource type="PackedScene" uid="uid://cu8sskt8qxtpq" path="res://Prefabs/UI/LevelUp.tscn" id="7_hueuk"]
 
 [node name="Game" type="Node2D" groups=["Game"]]
 script = ExtResource("1_togfq")
@@ -39,6 +40,9 @@ position = Vector2(202, -15)
 [node name="EXPBar" parent="CanvasLayer" instance=ExtResource("6_aan6j")]
 offset_top = -26.0
 offset_bottom = 0.0
+
+[node name="Panel" parent="CanvasLayer" instance=ExtResource("7_hueuk")]
+visible = false
 
 [node name="EXP" parent="." instance=ExtResource("6_h3nmf")]
 position = Vector2(138, -115)

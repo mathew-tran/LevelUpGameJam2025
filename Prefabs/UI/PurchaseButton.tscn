@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bevhto76bb856"]
+
+[ext_resource type="Script" uid="uid://dee4p5pykkv1y" path="res://Scripts/UI/PurchaseButton.gd" id="1_itwev"]
+
+[node name="PurchaseButton" type="Button"]
+custom_minimum_size = Vector2(300, 0)
+script = ExtResource("1_itwev")
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]
