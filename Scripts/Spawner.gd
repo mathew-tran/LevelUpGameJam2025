@@ -1,11 +1,11 @@
 extends Node2D
 
-var MaxEnemyCount = 20
+var MaxEnemyCount = 100
 func _on_timer_timeout() -> void:
 	SpawnEnemies()
 
 func SpawnEnemies():
-	var enemiesToSpawn = 10
+	var enemiesToSpawn = 100
 	var currentEnemies = Finder.GetEnemyGroup().get_children().size()
 	enemiesToSpawn = clamp(enemiesToSpawn, 0, MaxEnemyCount - currentEnemies)
 		

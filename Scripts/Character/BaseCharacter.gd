@@ -36,7 +36,7 @@ func _on_shoot_timer_timeout() -> void:
 
 func _process(delta: float) -> void:
 	if $HitTimer.time_left == 0.0:
-		var areas = $Hitbox.get_overlapping_areas()
+		var areas = $Hitbox.get_overlapping_bodies()
 		for area in areas:
 			if area is Enemy:
 				$HealthComponent.TakeDamage(area.Damage)

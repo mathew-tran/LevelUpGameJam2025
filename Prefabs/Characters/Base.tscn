@@ -20,6 +20,7 @@ size = Vector2(40, 40)
 [node name="RigidBody2D" type="RigidBody2D"]
 collision_layer = 2
 gravity_scale = 0.0
+lock_rotation = true
 script = ExtResource("1_su17a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -46,6 +47,7 @@ script = ExtResource("4_jwghg")
 metadata/_custom_type_script = "uid://bd6c17ffm375y"
 
 [node name="Hitbox" type="Area2D" parent="."]
+collision_mask = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("RectangleShape2D_jwghg")
