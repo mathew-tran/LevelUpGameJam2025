@@ -22,6 +22,7 @@ func OnLevelup():
 	
 func Setup():
 	get_tree().paused = true
+	Jukebox.PlayMusic(JukeboxPlayer.MUSIC_TYPE.SHOP)
 	await Cleanup()
 	var characters = Finder.GetWorkerGroup().get_children()
 	UpgradeableCharacters.clear()
@@ -103,3 +104,4 @@ func Close():
 	visible = false
 	Cleanup()
 	get_tree().paused = false
+	Jukebox.PlayMusic(JukeboxPlayer.MUSIC_TYPE.NONE)

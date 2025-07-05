@@ -19,7 +19,8 @@ func UpdateBody():
 		else:
 			workers[index].FollowObject = workers[index-1]
 	if workers.size() == 0:
-		get_tree().reload_current_scene()
+		Jukebox.PlayMusic(JukeboxPlayer.MUSIC_TYPE.DEAD)
+		Finder.GetGame().OnGameOver.emit()
 
 func GetPlayerPosition():
 	return LastKnownPosition

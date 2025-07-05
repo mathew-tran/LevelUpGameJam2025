@@ -26,6 +26,7 @@ func Setup(character : BaseCharacter):
 	$Name.text = character.CharacterDataRef.Name + " " +  character.CharacterDataRef.GetOccupationString()
 	
 func _on_button_up() -> void:
+	Jukebox.PlaySFX(load("res://Audio/SFX/levelup25-purchase.wav"))
 	if is_instance_valid(UpgradeToMake):
 		UpgradeToMake.Apply(CharacterToApply)
 	elif is_instance_valid(CharacterToAdd):

@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Finder="*res://Scripts/Autoload/Finder.gd"
 Helper="*res://Scripts/Autoload/Helper.gd"
+Jukebox="*res://Prefabs/Autoload/Jukebox.tscn"
 
 [display]
 
