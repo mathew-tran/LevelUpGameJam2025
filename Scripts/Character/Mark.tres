@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3 uid="uid://cj6fpl8v47hn3"]
+
+[ext_resource type="Texture2D" uid="uid://cj0tuc0njq1l3" path="res://Art/Character/Mark.png" id="1_2sfwl"]
+[ext_resource type="Script" uid="uid://dadt4pa7kewb" path="res://Content/CharacterData.gd" id="1_mjtoq"]
+
+[resource]
+script = ExtResource("1_mjtoq")
+Name = "Mark"
+Occupation = 0
+Cost = 4
+Description = "Has extra pencils to throw around."
+Picture = ExtResource("1_2sfwl")
+metadata/_custom_type_script = "uid://dadt4pa7kewb"

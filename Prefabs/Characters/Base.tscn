@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://uf5h3c2dv0a2"]
+
+[ext_resource type="Texture2D" uid="uid://cj0tuc0njq1l3" path="res://Art/Character/Mark.png" id="1_8spd0"]
+[ext_resource type="Script" uid="uid://cbqniscqsxqoo" path="res://Scripts/Character/BaseCharacter.gd" id="1_su17a"]
+
+[node name="RigidBody2D" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_su17a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8spd0")
