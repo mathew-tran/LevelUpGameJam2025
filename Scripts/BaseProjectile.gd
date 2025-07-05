@@ -15,11 +15,10 @@ func _process(delta: float) -> void:
 	global_position += Direction * Speed
 
 func Hit():
-	if Bounces > 0:
+	
+	if Bounces > 0 and $BounceTimer.time_left == 0.0:
 		Bounces -= 1
-		var closestEnemy = Finder.GetClosestEnemy(global_position)
-		if closestEnemy:
-			Direction = (closestEnemy.global_position - global_position).normalized()
+		$BounceTimer.start()
 		return
 	if Penetration <= 0:
 		queue_free()
@@ -28,3 +27,10 @@ func Hit():
 		
 func _on_live_timer_timeout() -> void:
 	queue_free()
+
+
+func _on_bounce_timer_timeout() -> void:
+	var closestEnemy = Finder.GetClosestEnemy(global_position)
+	if closestEnemy:
+		Direction = (closestEnemy.global_position - global_position).normalized()
+		rotation = Direction.angle()

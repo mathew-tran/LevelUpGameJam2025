@@ -22,12 +22,16 @@ func GetClosestEnemy(fromPosition):
 	var enemies = GetEnemyGroup().get_children()
 	if enemies.size() > 0:
 		var closestEnemy = enemies[0]
-		var closestDistance = 999999999
+		var closestDistance = 999999
 		for index in range(0, enemies.size()):
 			var distanceToEnemy = enemies[index].global_position.distance_to(fromPosition)
 			if distanceToEnemy < closestDistance:
 				closestDistance = distanceToEnemy
 				closestEnemy = enemies[index]
+				print("closest" + str(closestDistance))
+			else:
+				print("too far: " + str(distanceToEnemy))
+		print("distance" + str(closestDistance))
 		return closestEnemy
 	return null
 
@@ -39,7 +43,7 @@ func GetClosestWorker(fromPosition):
 	var worker = GetWorkerGroup().get_children()
 	if worker.size() > 0:
 		var closestWorker = worker[0]
-		var closestDistance = 99999999
+		var closestDistance = 9999999
 		for index in range(0, worker.size()):
 			var distanceToEnemy = worker[index].global_position.distance_to(fromPosition)
 			if distanceToEnemy < closestDistance:

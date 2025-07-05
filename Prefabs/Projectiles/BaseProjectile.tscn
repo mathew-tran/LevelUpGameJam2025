@@ -22,4 +22,9 @@ autostart = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_t60cr")
 
+[node name="BounceTimer" type="Timer" parent="."]
+wait_time = 0.03
+one_shot = true
+
 [connection signal="timeout" from="LiveTimer" to="." method="_on_live_timer_timeout"]
+[connection signal="timeout" from="BounceTimer" to="." method="_on_bounce_timer_timeout"]
