@@ -9,3 +9,8 @@ script = ExtResource("1_su17a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_8spd0")
+
+[node name="ShootTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

@@ -14,3 +14,7 @@ config/name="levelupjam"
 run/main_scene="uid://cq0pg18wpqef1"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Finder="*res://Scripts/Autoload/Finder.gd"

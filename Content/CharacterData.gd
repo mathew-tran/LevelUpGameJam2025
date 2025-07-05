@@ -7,6 +7,7 @@ class_name CharacterData
 @export var Cost = 10
 @export var Description = ""
 @export var Picture : Texture2D
+@export var Projectile : PackedScene
 
 enum DEPARTMENT {
 	ACCOUNTING,
