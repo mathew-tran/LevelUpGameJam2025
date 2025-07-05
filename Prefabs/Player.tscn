@@ -7,7 +7,7 @@
 [node name="Head" type="Node2D"]
 script = ExtResource("1_b43ah")
 
-[node name="Workers" type="Node2D" parent="."]
+[node name="Workers" type="Node2D" parent="." groups=["WorkerGroup"]]
 
 [node name="RigidBody2D" parent="Workers" instance=ExtResource("1_x3d5u")]
 CharacterDataRef = ExtResource("2_b43ah")

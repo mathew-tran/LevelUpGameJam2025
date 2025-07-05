@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cq0pg18wpqef1"]
 
-[ext_resource type="Texture2D" uid="uid://bxqyxqpwa4x46" path="res://Art/Environment/Desk.png" id="1_g6ejq"]
+[ext_resource type="PackedScene" uid="uid://bqy51bgry7fi5" path="res://Prefabs/Environment/Desk.tscn" id="1_djkur"]
 [ext_resource type="PackedScene" uid="uid://d1demcer6jenb" path="res://Prefabs/Player.tscn" id="1_xhtwi"]
 [ext_resource type="PackedScene" uid="uid://cae8gsfov06bs" path="res://Prefabs/Enemies/BaseEnemy.tscn" id="3_djkur"]
 
@@ -8,8 +8,8 @@
 
 [node name="Environment" type="Node2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="Environment"]
-texture = ExtResource("1_g6ejq")
+[node name="StaticBody2D" parent="Environment" instance=ExtResource("1_djkur")]
+position = Vector2(5, -59)
 
 [node name="Bullets" type="Node2D" parent="." groups=["Bullets"]]
 

@@ -18,3 +18,20 @@ func GetClosestEnemy(fromPosition):
 				closestEnemy = enemies[index]
 		return closestEnemy
 	return null
+
+
+func GetWorkerGroup():
+	return get_tree().get_nodes_in_group("WorkerGroup")[0]
+	
+func GetClosestWorker(fromPosition):
+	var worker = GetWorkerGroup().get_children()
+	if worker.size() > 0:
+		var closestWorker = worker[0]
+		var closestDistance = 9999999999999999999
+		for index in range(0, worker.size()):
+			var distanceToEnemy = worker[index].global_position.distance_to(fromPosition)
+			if distanceToEnemy < closestDistance:
+				closestDistance = distanceToEnemy
+				closestWorker = worker[index]
+		return closestWorker
+	return null
