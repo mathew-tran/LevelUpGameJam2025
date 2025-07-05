@@ -26,9 +26,10 @@ func GetOccupationString():
 	return str
 
 func Create():
-	var instance = load("res://Prefabs/Characters/Base.tscn").instantiate()
+	var instance = load("res://Prefabs/Characters/BaseCharacter.tscn").instantiate()
 	instance.global_position = Finder.GetPlayer().GetPlayerPosition()
+	instance.CharacterDataRef = self
 	Finder.GetWorkerGroup().add_child(instance)
 
-	instance.Setup(self)
+	
 	

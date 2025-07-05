@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="StatResourceData" load_steps=2 format=3 uid="uid://cm208bnqi7bki"]
+
+[ext_resource type="Script" uid="uid://d2nir15hqp07e" path="res://Content/StatResourceData.gd" id="1_g3ch0"]
+
+[resource]
+script = ExtResource("1_g3ch0")
+FlatValue = 0.0
+MaxClampValue = -1.0
+MinClampValue = -1.0
+PostPend = ""
+metadata/_custom_type_script = "uid://d2nir15hqp07e"

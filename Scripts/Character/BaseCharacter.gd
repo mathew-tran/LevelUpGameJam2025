@@ -9,8 +9,14 @@ var Speed = 100
 var FollowObject = null
 
 var Velocity = Vector2.ZERO
-var Damage = 3
+var Damage = 10
+var AttackRate = 1.0
+var SubStatAttackRate : Resource
+
+var SubStatDamage : Resource
+
 var CharacterLevel = 1
+var Penetration = 0
 			
 			
 func GetNextUpgrade():
@@ -22,6 +28,7 @@ func _ready() -> void:
 	$HealthComponent.OnTakeDamage.connect(OnTakeDamage)
 	$HealthComponent.OnDeath.connect(OnDeath)
 	OnTakeDamage(0)
+	Setup(CharacterDataRef)
 	
 func OnTakeDamage(_amount):
 	$Healthbar.value = float($HealthComponent.CurrentHealth) / float($HealthComponent.MaxHealth)
@@ -33,7 +40,24 @@ func OnDeath():
 func Setup(newData):
 	CharacterDataRef = newData
 	$Sprite2D.texture = CharacterDataRef.Picture
+	
+	SubStatDamage = SubStatResourceData.new()
+	SubStatDamage.StatResourceRef = load("res://Content/Stats/CHAR_DAMAGE.tres")
+	SubStatDamage.FlatValue = Damage
+	SubStatDamage.Init()
+	
+	SubStatAttackRate = SubStatResourceData.new()
+	SubStatAttackRate.StatResourceRef = load("res://Content/Stats/CHAR_ATTACK_RATE.tres")
+	SubStatAttackRate.FlatValue = AttackRate
 
+	SubStatAttackRate.Init()
+	SubStatAttackRate.ModifiedResource.ValueUpdated.connect(OnAttackRateUpdate)
+	
+	$ShootTimer.wait_time = 1/SubStatAttackRate.Get().GetValue()
+	
+func OnAttackRateUpdate(rate):
+	$ShootTimer.wait_time = 1/rate
+	
 func _on_shoot_timer_timeout() -> void:
 	if CharacterDataRef.Projectile:
 		var enemy = Finder.GetClosestEnemy(global_position)
@@ -41,7 +65,8 @@ func _on_shoot_timer_timeout() -> void:
 			var instance = CharacterDataRef.Projectile.instantiate()
 			instance.Direction = (enemy.global_position - global_position).normalized()
 			instance.global_position = global_position
-			instance.Damage = Damage
+			instance.Damage = SubStatDamage.Get().GetValue() + randi_range(0, 4)
+			instance.Penetration = Penetration
 			Finder.GetBulletsGroup().add_child(instance)
 
 func _process(delta: float) -> void:

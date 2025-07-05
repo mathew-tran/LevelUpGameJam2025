@@ -5,6 +5,7 @@ class_name Enemy
 var Direction = Vector2.ZERO
 @export var Speed = 30
 @export var Damage = 4
+@export var Penetration = 0
 @export var EXPToDrop = 10
 var Velocity=  Vector2.ZERO
 func _ready() -> void:
@@ -18,7 +19,7 @@ func OnTakeDamage(amount):
 	var instance = damageClass.instantiate()
 	instance.global_position = global_position
 	var data = {}
-	data["text"] = str(amount)
+	data["text"] = (str(int(amount)))
 	data["color"] = Color.RED
 	instance.data = data
 	Finder.GetEffectGroup().add_child(instance)
@@ -27,7 +28,7 @@ func OnDeath():
 	var instance = load("res://Prefabs/Pickups/EXP.tscn").instantiate()
 	instance.global_position = global_position
 	instance.Amount = EXPToDrop
-	Finder.GetEffectGroup().add_child(instance)
+	Finder.GetEffectGroup().call_deferred("add_child", instance)
 	queue_free()
 	
 func _process(delta: float) -> void:
@@ -49,6 +50,5 @@ func _on_timer_timeout() -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area is BaseProjectile:
-		area.Direction =Vector2.ZERO
 		$HealthComponent.TakeDamage(area.Damage)
-		area.queue_free()
+		area.Hit()

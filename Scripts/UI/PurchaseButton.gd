@@ -22,7 +22,7 @@ func Setup(character : BaseCharacter):
 	
 	$Label.text = nextUpgrade.GetUpgradeName()
 	$TextureRect.texture = character.CharacterDataRef.Picture
-	$Level.text = "LV" + str(character.CharacterLevel)
+	$Level.text = "LV" + str(character.CharacterLevel + 1)
 	$Name.text = character.CharacterDataRef.Name + " " +  character.CharacterDataRef.GetOccupationString()
 	
 func _on_button_up() -> void:
