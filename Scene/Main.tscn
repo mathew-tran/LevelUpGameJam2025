@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cq0pg18wpqef1"]
+[gd_scene load_steps=7 format=3 uid="uid://cq0pg18wpqef1"]
 
 [ext_resource type="PackedScene" uid="uid://bqy51bgry7fi5" path="res://Prefabs/Environment/Desk.tscn" id="1_djkur"]
+[ext_resource type="Script" uid="uid://dokag847w5cfs" path="res://Scripts/Game.gd" id="1_togfq"]
 [ext_resource type="PackedScene" uid="uid://d1demcer6jenb" path="res://Prefabs/Player.tscn" id="1_xhtwi"]
 [ext_resource type="PackedScene" uid="uid://cae8gsfov06bs" path="res://Prefabs/Enemies/BaseEnemy.tscn" id="3_djkur"]
+[ext_resource type="PackedScene" uid="uid://wxay2kx6dg3m" path="res://Prefabs/UI/EXPBar.tscn" id="6_aan6j"]
+[ext_resource type="PackedScene" uid="uid://drny8xxvq6ide" path="res://Prefabs/Pickups/EXP.tscn" id="6_h3nmf"]
 
-[node name="Level" type="Node2D"]
+[node name="Game" type="Node2D" groups=["Game"]]
+script = ExtResource("1_togfq")
 
 [node name="Environment" type="Node2D" parent="."]
 
@@ -21,3 +25,12 @@ position = Vector2(5, -59)
 position = Vector2(202, -15)
 
 [node name="EffectGroup" type="Node2D" parent="." groups=["EffectGroup"]]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="EXPBar" parent="CanvasLayer" instance=ExtResource("6_aan6j")]
+offset_top = -26.0
+offset_bottom = 0.0
+
+[node name="EXP" parent="." instance=ExtResource("6_h3nmf")]
+position = Vector2(138, -115)

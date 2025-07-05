@@ -23,6 +23,9 @@ func OnTakeDamage(amount):
 	Finder.GetEffectGroup().add_child(instance)
 	
 func OnDeath():
+	var instance = load("res://Prefabs/Pickups/EXP.tscn").instantiate()
+	instance.global_position = global_position
+	Finder.GetEffectGroup().add_child(instance)
 	queue_free()
 	
 func _process(delta: float) -> void:

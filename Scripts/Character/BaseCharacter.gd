@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+class_name BaseCharacter
+
 @export var CharacterDataRef : CharacterData
 
 signal OnCharacterDeath

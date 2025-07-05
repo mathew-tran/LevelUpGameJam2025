@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqk2bjwlkrxn0"]
+
+[ext_resource type="Texture2D" uid="uid://d0qwnb32bj80e" path="res://Art/Cash.png" id="1_5lo7a"]
+[ext_resource type="Script" uid="uid://cmtfhgr7byh74" path="res://Scripts/Pickups/Money.gd" id="1_sayey"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sayey"]
+size = Vector2(43, 20)
+
+[node name="Money" type="Area2D"]
+script = ExtResource("1_sayey")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5lo7a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_sayey")

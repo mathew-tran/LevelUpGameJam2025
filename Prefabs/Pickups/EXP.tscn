@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://drny8xxvq6ide"]
+
+[ext_resource type="Script" uid="uid://dgf0qvwkernp7" path="res://Scripts/Pickups/EXP.gd" id="1_cpms5"]
+[ext_resource type="Texture2D" uid="uid://cgru2l1wrc00p" path="res://Art/Pickups/EXP.png" id="1_xc8gy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cpms5"]
+
+[node name="EXP" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_cpms5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xc8gy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cpms5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
