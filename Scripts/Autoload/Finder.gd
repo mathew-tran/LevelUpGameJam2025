@@ -1,5 +1,8 @@
 extends Node
 
+func GetPlayer() -> Player:
+	return get_tree().get_nodes_in_group("Player")[0]
+	
 func GetBulletsGroup():
 	return get_tree().get_nodes_in_group("Bullets")[0]
 
@@ -16,7 +19,7 @@ func GetClosestEnemy(fromPosition):
 	var enemies = GetEnemyGroup().get_children()
 	if enemies.size() > 0:
 		var closestEnemy = enemies[0]
-		var closestDistance = 9999999999999999999
+		var closestDistance = 999999999
 		for index in range(0, enemies.size()):
 			var distanceToEnemy = enemies[index].global_position.distance_to(fromPosition)
 			if distanceToEnemy < closestDistance:
@@ -33,7 +36,7 @@ func GetClosestWorker(fromPosition):
 	var worker = GetWorkerGroup().get_children()
 	if worker.size() > 0:
 		var closestWorker = worker[0]
-		var closestDistance = 9999999999999999999
+		var closestDistance = 99999999
 		for index in range(0, worker.size()):
 			var distanceToEnemy = worker[index].global_position.distance_to(fromPosition)
 			if distanceToEnemy < closestDistance:

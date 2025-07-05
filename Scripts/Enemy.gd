@@ -5,6 +5,7 @@ class_name Enemy
 var Direction = Vector2.ZERO
 @export var Speed = 30
 @export var Damage = 4
+@export var EXPToDrop = 10
 
 func _ready() -> void:
 	$HealthComponent.OnDeath.connect(OnDeath)
@@ -25,6 +26,7 @@ func OnTakeDamage(amount):
 func OnDeath():
 	var instance = load("res://Prefabs/Pickups/EXP.tscn").instantiate()
 	instance.global_position = global_position
+	instance.Amount = EXPToDrop
 	Finder.GetEffectGroup().add_child(instance)
 	queue_free()
 	

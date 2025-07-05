@@ -48,6 +48,7 @@ _data = {
 collision_mask = 4
 script = ExtResource("1_y3xhg")
 Damage = 1
+EXPToDrop = 15
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_rvsag")
@@ -58,7 +59,6 @@ shape = SubResource("RectangleShape2D_h175a")
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("3_t3hgn")
-MaxHealth = 50
 metadata/_custom_type_script = "uid://bd6c17ffm375y"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

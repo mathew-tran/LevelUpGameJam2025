@@ -1,7 +1,10 @@
 extends Node2D
 
+class_name Player
+
 var Headbody = null
 var CameraMoveSpeed = 100
+var LastKnownPosition = Vector2.ZERO
 
 func _ready() -> void:
 	UpdateBody()
@@ -17,7 +20,10 @@ func UpdateBody():
 			workers[index].FollowObject = workers[index-1]
 	if workers.size() == 0:
 		get_tree().reload_current_scene()
-		
+
+func GetPlayerPosition():
+	return LastKnownPosition
+	
 func _on_workers_child_entered_tree(node: Node) -> void:
 	print(node.name + "entered")
 	UpdateBody()
@@ -32,3 +38,8 @@ func _process(delta: float) -> void:
 		var distance = Headbody.global_position.distance_to($Camera2D.global_position)
 		if distance > 50:
 			$Camera2D.global_position += (Headbody.global_position - $Camera2D.global_position).normalized() * CameraMoveSpeed * delta
+
+
+func _on_player_position_timer_timeout() -> void:
+	if Headbody:
+		LastKnownPosition = Headbody.global_position

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://uf5h3c2dv0a2" path="res://Prefabs/Characters/Base.tscn" id="1_x3d5u"]
 [ext_resource type="Resource" uid="uid://cj6fpl8v47hn3" path="res://Content/Characters/Mark.tres" id="2_b43ah"]
 
-[node name="Head" type="Node2D"]
+[node name="Head" type="Node2D" groups=["Player"]]
 script = ExtResource("1_b43ah")
 
 [node name="Workers" type="Node2D" parent="." groups=["WorkerGroup"]]
@@ -14,5 +14,10 @@ CharacterDataRef = ExtResource("2_b43ah")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
+[node name="PlayerPositionTimer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
 [connection signal="child_entered_tree" from="Workers" to="." method="_on_workers_child_entered_tree"]
 [connection signal="child_exiting_tree" from="Workers" to="." method="_on_workers_child_exiting_tree"]
+[connection signal="timeout" from="PlayerPositionTimer" to="." method="_on_player_position_timer_timeout"]
