@@ -43,8 +43,13 @@ func Setup():
 func DetermineUpgradeState():
 	if UpgradeableCharacters.size() > 0:
 		CurrentUpgradeState = UPGRADE_STATE.CHARACTER_UPGRADES
+		var value = randf_range(0, 100)
+		if value <= 50:
+			CurrentUpgradeState = UPGRADE_STATE.CHARACTER_UNLOCK
+			
 	else:
 		CurrentUpgradeState = UPGRADE_STATE.CHARACTER_UNLOCK
+
 
 func CreateCharacterUpgrades():
 	var characters = Finder.GetWorkerGroup().get_children()

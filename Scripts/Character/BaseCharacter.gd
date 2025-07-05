@@ -17,6 +17,7 @@ var SubStatDamage : Resource
 
 var CharacterLevel = 1
 var Penetration = 0
+var Bounces = 0
 			
 			
 func GetNextUpgrade():
@@ -67,6 +68,7 @@ func _on_shoot_timer_timeout() -> void:
 			instance.global_position = global_position
 			instance.Damage = SubStatDamage.Get().GetValue() + randi_range(0, 4)
 			instance.Penetration = Penetration
+			instance.Bounces += Bounces
 			Finder.GetBulletsGroup().add_child(instance)
 
 func _process(delta: float) -> void:

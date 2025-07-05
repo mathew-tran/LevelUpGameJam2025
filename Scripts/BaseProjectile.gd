@@ -3,9 +3,10 @@ extends Area2D
 class_name BaseProjectile
 
 var Direction = Vector2.RIGHT
-var Speed = 25
+var Speed = 5
 var Damage = 3
 var Penetration = 0
+@export var Bounces = 0
 
 func _ready():
 	rotation = Direction.angle()
@@ -14,6 +15,12 @@ func _process(delta: float) -> void:
 	global_position += Direction * Speed
 
 func Hit():
+	if Bounces > 0:
+		Bounces -= 1
+		var closestEnemy = Finder.GetClosestEnemy(global_position)
+		if closestEnemy:
+			Direction = (closestEnemy.global_position - global_position).normalized()
+		return
 	if Penetration <= 0:
 		queue_free()
 	else:
