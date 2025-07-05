@@ -28,10 +28,8 @@ func GetClosestEnemy(fromPosition):
 			if distanceToEnemy < closestDistance:
 				closestDistance = distanceToEnemy
 				closestEnemy = enemies[index]
-				print("closest" + str(closestDistance))
 			else:
-				print("too far: " + str(distanceToEnemy))
-		print("distance" + str(closestDistance))
+				pass
 		return closestEnemy
 	return null
 

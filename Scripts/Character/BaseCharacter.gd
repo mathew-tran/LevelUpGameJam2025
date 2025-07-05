@@ -20,6 +20,7 @@ var Penetration = 0
 var Bounces = 0
 
 var MaxMovementSpeed = 1
+var BaseHealthValue = 10
 			
 			
 func GetNextUpgrade():
@@ -27,7 +28,13 @@ func GetNextUpgrade():
 		return null
 	return CharacterDataRef.Upgrades[CharacterLevel - 1]
 	
+func AdjustHealth():
+	$HealthComponent.MaxHealth = BaseHealthValue * Finder.GetGame().SubStatTeamHealth.Get().GetValue()
+	print($HealthComponent.MaxHealth)
+	OnTakeDamage(0)
+	
 func _ready() -> void:
+	AdjustHealth()
 	$HealthComponent.OnTakeDamage.connect(OnTakeDamage)
 	$HealthComponent.OnDeath.connect(OnDeath)
 	OnTakeDamage(0)
@@ -38,6 +45,10 @@ func OnTakeDamage(_amount):
 
 func OnDeath():
 	OnCharacterDeath.emit()
+	var upgradesToUndo = CharacterLevel
+	while(upgradesToUndo >= 0):
+		CharacterDataRef.Upgrades[upgradesToUndo].Remove(self)
+		upgradesToUndo -= 1
 	queue_free()
 
 func Setup(newData):
@@ -85,7 +96,6 @@ func _process(delta: float) -> void:
 		followObjectPosition = FollowObject.global_position
 		
 
-		
 	if global_position.distance_to(followObjectPosition) > 50:
 		var dir = (followObjectPosition - global_position).normalized()
 		Velocity += dir * Speed * delta
@@ -93,7 +103,6 @@ func _process(delta: float) -> void:
 	
 	if Velocity.length() > MaxMovementSpeed:
 		Velocity = Velocity.normalized() * MaxMovementSpeed
-	print(Velocity.length())
 	move_and_collide(Velocity)
 	
 

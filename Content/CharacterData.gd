@@ -10,7 +10,6 @@ class_name CharacterData
 @export var Projectile : PackedScene
 
 @export var Upgrades : Array[CharacterUpgradeData]
-
 enum DEPARTMENT {
 	ACCOUNTING,
 	SECURITY,

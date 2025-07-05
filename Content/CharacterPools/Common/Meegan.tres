@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=12 format=3 uid="uid://cnfaf0g2kv0ff"]
+
+[ext_resource type="Script" uid="uid://b1crlyox21yx2" path="res://Content/CharacterUpgradeData.gd" id="1_7ru7e"]
+[ext_resource type="Texture2D" uid="uid://d0tue3nmfmh5e" path="res://Art/Character/Meegan.png" id="1_tcvd6"]
+[ext_resource type="PackedScene" uid="uid://cckaavq8k4w3i" path="res://Prefabs/Projectiles/PaperBallProjectile.tscn" id="2_h3pu5"]
+[ext_resource type="Script" uid="uid://dadt4pa7kewb" path="res://Content/CharacterData.gd" id="2_tcvd6"]
+[ext_resource type="Script" uid="uid://b068slgsi0qfb" path="res://Content/UpgradeTypes/CharacterUpgradeTeamHealth.gd" id="4_rlp8v"]
+[ext_resource type="Script" uid="uid://bqa6hwpbpw3x0" path="res://Content/UpgradeTypes/CharacterUpgradeBaseAttack.gd" id="5_emh3o"]
+[ext_resource type="Script" uid="uid://b6h68mdjtk5lp" path="res://Content/UpgradeTypes/CharacterUpgradeBounces.gd" id="6_ig3pp"]
+
+[sub_resource type="Resource" id="Resource_p8obt"]
+script = ExtResource("4_rlp8v")
+Amount = 10.0
+metadata/_custom_type_script = "uid://b068slgsi0qfb"
+
+[sub_resource type="Resource" id="Resource_6cv73"]
+script = ExtResource("5_emh3o")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_p2kn4"]
+script = ExtResource("4_rlp8v")
+Amount = 10.0
+metadata/_custom_type_script = "uid://b068slgsi0qfb"
+
+[sub_resource type="Resource" id="Resource_ijecq"]
+script = ExtResource("6_ig3pp")
+Bounces = 2
+metadata/_custom_type_script = "uid://b6h68mdjtk5lp"
+
+[resource]
+script = ExtResource("2_tcvd6")
+Name = "Meegan"
+Occupation = 1
+Cost = 10
+Description = "Make your team sturdier!"
+Picture = ExtResource("1_tcvd6")
+Projectile = ExtResource("2_h3pu5")
+Upgrades = Array[ExtResource("1_7ru7e")]([SubResource("Resource_p8obt"), SubResource("Resource_6cv73"), SubResource("Resource_p2kn4"), SubResource("Resource_ijecq")])
+metadata/_custom_type_script = "uid://dadt4pa7kewb"

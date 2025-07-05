@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cckaavq8k4w3i"]
+
+[ext_resource type="PackedScene" uid="uid://csm5aoidl1x0s" path="res://Prefabs/Projectiles/BaseProjectile.tscn" id="1_viv5q"]
+[ext_resource type="Texture2D" uid="uid://dy3f5ddccwdjj" path="res://Art/Projectiles/CrumpledPaper.png" id="2_viv5q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_unxac"]
+radius = 14.5022
+
+[node name="Projectile" instance=ExtResource("1_viv5q")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_viv5q")
+
+[node name="CollisionShape2D" parent="." index="2"]
+position = Vector2(-0.5, 0.25)
+shape = SubResource("CircleShape2D_unxac")
