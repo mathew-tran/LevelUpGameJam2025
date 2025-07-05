@@ -1,11 +1,52 @@
-[gd_scene load_steps=3 format=3 uid="uid://cae8gsfov06bs"]
+[gd_scene load_steps=8 format=3 uid="uid://cae8gsfov06bs"]
 
 [ext_resource type="Texture2D" uid="uid://cb0oqjthvko6f" path="res://Art/Enemy/Assignment.png" id="1_rvsag"]
+[ext_resource type="Script" uid="uid://ctydv5myuehl3" path="res://Scripts/Enemy.gd" id="1_y3xhg"]
+[ext_resource type="Script" uid="uid://bd6c17ffm375y" path="res://Scripts/Components/HealthComponent.gd" id="3_t3hgn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h175a"]
 size = Vector2(40, 45)
 
+[sub_resource type="Animation" id="Animation_y3xhg"]
+resource_name = "hit"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0.231373, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_t3hgn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t85t7"]
+_data = {
+&"RESET": SubResource("Animation_t3hgn"),
+&"hit": SubResource("Animation_y3xhg")
+}
+
 [node name="Area2D" type="Area2D" groups=["Enemy"]]
+collision_mask = 4
+script = ExtResource("1_y3xhg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_rvsag")
@@ -13,3 +54,14 @@ texture = ExtResource("1_rvsag")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_h175a")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("3_t3hgn")
+metadata/_custom_type_script = "uid://bd6c17ffm375y"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_t85t7")
+}
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

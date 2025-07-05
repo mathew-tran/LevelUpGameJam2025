@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://uf5h3c2dv0a2"]
+[gd_scene load_steps=4 format=3 uid="uid://uf5h3c2dv0a2"]
 
 [ext_resource type="Texture2D" uid="uid://cj0tuc0njq1l3" path="res://Art/Character/Mark.png" id="1_8spd0"]
 [ext_resource type="Script" uid="uid://cbqniscqsxqoo" path="res://Scripts/Character/BaseCharacter.gd" id="1_su17a"]
+[ext_resource type="PackedScene" uid="uid://cv6pm1detf5ct" path="res://Prefabs/UI/AbilityBar.tscn" id="3_8aybb"]
 
 [node name="RigidBody2D" type="RigidBody2D"]
 gravity_scale = 0.0
@@ -12,5 +13,8 @@ texture = ExtResource("1_8spd0")
 
 [node name="ShootTimer" type="Timer" parent="."]
 autostart = true
+
+[node name="ProgressBar" parent="." node_paths=PackedStringArray("TimerRef") instance=ExtResource("3_8aybb")]
+TimerRef = NodePath("../ShootTimer")
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

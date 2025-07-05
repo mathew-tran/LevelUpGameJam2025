@@ -1,11 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cq0pg18wpqef1"]
+[gd_scene load_steps=4 format=3 uid="uid://cq0pg18wpqef1"]
 
 [ext_resource type="Texture2D" uid="uid://bxqyxqpwa4x46" path="res://Art/Environment/Desk.png" id="1_g6ejq"]
 [ext_resource type="PackedScene" uid="uid://d1demcer6jenb" path="res://Prefabs/Player.tscn" id="1_xhtwi"]
-[ext_resource type="Texture2D" uid="uid://cb0oqjthvko6f" path="res://Art/Enemy/Assignment.png" id="3_djkur"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h175a"]
-size = Vector2(40, 45)
+[ext_resource type="PackedScene" uid="uid://cae8gsfov06bs" path="res://Prefabs/Enemies/BaseEnemy.tscn" id="3_djkur"]
 
 [node name="Level" type="Node2D"]
 
@@ -18,11 +15,7 @@ texture = ExtResource("1_g6ejq")
 
 [node name="Head" parent="." instance=ExtResource("1_xhtwi")]
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="EnemyGroup" type="Node2D" parent="." groups=["EnemyGroup"]]
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-texture = ExtResource("3_djkur")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 2.5)
-shape = SubResource("RectangleShape2D_h175a")
+[node name="Area2D" parent="EnemyGroup" instance=ExtResource("3_djkur")]
+position = Vector2(202, -15)
