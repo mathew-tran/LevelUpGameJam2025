@@ -9,7 +9,15 @@ var Speed = 100
 var FollowObject = null
 
 var Velocity = Vector2.ZERO
+var Damage = 3
+var CharacterLevel = 1
 			
+			
+func GetNextUpgrade():
+	if CharacterLevel > CharacterDataRef.Upgrades.size():
+		return null
+	return CharacterDataRef.Upgrades[CharacterLevel - 1]
+	
 func _ready() -> void:
 	$HealthComponent.OnTakeDamage.connect(OnTakeDamage)
 	$HealthComponent.OnDeath.connect(OnDeath)
@@ -22,7 +30,8 @@ func OnDeath():
 	OnCharacterDeath.emit()
 	queue_free()
 
-func Setup():
+func Setup(newData):
+	CharacterDataRef = newData
 	$Sprite2D.texture = CharacterDataRef.Picture
 
 func _on_shoot_timer_timeout() -> void:
@@ -32,6 +41,7 @@ func _on_shoot_timer_timeout() -> void:
 			var instance = CharacterDataRef.Projectile.instantiate()
 			instance.Direction = (enemy.global_position - global_position).normalized()
 			instance.global_position = global_position
+			instance.Damage = Damage
 			Finder.GetBulletsGroup().add_child(instance)
 
 func _process(delta: float) -> void:

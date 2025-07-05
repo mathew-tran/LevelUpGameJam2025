@@ -9,6 +9,8 @@ class_name CharacterData
 @export var Picture : Texture2D
 @export var Projectile : PackedScene
 
+@export var Upgrades : Array[CharacterUpgradeData]
+
 enum DEPARTMENT {
 	ACCOUNTING,
 	SECURITY,
@@ -21,4 +23,12 @@ enum DEPARTMENT {
 
 func GetOccupationString():
 	var str = "from " + str(DEPARTMENT.keys()[Occupation])
+	return str
+
+func Create():
+	var instance = load("res://Prefabs/Characters/Base.tscn").instantiate()
+	instance.global_position = Finder.GetPlayer().GetPlayerPosition()
+	Finder.GetWorkerGroup().add_child(instance)
+
+	instance.Setup(self)
 	

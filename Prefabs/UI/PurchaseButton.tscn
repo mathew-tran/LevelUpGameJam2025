@@ -1,9 +1,59 @@
-[gd_scene load_steps=2 format=3 uid="uid://bevhto76bb856"]
+[gd_scene load_steps=3 format=3 uid="uid://bevhto76bb856"]
 
 [ext_resource type="Script" uid="uid://dee4p5pykkv1y" path="res://Scripts/UI/PurchaseButton.gd" id="1_itwev"]
+[ext_resource type="Texture2D" uid="uid://cj0tuc0njq1l3" path="res://Art/Character/Mark.png" id="2_d433i"]
 
 [node name="PurchaseButton" type="Button"]
-custom_minimum_size = Vector2(300, 0)
+custom_minimum_size = Vector2(300, 400)
 script = ExtResource("1_itwev")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 66.0
+offset_right = -1.0
+offset_bottom = -63.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "asdasdasdasdsa
+dasd
+asd
+asd
+asd
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -76.0
+offset_top = 22.0
+offset_right = 127.0
+offset_bottom = 72.0
+texture = ExtResource("2_d433i")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Level" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 5.0
+offset_right = 52.0
+offset_bottom = 28.0
+text = "LV 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 6.0
+offset_right = 296.0
+offset_bottom = 29.0
+text = "Mark from ACCOUNTING"
+vertical_alignment = 1
 
 [connection signal="button_up" from="." to="." method="_on_button_up"]

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=6 format=3 uid="uid://cj6fpl8v47hn3"]
+
+[ext_resource type="Texture2D" uid="uid://cj0tuc0njq1l3" path="res://Art/Character/Mark.png" id="1_tk5wi"]
+[ext_resource type="PackedScene" uid="uid://csm5aoidl1x0s" path="res://Prefabs/Projectiles/BaseProjectile.tscn" id="2_eoqc0"]
+[ext_resource type="Script" uid="uid://b1crlyox21yx2" path="res://Content/CharacterUpgradeData.gd" id="3_x2yx5"]
+[ext_resource type="Resource" uid="uid://comm7auor3dgh" path="res://Content/Characters/Mark/Upgrades/Mark_001.tres" id="4_dd2m4"]
+[ext_resource type="Script" uid="uid://dadt4pa7kewb" path="res://Content/CharacterData.gd" id="5_6070i"]
+
+[resource]
+script = ExtResource("5_6070i")
+Name = "Mark"
+Occupation = 0
+Cost = 4
+Description = "Has extra pencils to throw around."
+Picture = ExtResource("1_tk5wi")
+Projectile = ExtResource("2_eoqc0")
+Upgrades = Array[ExtResource("3_x2yx5")]([ExtResource("4_dd2m4")])
+metadata/_custom_type_script = "uid://dadt4pa7kewb"
