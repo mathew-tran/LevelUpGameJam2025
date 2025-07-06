@@ -18,4 +18,15 @@ texture = ExtResource("1_5lo7a")
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_sayey")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 120.0
+one_shot = true
+autostart = true
+
+[node name="PollTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="PollTimer" to="." method="_on_poll_timer_timeout"]

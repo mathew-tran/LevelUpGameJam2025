@@ -17,7 +17,6 @@ func _ready() -> void:
 	SoundChannels.append(self)
 	SoundChannels.append($Shop)
 	SoundChannels.append($Dead)
-	SoundChannels.append($EXP)
 	ChangeAudio(-1000)
 	PlayMusic(MUSIC_TYPE.NONE)
 

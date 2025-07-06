@@ -7,7 +7,7 @@ var Direction = Vector2.ZERO
 @export var Damage = 4
 @export var Penetration = 0
 @export var EXPToDrop = 10
-@export var MoneyDropChance = 3.0
+@export var MoneyDropChance = 100.0
 
 var Velocity=  Vector2.ZERO
 func _ready() -> void:
