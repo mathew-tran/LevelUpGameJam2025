@@ -4,7 +4,7 @@ class_name Game
 
 signal OnEXPUpdate(amount)
 signal OnGameOver
-
+signal OnRemoveCharFromGame(char)
 var SubStatTeamHealth : Resource
 
 func _enter_tree() -> void:
@@ -28,3 +28,5 @@ func OnTeamHealthUpdated(value):
 func AddEXP(amount):
 	OnEXPUpdate.emit(amount)
 	
+func RemoveCharacterFromGame(char):
+	OnRemoveCharFromGame.emit(char)

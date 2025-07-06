@@ -31,4 +31,5 @@ func _on_button_up() -> void:
 		UpgradeToMake.Apply(CharacterToApply)
 	elif is_instance_valid(CharacterToAdd):
 		CharacterToAdd.Create()
+		Finder.GetGame().RemoveCharacterFromGame(CharacterToAdd.Name)
 	OnPurchased.emit()

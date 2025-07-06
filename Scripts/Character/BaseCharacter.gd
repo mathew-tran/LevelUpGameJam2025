@@ -21,6 +21,9 @@ var Bounces = 0
 
 var MaxMovementSpeed = 1
 var BaseHealthValue = 10
+
+var RegenSpeed = 1
+var RegenAmount = .25
 			
 			
 func GetNextUpgrade():
@@ -34,6 +37,8 @@ func AdjustHealth():
 	OnTakeDamage(0)
 	
 func _ready() -> void:
+	$RegenTimer.wait_time = 1 / RegenSpeed
+	$RegenTimer.start()
 	AdjustHealth()
 	$HealthComponent.OnTakeDamage.connect(OnTakeDamage)
 	$HealthComponent.OnDeath.connect(OnDeath)
@@ -109,3 +114,7 @@ func _process(delta: float) -> void:
 
 func Enable():
 	$Camera2D.make_current()
+
+
+func _on_regen_timer_timeout() -> void:
+	$HealthComponent.Heal(RegenAmount)

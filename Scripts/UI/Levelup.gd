@@ -4,7 +4,8 @@ extends Panel
 
 enum UPGRADE_STATE {
 	CHARACTER_UPGRADES,
-	CHARACTER_UNLOCK
+	CHARACTER_UNLOCK,
+	SKIP
 }
 
 var CurrentUpgradeState = UPGRADE_STATE.CHARACTER_UPGRADES
@@ -14,9 +15,11 @@ var UpgradeableCharacters = []
 var CharactersToUnlock = []
 var CurrentCharacters =[]
 
+var MaxCharacterAmount = 6
 func _ready() -> void:
 	Finder.GetEXPBar().OnLevelUp.connect(OnLevelup)
 	Finder.GetGame().OnGameOver.connect(OnGameOver)
+	Finder.GetGame().OnRemoveCharFromGame.connect(OnRemoveCharFromGame)
 	CharactersToUnlock = Helper.GetAllFilePaths("res://Content/CharacterPools/Common/")
 	CharactersToUnlock.shuffle()
 	
@@ -46,21 +49,42 @@ func Setup():
 			CreateCharacterUpgrades()
 		UPGRADE_STATE.CHARACTER_UNLOCK:
 			CreateCharacterUnlocks()
+		UPGRADE_STATE.SKIP:
+			Close()
+
+func HasUpgradeableCharacters():
+	return UpgradeableCharacters.size() > 0
 	
-
-
+func HasMoreCharacters():
+	return CharactersToUnlock.size() > 0
+	
+func HasFullTeam():
+	return CurrentCharacters.size() >= MaxCharacterAmount
 func DetermineUpgradeState():
-	if UpgradeableCharacters.size() > 0:		
-		if CurrentCharacters.size() >= 6:
-			CurrentUpgradeState = UPGRADE_STATE.CHARACTER_UPGRADES
+	if HasMoreCharacters() == false and HasUpgradeableCharacters() == false:
+		CurrentUpgradeState = UPGRADE_STATE.SKIP
+		return
+	if HasUpgradeableCharacters() == false and HasFullTeam():
+			CurrentUpgradeState = UPGRADE_STATE.SKIP
 			return
-		else:
+		
+	if HasMoreCharacters() == false and HasUpgradeableCharacters():
+		CurrentUpgradeState = UPGRADE_STATE.CHARACTER_UPGRADES
+		return
+
+	if HasUpgradeableCharacters() and HasFullTeam():
+		CurrentUpgradeState = UPGRADE_STATE.CHARACTER_UPGRADES
+		return
+		
+	if HasFullTeam() == false and HasUpgradeableCharacters():	
+		CurrentUpgradeState = UPGRADE_STATE.CHARACTER_UPGRADES
+		if HasMoreCharacters():
 			var value = randf_range(0, 100)
-			if value <= 50:
+			if value <= 60:
 				CurrentUpgradeState = UPGRADE_STATE.CHARACTER_UNLOCK
-			
-	else:
-		CurrentUpgradeState = UPGRADE_STATE.CHARACTER_UNLOCK
+		else:
+			CurrentUpgradeState = UPGRADE_STATE.CHARACTER_UPGRADES
+	
 
 
 func CreateCharacterUpgrades():
@@ -110,6 +134,15 @@ func Cleanup():
 	
 func OnPurchased():
 	Close()
+	
+func OnRemoveCharFromGame(char):
+	var index = 0
+	for x in CharactersToUnlock:
+		if char.to_lower() in x.to_lower():
+			CharactersToUnlock.remove_at(index)
+			break
+		index += 1
+	print("remaining characters" + str(CharactersToUnlock))
 	
 func Close():
 	visible = false
