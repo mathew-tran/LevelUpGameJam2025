@@ -70,5 +70,6 @@ Projectile = ExtResource("2_h3pu5")
 Spread = 1
 AttackSpeed = 1.0
 Damage = 7
+ProjectileSpeed = 3
 Upgrades = Array[ExtResource("1_7ru7e")]([SubResource("Resource_p8obt"), SubResource("Resource_6cv73"), SubResource("Resource_p2kn4"), SubResource("Resource_ijecq"), SubResource("Resource_ig3pp"), SubResource("Resource_2r8qw"), SubResource("Resource_br1bi"), SubResource("Resource_urjpc"), SubResource("Resource_emh3o"), SubResource("Resource_k70v0")])
 metadata/_custom_type_script = "uid://dadt4pa7kewb"

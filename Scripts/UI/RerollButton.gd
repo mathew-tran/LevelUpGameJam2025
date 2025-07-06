@@ -18,6 +18,7 @@ func OnMoneyUpdate():
 
 func _on_button_up() -> void:
 	if RerollCost <= Finder.GetGame().GetMoney():
+		Jukebox.PlaySFXMenu(load("res://Audio/SFX/levelup25-purchase.wav"))
 		Finder.GetLevelUp().Setup()
 		Finder.GetGame().RemoveMoney(RerollCost)
 		RerollCost += 2

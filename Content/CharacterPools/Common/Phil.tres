@@ -1,0 +1,76 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=19 format=3 uid="uid://bhdty4bfqutx2"]
+
+[ext_resource type="Texture2D" uid="uid://cs8ycmju16lxt" path="res://Art/Character/Phil.png" id="1_a55og"]
+[ext_resource type="Script" uid="uid://b1crlyox21yx2" path="res://Content/CharacterUpgradeData.gd" id="1_aklkf"]
+[ext_resource type="Script" uid="uid://dadt4pa7kewb" path="res://Content/CharacterData.gd" id="2_jmlae"]
+[ext_resource type="PackedScene" uid="uid://cl0kbexux4hj4" path="res://Prefabs/Projectiles/FolderProjectile.tscn" id="2_xskfd"]
+[ext_resource type="Script" uid="uid://cxcg364uu2exq" path="res://Content/UpgradeTypes/CharacterUpgradePenetration.gd" id="4_yiwqv"]
+[ext_resource type="Script" uid="uid://c7f6e6ejy2j0y" path="res://Content/UpgradeTypes/CharacterUpgradeSpread.gd" id="5_8t6pq"]
+[ext_resource type="Script" uid="uid://civl0ns7ngbc6" path="res://Content/UpgradeTypes/CharacterUpgradeBaseAttackRate.gd" id="6_2iemo"]
+[ext_resource type="Script" uid="uid://bqa6hwpbpw3x0" path="res://Content/UpgradeTypes/CharacterUpgradeBaseAttack.gd" id="7_nbkig"]
+
+[sub_resource type="Resource" id="Resource_i7lrs"]
+script = ExtResource("4_yiwqv")
+Penetration = 1
+metadata/_custom_type_script = "uid://cxcg364uu2exq"
+
+[sub_resource type="Resource" id="Resource_u0d1d"]
+script = ExtResource("5_8t6pq")
+Spread = 1
+metadata/_custom_type_script = "uid://c7f6e6ejy2j0y"
+
+[sub_resource type="Resource" id="Resource_j75yf"]
+script = ExtResource("6_2iemo")
+AttackRateIncrease = 10.0
+metadata/_custom_type_script = "uid://civl0ns7ngbc6"
+
+[sub_resource type="Resource" id="Resource_dvm7j"]
+script = ExtResource("7_nbkig")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_xi44f"]
+script = ExtResource("6_2iemo")
+AttackRateIncrease = 10.0
+metadata/_custom_type_script = "uid://civl0ns7ngbc6"
+
+[sub_resource type="Resource" id="Resource_mg6cu"]
+script = ExtResource("6_2iemo")
+AttackRateIncrease = 10.0
+metadata/_custom_type_script = "uid://civl0ns7ngbc6"
+
+[sub_resource type="Resource" id="Resource_h4c2s"]
+script = ExtResource("6_2iemo")
+AttackRateIncrease = 10.0
+metadata/_custom_type_script = "uid://civl0ns7ngbc6"
+
+[sub_resource type="Resource" id="Resource_optm0"]
+script = ExtResource("4_yiwqv")
+Penetration = 1
+metadata/_custom_type_script = "uid://cxcg364uu2exq"
+
+[sub_resource type="Resource" id="Resource_gnudc"]
+script = ExtResource("4_yiwqv")
+Penetration = 1
+metadata/_custom_type_script = "uid://cxcg364uu2exq"
+
+[sub_resource type="Resource" id="Resource_d2fhf"]
+script = ExtResource("5_8t6pq")
+Spread = 3
+metadata/_custom_type_script = "uid://c7f6e6ejy2j0y"
+
+[resource]
+script = ExtResource("2_jmlae")
+Name = "Phil"
+Occupation = 1
+Cost = 10
+Description = "Likes to collect EXP"
+Picture = ExtResource("1_a55og")
+Projectile = ExtResource("2_xskfd")
+Spread = 1
+AttackSpeed = 0.5
+Damage = 5
+ProjectileSpeed = 3
+Penetration = 10
+Upgrades = Array[ExtResource("1_aklkf")]([SubResource("Resource_i7lrs"), SubResource("Resource_u0d1d"), SubResource("Resource_j75yf"), SubResource("Resource_dvm7j"), SubResource("Resource_xi44f"), SubResource("Resource_mg6cu"), SubResource("Resource_h4c2s"), SubResource("Resource_optm0"), SubResource("Resource_gnudc"), SubResource("Resource_d2fhf")])
+metadata/_custom_type_script = "uid://dadt4pa7kewb"

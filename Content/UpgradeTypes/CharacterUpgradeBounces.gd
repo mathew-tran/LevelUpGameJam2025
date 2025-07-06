@@ -7,6 +7,6 @@ func GetUpgradeName():
 	return "Increase projectile bounces by " + str(Bounces)
 	
 func ApplyUpgrade(char : BaseCharacter):
-	char.Bounces += 1
+	char.Bounces += Bounces
 func RemoveUpgrade(char : BaseCharacter):
-	char.Bounces -= 1
+	char.Bounces -= Bounces

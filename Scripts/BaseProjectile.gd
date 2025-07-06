@@ -6,6 +6,7 @@ var Direction = Vector2.RIGHT
 var Speed = 5
 var Damage = 3
 var Penetration = 0
+
 @export var Bounces = 0
 
 func _ready():
@@ -34,3 +35,10 @@ func _on_bounce_timer_timeout() -> void:
 	if closestEnemy:
 		Direction = (closestEnemy.global_position - global_position).normalized()
 		rotation = Direction.angle()
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area is EXPPickup:
+		if area.IsFollowing() == false:
+			area.SetFollowing()
+			Hit()

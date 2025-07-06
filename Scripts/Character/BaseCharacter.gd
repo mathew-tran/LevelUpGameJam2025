@@ -5,7 +5,7 @@ class_name BaseCharacter
 @export var CharacterDataRef : CharacterData
 
 signal OnCharacterDeath
-var Speed = 100
+var Speed = 300
 var FollowObject = null
 
 var Velocity = Vector2.ZERO
@@ -25,6 +25,7 @@ var RegenSpeed = 1
 var RegenAmount = .25
 			
 var Spread = 1
+var ProjectileSpeed = 5
 
 var bCanBeHit = true
 			
@@ -83,6 +84,8 @@ func Setup(newData):
 	CharacterDataRef = newData
 	$Sprite2D.texture = CharacterDataRef.Picture
 	Damage = CharacterDataRef.Damage
+	ProjectileSpeed = CharacterDataRef.ProjectileSpeed
+	Penetration = CharacterDataRef.Penetration
 	
 	SubStatDamage = SubStatResourceData.new()
 	SubStatDamage.StatResourceRef = load("res://Content/Stats/CHAR_DAMAGE.tres")
@@ -123,6 +126,7 @@ func _on_shoot_timer_timeout() -> void:
 			for angle in GetBulletAngles(Spread):
 				var instance = CharacterDataRef.Projectile.instantiate()
 				instance.Direction = (enemy.global_position - global_position).normalized()
+				instance.Speed = ProjectileSpeed
 				var radians = float(deg_to_rad(angle))
 				instance.Direction = instance.Direction.rotated(radians)
 				instance.global_position = global_position

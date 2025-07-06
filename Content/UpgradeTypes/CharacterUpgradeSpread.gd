@@ -7,6 +7,6 @@ func GetUpgradeName():
 	return "Increase projectile amount by " + str(Spread)
 	
 func ApplyUpgrade(char : BaseCharacter):
-	char.Spread += 1
+	char.Spread += Spread
 func RemoveUpgrade(char : BaseCharacter):
-	char.Spread -= 1
+	char.Spread -= Spread

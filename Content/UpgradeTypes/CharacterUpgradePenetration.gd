@@ -7,6 +7,6 @@ func GetUpgradeName():
 	return "Increase projectile penetration by " + str(Penetration)
 	
 func ApplyUpgrade(char : BaseCharacter):
-	char.Penetration += 1
+	char.Penetration += Penetration
 func RemoveUpgrade(char : BaseCharacter):
-	char.SubStatAttackRate.Get().Undo(resource_path)
+	char.Penetration -= Penetration

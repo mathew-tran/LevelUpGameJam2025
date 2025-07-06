@@ -11,6 +11,8 @@ class_name CharacterData
 @export var Spread = 1
 @export var AttackSpeed = 1.0 # per second
 @export var Damage = 5
+@export var ProjectileSpeed = 5
+@export var Penetration = 0
 
 @export var Upgrades : Array[CharacterUpgradeData]
 enum DEPARTMENT {
