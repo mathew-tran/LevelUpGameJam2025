@@ -22,6 +22,7 @@ func _process(delta: float) -> void:
 	if EXPCache != 0:
 		EXP += 1
 		EXPCache -= 1
+		Jukebox.PlayXPSFX(lerp(1.0, 2.5, value))
 		if EXP >= MaxEXP:
 			EXP = 0
 			MaxEXP *= 1.2

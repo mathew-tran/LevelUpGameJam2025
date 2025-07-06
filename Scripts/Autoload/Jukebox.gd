@@ -6,22 +6,31 @@ enum MUSIC_TYPE {
 	NONE,
 	CONTINUE,
 	SHOP,
+	FIGHT,
 	DEAD
 }
 
+func _ready() -> void:
+	play()
+	$Shop.play()
+	$Dead.play()
+	
 func PlayMusic(musicType : MUSIC_TYPE):
 	print("PLAY: " + str(MUSIC_TYPE.keys()[musicType]))
+	$Shop.stream_paused = true
+	stream_paused = true
+	$Dead.stream_paused = true
 	match musicType:
 		MUSIC_TYPE.SHOP:
-			stream = load("res://Audio/Music/leveup25-shop-music.ogg")
+			$Shop.stream_paused = false
 		MUSIC_TYPE.DEAD:
-			stream = load("res://Audio/SFX/levelup25-dead (2).ogg")
+			$Dead.stream_paused = false
+		MUSIC_TYPE.FIGHT:
+			stream_paused = false
 		MUSIC_TYPE.NONE:
-			stream = null
-			stop()
+			pass
 		MUSIC_TYPE.CONTINUE:
 			return
-	play()
 
 	
 func PlaySFX(audiostream : AudioStream):
@@ -29,3 +38,6 @@ func PlaySFX(audiostream : AudioStream):
 		$SFX.stream = audiostream
 		$SFX.play()
 	
+func PlayXPSFX(pitch):
+	$EXP.pitch_scale = pitch
+	$EXP.play()

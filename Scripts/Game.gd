@@ -10,7 +10,7 @@ var SubStatTeamHealth : Resource
 func _enter_tree() -> void:
 	Setup()
 func _ready() -> void:
-	Jukebox.PlayMusic(JukeboxPlayer.MUSIC_TYPE.NONE)
+	Jukebox.PlayMusic(JukeboxPlayer.MUSIC_TYPE.FIGHT)
 
 func Setup():
 	SubStatTeamHealth = SubStatResourceData.new()

@@ -12,20 +12,28 @@ var CurrentUpgradeState = UPGRADE_STATE.CHARACTER_UPGRADES
 var UpgradeableCharacters = []
 
 var CharactersToUnlock = []
+var CurrentCharacters =[]
 
 func _ready() -> void:
 	Finder.GetEXPBar().OnLevelUp.connect(OnLevelup)
+	Finder.GetGame().OnGameOver.connect(OnGameOver)
 	CharactersToUnlock = Helper.GetAllFilePaths("res://Content/CharacterPools/Common/")
 	CharactersToUnlock.shuffle()
+	
+func OnGameOver():
+	if visible:
+		Close()
 func OnLevelup():
 	Setup()
-	
+
 func Setup():
 	get_tree().paused = true
 	Jukebox.PlayMusic(JukeboxPlayer.MUSIC_TYPE.SHOP)
 	await Cleanup()
 	var characters = Finder.GetWorkerGroup().get_children()
 	UpgradeableCharacters.clear()
+	CurrentCharacters.clear()
+	CurrentCharacters = characters
 	for x in range(0, characters.size()):
 		if characters[x].GetNextUpgrade():
 			UpgradeableCharacters.append(characters[x])
@@ -42,11 +50,14 @@ func Setup():
 
 
 func DetermineUpgradeState():
-	if UpgradeableCharacters.size() > 0:
-		CurrentUpgradeState = UPGRADE_STATE.CHARACTER_UPGRADES
-		var value = randf_range(0, 100)
-		if value <= 50:
-			CurrentUpgradeState = UPGRADE_STATE.CHARACTER_UNLOCK
+	if UpgradeableCharacters.size() > 0:		
+		if CurrentCharacters.size() >= 6:
+			CurrentUpgradeState = UPGRADE_STATE.CHARACTER_UPGRADES
+			return
+		else:
+			var value = randf_range(0, 100)
+			if value <= 50:
+				CurrentUpgradeState = UPGRADE_STATE.CHARACTER_UNLOCK
 			
 	else:
 		CurrentUpgradeState = UPGRADE_STATE.CHARACTER_UNLOCK
@@ -104,4 +115,4 @@ func Close():
 	visible = false
 	Cleanup()
 	get_tree().paused = false
-	Jukebox.PlayMusic(JukeboxPlayer.MUSIC_TYPE.NONE)
+	Jukebox.PlayMusic(JukeboxPlayer.MUSIC_TYPE.FIGHT)

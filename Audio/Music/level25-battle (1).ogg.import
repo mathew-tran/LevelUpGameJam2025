@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d1sx8f64p3ws7"
+path="res://.godot/imported/level25-battle (1).ogg-6125eec30adb7b9fb4b15b0f9668797e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/Music/level25-battle (1).ogg"
+dest_files=["res://.godot/imported/level25-battle (1).ogg-6125eec30adb7b9fb4b15b0f9668797e.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -49,6 +49,7 @@ func OnDeath():
 	while(upgradesToUndo >= 0):
 		CharacterDataRef.Upgrades[upgradesToUndo].Remove(self)
 		upgradesToUndo -= 1
+	Jukebox.PlaySFX(load("res://Audio/SFX/levelup25-remove.wav"))
 	queue_free()
 
 func Setup(newData):

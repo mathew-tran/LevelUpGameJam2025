@@ -23,6 +23,7 @@ func OnTakeDamage(amount):
 	data["color"] = Color.RED
 	instance.data = data
 	Finder.GetEffectGroup().add_child(instance)
+	Jukebox.PlaySFX(load("res://Audio/SFX/hit.wav"))
 	
 func OnDeath():
 	var instance = load("res://Prefabs/Pickups/EXP.tscn").instantiate()
