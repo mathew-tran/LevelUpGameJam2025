@@ -5,7 +5,10 @@ class_name Game
 signal OnEXPUpdate(amount)
 signal OnGameOver
 signal OnRemoveCharFromGame(char)
+signal OnMoneyUpdate(amount)
 var SubStatTeamHealth : Resource
+
+var Money = 10
 
 func _enter_tree() -> void:
 	Setup()
@@ -24,6 +27,16 @@ func OnTeamHealthUpdated(value):
 	for worker in workers.get_children():
 		worker.AdjustHealth()
 	
+func AddMoney(amount):
+	Money += amount
+	OnMoneyUpdate.emit()
+	
+func GetMoney():
+	return Money
+	
+func RemoveMoney(amount):
+	Money -= amount
+	OnMoneyUpdate.emit()
 	
 func AddEXP(amount):
 	OnEXPUpdate.emit(amount)

@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://ruheheucmcn7"]
+
+[ext_resource type="Script" uid="uid://ci70uqdn4cke" path="res://Scripts/UI/SkipButton.gd" id="1_jlgi5"]
+[ext_resource type="Texture2D" uid="uid://d0qwnb32bj80e" path="res://Art/Cash.png" id="2_qqtpq"]
+
+[node name="SkipButton" type="Button"]
+custom_minimum_size = Vector2(221, 56)
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_jlgi5")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_top = -4.0
+offset_right = 228.0
+offset_bottom = 58.0
+metadata/_edit_group_ = true
+
+[node name="Label3" type="Label" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "SKIP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+text = "(+1 "
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+texture = ExtResource("2_qqtpq")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+text = ")"
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]

@@ -1,0 +1,74 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=19 format=3 uid="uid://dmu3xrwyb68fp"]
+
+[ext_resource type="Script" uid="uid://b1crlyox21yx2" path="res://Content/CharacterUpgradeData.gd" id="1_7ggyt"]
+[ext_resource type="Texture2D" uid="uid://d30fxpesxioev" path="res://Art/Character/Samantha.png" id="1_gfgr1"]
+[ext_resource type="PackedScene" uid="uid://b2ohd7icel5ox" path="res://Prefabs/Projectiles/PenProjectile.tscn" id="1_shfyc"]
+[ext_resource type="Script" uid="uid://dadt4pa7kewb" path="res://Content/CharacterData.gd" id="2_shfyc"]
+[ext_resource type="Script" uid="uid://civl0ns7ngbc6" path="res://Content/UpgradeTypes/CharacterUpgradeBaseAttackRate.gd" id="4_r4aox"]
+[ext_resource type="Script" uid="uid://bqa6hwpbpw3x0" path="res://Content/UpgradeTypes/CharacterUpgradeBaseAttack.gd" id="5_n3gpu"]
+[ext_resource type="Script" uid="uid://cxcg364uu2exq" path="res://Content/UpgradeTypes/CharacterUpgradePenetration.gd" id="6_uf01l"]
+[ext_resource type="Script" uid="uid://c7f6e6ejy2j0y" path="res://Content/UpgradeTypes/CharacterUpgradeSpread.gd" id="7_ul77h"]
+
+[sub_resource type="Resource" id="Resource_bsnjl"]
+script = ExtResource("4_r4aox")
+AttackRateIncrease = 50.0
+metadata/_custom_type_script = "uid://civl0ns7ngbc6"
+
+[sub_resource type="Resource" id="Resource_2d2ap"]
+script = ExtResource("5_n3gpu")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_arssk"]
+script = ExtResource("5_n3gpu")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_6kf5l"]
+script = ExtResource("6_uf01l")
+Penetration = 1
+metadata/_custom_type_script = "uid://cxcg364uu2exq"
+
+[sub_resource type="Resource" id="Resource_t25h1"]
+script = ExtResource("5_n3gpu")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_8ouqm"]
+script = ExtResource("5_n3gpu")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_jt3av"]
+script = ExtResource("4_r4aox")
+AttackRateIncrease = 10.0
+metadata/_custom_type_script = "uid://civl0ns7ngbc6"
+
+[sub_resource type="Resource" id="Resource_3dady"]
+script = ExtResource("4_r4aox")
+AttackRateIncrease = 10.0
+metadata/_custom_type_script = "uid://civl0ns7ngbc6"
+
+[sub_resource type="Resource" id="Resource_6u4sj"]
+script = ExtResource("5_n3gpu")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_14n8x"]
+script = ExtResource("7_ul77h")
+Spread = 2
+metadata/_custom_type_script = "uid://c7f6e6ejy2j0y"
+
+[resource]
+script = ExtResource("2_shfyc")
+Name = "Samantha"
+Occupation = 2
+Cost = 10
+Description = "Throws pens and lightning speeds."
+Picture = ExtResource("1_gfgr1")
+Projectile = ExtResource("1_shfyc")
+Spread = 1
+AttackSpeed = 10.0
+Damage = 2
+Upgrades = Array[ExtResource("1_7ggyt")]([SubResource("Resource_bsnjl"), SubResource("Resource_2d2ap"), SubResource("Resource_arssk"), SubResource("Resource_6kf5l"), SubResource("Resource_t25h1"), SubResource("Resource_8ouqm"), SubResource("Resource_jt3av"), SubResource("Resource_3dady"), SubResource("Resource_6u4sj"), SubResource("Resource_14n8x")])
+metadata/_custom_type_script = "uid://dadt4pa7kewb"

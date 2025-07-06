@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbf88e2kibbpj"]
+
+[ext_resource type="Texture2D" uid="uid://d0qwnb32bj80e" path="res://Art/Cash.png" id="1_k4her"]
+[ext_resource type="Script" uid="uid://mxq6ot5s15nh" path="res://Scripts/UI/MoneyUI.gd" id="1_xokbh"]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+script = ExtResource("1_xokbh")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_k4her")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "10"

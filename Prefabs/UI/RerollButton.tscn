@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://duiayraokc07y"]
+
+[ext_resource type="Script" uid="uid://bla0xgxia3i86" path="res://Scripts/UI/RerollButton.gd" id="1_jhcih"]
+[ext_resource type="PackedScene" uid="uid://bbf88e2kibbpj" path="res://Prefabs/UI/MoneyUI.tscn" id="2_eva6c"]
+
+[node name="Button" type="Button"]
+process_mode = 3
+custom_minimum_size = Vector2(221, 56)
+offset_right = 221.0
+offset_bottom = 56.0
+script = ExtResource("1_jhcih")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 9.0
+offset_right = 217.0
+offset_bottom = 44.0
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "REROLL"
+horizontal_alignment = 1
+
+[node name="MoneyText" parent="HBoxContainer" instance=ExtResource("2_eva6c")]
+layout_mode = 2
+MoneyUIType = 1
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]

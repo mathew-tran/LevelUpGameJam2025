@@ -1,5 +1,7 @@
 extends Panel
 
+class_name Levelup
+
 @onready var PurchaseContainer = $Panel/HBoxContainer
 
 enum UPGRADE_STATE {

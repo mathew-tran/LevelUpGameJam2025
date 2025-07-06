@@ -9,6 +9,8 @@ class_name CharacterData
 @export var Picture : Texture2D
 @export var Projectile : PackedScene
 @export var Spread = 1
+@export var AttackSpeed = 1.0 # per second
+@export var Damage = 5
 
 @export var Upgrades : Array[CharacterUpgradeData]
 enum DEPARTMENT {

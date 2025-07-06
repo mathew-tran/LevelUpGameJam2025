@@ -20,6 +20,7 @@ grow_vertical = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_odn3u")
 theme_override_styles/fill = SubResource("StyleBoxFlat_hi2hd")
 max_value = 1.0
+step = 0.001
 value = 0.23
 show_percentage = false
 script = ExtResource("1_hi2hd")

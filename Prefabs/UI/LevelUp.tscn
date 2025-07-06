@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cu8sskt8qxtpq"]
+[gd_scene load_steps=5 format=3 uid="uid://cu8sskt8qxtpq"]
 
 [ext_resource type="PackedScene" uid="uid://bevhto76bb856" path="res://Prefabs/UI/PurchaseButton.tscn" id="1_m8v2k"]
 [ext_resource type="Script" uid="uid://dlrrspdtty0hr" path="res://Scripts/UI/Levelup.gd" id="1_tee8a"]
+[ext_resource type="PackedScene" uid="uid://duiayraokc07y" path="res://Prefabs/UI/RerollButton.tscn" id="3_an5oa"]
+[ext_resource type="PackedScene" uid="uid://ruheheucmcn7" path="res://Prefabs/UI/Skipbutton.tscn" id="4_hejj1"]
 
-[node name="Levelup" type="Panel"]
+[node name="Levelup" type="Panel" groups=["Levelup"]]
 process_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,4 +38,25 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PurchaseButton" parent="Panel/HBoxContainer" instance=ExtResource("1_m8v2k")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -223.0
+offset_top = -85.0
+offset_right = 223.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 40
+
+[node name="Button" parent="HBoxContainer" instance=ExtResource("3_an5oa")]
+layout_mode = 2
+
+[node name="SkipButton" parent="HBoxContainer" instance=ExtResource("4_hejj1")]
 layout_mode = 2

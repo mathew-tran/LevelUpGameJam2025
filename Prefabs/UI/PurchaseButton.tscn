@@ -52,8 +52,8 @@ layout_mode = 0
 offset_left = 57.0
 offset_top = 6.0
 offset_right = 296.0
-offset_bottom = 29.0
+offset_bottom = 70.0
 text = "Mark from ACCOUNTING"
-vertical_alignment = 1
+autowrap_mode = 2
 
 [connection signal="button_up" from="." to="." method="_on_button_up"]

@@ -63,5 +63,7 @@ Description = "Throws a bunch of paper clips!"
 Picture = ExtResource("1_bfmt5")
 Projectile = ExtResource("2_7qxdr")
 Spread = 2
+AttackSpeed = 1.0
+Damage = 8
 Upgrades = Array[ExtResource("1_sjvf1")]([SubResource("Resource_lajlj"), SubResource("Resource_uju6c"), SubResource("Resource_fev4i"), SubResource("Resource_0tw70"), SubResource("Resource_dh6n2"), SubResource("Resource_567l0"), SubResource("Resource_kyfbt"), SubResource("Resource_a1efr"), SubResource("Resource_7bkbm")])
 metadata/_custom_type_script = "uid://dadt4pa7kewb"

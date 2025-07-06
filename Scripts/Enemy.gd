@@ -7,6 +7,8 @@ var Direction = Vector2.ZERO
 @export var Damage = 4
 @export var Penetration = 0
 @export var EXPToDrop = 10
+@export var MoneyDropChance = 3.0
+
 var Velocity=  Vector2.ZERO
 func _ready() -> void:
 	$HealthComponent.OnDeath.connect(OnDeath)
@@ -29,7 +31,13 @@ func OnDeath():
 	var instance = load("res://Prefabs/Pickups/EXP.tscn").instantiate()
 	instance.global_position = global_position
 	instance.Amount = EXPToDrop
-	Finder.GetEffectGroup().call_deferred("add_child", instance)
+	Finder.GetPickupGroup().call_deferred("add_child", instance)
+	var result = randi() % 100
+	if result <= MoneyDropChance:
+		var moneyInstance = load("res://Prefabs/Pickups/Money.tscn").instantiate()
+		moneyInstance.global_position = global_position
+		Finder.GetPickupGroup().call_deferred("add_child", moneyInstance)
+		
 	queue_free()
 	
 func _process(delta: float) -> void:

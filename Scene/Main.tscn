@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cq0pg18wpqef1"]
+[gd_scene load_steps=11 format=3 uid="uid://cq0pg18wpqef1"]
 
 [ext_resource type="PackedScene" uid="uid://bqy51bgry7fi5" path="res://Prefabs/Environment/Desk.tscn" id="1_djkur"]
 [ext_resource type="Script" uid="uid://dokag847w5cfs" path="res://Scripts/Game.gd" id="1_togfq"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://drny8xxvq6ide" path="res://Prefabs/Pickups/EXP.tscn" id="6_h3nmf"]
 [ext_resource type="PackedScene" uid="uid://cu8sskt8qxtpq" path="res://Prefabs/UI/LevelUp.tscn" id="7_hueuk"]
 [ext_resource type="PackedScene" uid="uid://davv3kxe782ay" path="res://Prefabs/UI/GameOverPanel.tscn" id="8_6a8me"]
+[ext_resource type="PackedScene" uid="uid://bbf88e2kibbpj" path="res://Prefabs/UI/MoneyUI.tscn" id="9_yg4ot"]
 
 [node name="Game" type="Node2D" groups=["Game"]]
 script = ExtResource("1_togfq")
@@ -29,6 +30,8 @@ script = ExtResource("4_h3nmf")
 wait_time = 3.0
 autostart = true
 
+[node name="PickupGroup" type="Node2D" parent="." groups=["PickupGroup"]]
+
 [node name="EnemyGroup" type="Node2D" parent="." groups=["EnemyGroup"]]
 
 [node name="Area2D" parent="EnemyGroup" instance=ExtResource("3_djkur")]
@@ -47,6 +50,12 @@ visible = false
 
 [node name="GameOverPanel" parent="CanvasLayer" instance=ExtResource("8_6a8me")]
 visible = false
+
+[node name="HBoxContainer" parent="CanvasLayer" instance=ExtResource("9_yg4ot")]
+offset_left = 11.0
+offset_top = 19.0
+offset_right = 57.0
+offset_bottom = 42.0
 
 [node name="EXP" parent="." instance=ExtResource("6_h3nmf")]
 position = Vector2(138, -115)

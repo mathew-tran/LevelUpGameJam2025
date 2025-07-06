@@ -10,7 +10,6 @@ var FollowObject = null
 
 var Velocity = Vector2.ZERO
 var Damage = 10
-var AttackRate = 1.0
 var SubStatAttackRate : Resource
 
 var SubStatDamage : Resource
@@ -83,6 +82,7 @@ func OnDeath():
 func Setup(newData):
 	CharacterDataRef = newData
 	$Sprite2D.texture = CharacterDataRef.Picture
+	Damage = CharacterDataRef.Damage
 	
 	SubStatDamage = SubStatResourceData.new()
 	SubStatDamage.StatResourceRef = load("res://Content/Stats/CHAR_DAMAGE.tres")
@@ -91,7 +91,7 @@ func Setup(newData):
 	
 	SubStatAttackRate = SubStatResourceData.new()
 	SubStatAttackRate.StatResourceRef = load("res://Content/Stats/CHAR_ATTACK_RATE.tres")
-	SubStatAttackRate.FlatValue = AttackRate
+	SubStatAttackRate.FlatValue = CharacterDataRef.AttackSpeed
 
 	SubStatAttackRate.Init()
 	SubStatAttackRate.ModifiedResource.ValueUpdated.connect(OnAttackRateUpdate)

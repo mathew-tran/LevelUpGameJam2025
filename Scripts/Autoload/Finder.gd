@@ -15,6 +15,12 @@ func GetEffectGroup():
 func GetGame() -> Game:
 	return get_tree().get_nodes_in_group("Game")[0]
 
+func GetLevelUp() -> Levelup:
+	return get_tree().get_nodes_in_group("Levelup")[0]
+	
+func GetPickupGroup():
+	return get_tree().get_nodes_in_group("PickupGroup")[0]
+	
 func GetEXP() -> EXPBar:
 	return get_tree().get_nodes_in_group("EXPBar")[0]
 	

@@ -68,5 +68,7 @@ Description = "Throws a bouncy projectile"
 Picture = ExtResource("1_rn5iy")
 Projectile = ExtResource("2_fqx34")
 Spread = 1
+AttackSpeed = 1.0
+Damage = 10
 Upgrades = Array[ExtResource("1_c05vt")]([SubResource("Resource_4lvpt"), SubResource("Resource_lw4a6"), SubResource("Resource_jwrxj"), SubResource("Resource_bp10m"), SubResource("Resource_su8px"), SubResource("Resource_1e6yj"), SubResource("Resource_4av85"), SubResource("Resource_maa75"), SubResource("Resource_vmd4l"), SubResource("Resource_u1e6m")])
 metadata/_custom_type_script = "uid://dadt4pa7kewb"
