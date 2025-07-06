@@ -20,7 +20,7 @@ func OnTakeDamage(amount):
 	instance.global_position = global_position
 	var data = {}
 	data["text"] = (str(int(amount)))
-	data["color"] = Color.RED
+	data["color"] = Color.WHITE
 	instance.data = data
 	Finder.GetEffectGroup().add_child(instance)
 	Jukebox.PlaySFX(load("res://Audio/SFX/hit.wav"))

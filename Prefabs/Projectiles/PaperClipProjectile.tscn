@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4neoep5r3soq"]
+
+[ext_resource type="PackedScene" uid="uid://csm5aoidl1x0s" path="res://Prefabs/Projectiles/BaseProjectile.tscn" id="1_pl8cn"]
+[ext_resource type="Texture2D" uid="uid://3kibo1i3dj8w" path="res://Art/Projectiles/Paperclip.png" id="2_emyfl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ovcqh"]
+size = Vector2(29, 10)
+
+[node name="Projectile" instance=ExtResource("1_pl8cn")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_emyfl")
+
+[node name="CollisionShape2D" parent="." index="2"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_ovcqh")

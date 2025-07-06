@@ -6,6 +6,7 @@ var Headbody = null
 var CameraMoveSpeed = 100
 var LastKnownPosition = Vector2.ZERO
 
+
 func _ready() -> void:
 	UpdateBody()
 	
@@ -16,8 +17,10 @@ func UpdateBody():
 		if index == 0:
 			workers[index].FollowObject = null
 			Headbody = workers[index]
+			workers[index].Activate()
 		else:
 			workers[index].FollowObject = workers[index-1]
+			workers[index].Deactivate()
 	if workers.size() == 0:
 		Jukebox.PlayMusic(JukeboxPlayer.MUSIC_TYPE.DEAD)
 		Finder.GetGame().OnGameOver.emit()

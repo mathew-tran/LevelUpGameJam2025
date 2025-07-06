@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=12 format=3 uid="uid://dsj3abnbjh0q0"]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=19 format=3 uid="uid://dsj3abnbjh0q0"]
 
 [ext_resource type="Script" uid="uid://b1crlyox21yx2" path="res://Content/CharacterUpgradeData.gd" id="1_c05vt"]
 [ext_resource type="Texture2D" uid="uid://dyc6newsjc7yy" path="res://Art/Character/Jim.png" id="1_rn5iy"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://b6h68mdjtk5lp" path="res://Content/UpgradeTypes/CharacterUpgradeBounces.gd" id="4_tbwa4"]
 [ext_resource type="Script" uid="uid://civl0ns7ngbc6" path="res://Content/UpgradeTypes/CharacterUpgradeBaseAttackRate.gd" id="5_foiv3"]
 [ext_resource type="Script" uid="uid://bqa6hwpbpw3x0" path="res://Content/UpgradeTypes/CharacterUpgradeBaseAttack.gd" id="6_su8px"]
+[ext_resource type="Script" uid="uid://c7f6e6ejy2j0y" path="res://Content/UpgradeTypes/CharacterUpgradeSpread.gd" id="7_foiv3"]
 
 [sub_resource type="Resource" id="Resource_4lvpt"]
 script = ExtResource("4_tbwa4")
@@ -28,6 +29,36 @@ script = ExtResource("5_foiv3")
 AttackRateIncrease = 10.0
 metadata/_custom_type_script = "uid://civl0ns7ngbc6"
 
+[sub_resource type="Resource" id="Resource_su8px"]
+script = ExtResource("6_su8px")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_1e6yj"]
+script = ExtResource("5_foiv3")
+AttackRateIncrease = 10.0
+metadata/_custom_type_script = "uid://civl0ns7ngbc6"
+
+[sub_resource type="Resource" id="Resource_4av85"]
+script = ExtResource("4_tbwa4")
+Bounces = 2
+metadata/_custom_type_script = "uid://b6h68mdjtk5lp"
+
+[sub_resource type="Resource" id="Resource_maa75"]
+script = ExtResource("7_foiv3")
+Spread = 1
+metadata/_custom_type_script = "uid://c7f6e6ejy2j0y"
+
+[sub_resource type="Resource" id="Resource_vmd4l"]
+script = ExtResource("6_su8px")
+Amount = 75.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_u1e6m"]
+script = ExtResource("4_tbwa4")
+Bounces = 3
+metadata/_custom_type_script = "uid://b6h68mdjtk5lp"
+
 [resource]
 script = ExtResource("2_rn5iy")
 Name = "Jim"
@@ -36,5 +67,6 @@ Cost = 10
 Description = "Throws a bouncy projectile"
 Picture = ExtResource("1_rn5iy")
 Projectile = ExtResource("2_fqx34")
-Upgrades = Array[ExtResource("1_c05vt")]([SubResource("Resource_4lvpt"), SubResource("Resource_lw4a6"), SubResource("Resource_jwrxj"), SubResource("Resource_bp10m")])
+Spread = 1
+Upgrades = Array[ExtResource("1_c05vt")]([SubResource("Resource_4lvpt"), SubResource("Resource_lw4a6"), SubResource("Resource_jwrxj"), SubResource("Resource_bp10m"), SubResource("Resource_su8px"), SubResource("Resource_1e6yj"), SubResource("Resource_4av85"), SubResource("Resource_maa75"), SubResource("Resource_vmd4l"), SubResource("Resource_u1e6m")])
 metadata/_custom_type_script = "uid://dadt4pa7kewb"

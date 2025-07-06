@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://uf5h3c2dv0a2"]
+[gd_scene load_steps=10 format=3 uid="uid://uf5h3c2dv0a2"]
 
 [ext_resource type="Script" uid="uid://cbqniscqsxqoo" path="res://Scripts/Character/BaseCharacter.gd" id="1_18plh"]
 [ext_resource type="Texture2D" uid="uid://cj0tuc0njq1l3" path="res://Art/Character/Mark.png" id="2_hanbv"]
+[ext_resource type="Texture2D" uid="uid://ceeo4tnjbdiml" path="res://Art/ActiveCircle.png" id="2_u6xj4"]
 [ext_resource type="PackedScene" uid="uid://cv6pm1detf5ct" path="res://Prefabs/UI/AbilityBar.tscn" id="3_u6xj4"]
 [ext_resource type="Script" uid="uid://bd6c17ffm375y" path="res://Scripts/Components/HealthComponent.gd" id="4_fya0b"]
 
@@ -22,6 +23,10 @@ collision_layer = 2
 gravity_scale = 0.0
 lock_rotation = true
 script = ExtResource("1_18plh")
+
+[node name="ActiveCircle" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_u6xj4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_hanbv")

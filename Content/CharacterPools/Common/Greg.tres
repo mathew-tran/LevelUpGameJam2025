@@ -1,0 +1,67 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=18 format=3 uid="uid://cygdsjda3jivl"]
+
+[ext_resource type="Texture2D" uid="uid://d0xkmx3xkwdmb" path="res://Art/Character/Greg.png" id="1_bfmt5"]
+[ext_resource type="Script" uid="uid://b1crlyox21yx2" path="res://Content/CharacterUpgradeData.gd" id="1_sjvf1"]
+[ext_resource type="PackedScene" uid="uid://b4neoep5r3soq" path="res://Prefabs/Projectiles/PaperClipProjectile.tscn" id="2_7qxdr"]
+[ext_resource type="Script" uid="uid://dadt4pa7kewb" path="res://Content/CharacterData.gd" id="2_sr46h"]
+[ext_resource type="Script" uid="uid://c7f6e6ejy2j0y" path="res://Content/UpgradeTypes/CharacterUpgradeSpread.gd" id="4_f3jx6"]
+[ext_resource type="Script" uid="uid://civl0ns7ngbc6" path="res://Content/UpgradeTypes/CharacterUpgradeBaseAttackRate.gd" id="5_agrnv"]
+[ext_resource type="Script" uid="uid://cxcg364uu2exq" path="res://Content/UpgradeTypes/CharacterUpgradePenetration.gd" id="6_6j1cp"]
+[ext_resource type="Script" uid="uid://bqa6hwpbpw3x0" path="res://Content/UpgradeTypes/CharacterUpgradeBaseAttack.gd" id="7_lkxir"]
+
+[sub_resource type="Resource" id="Resource_lajlj"]
+script = ExtResource("4_f3jx6")
+Spread = 1
+metadata/_custom_type_script = "uid://c7f6e6ejy2j0y"
+
+[sub_resource type="Resource" id="Resource_uju6c"]
+script = ExtResource("5_agrnv")
+AttackRateIncrease = 50.0
+metadata/_custom_type_script = "uid://civl0ns7ngbc6"
+
+[sub_resource type="Resource" id="Resource_fev4i"]
+script = ExtResource("6_6j1cp")
+Penetration = 1
+metadata/_custom_type_script = "uid://cxcg364uu2exq"
+
+[sub_resource type="Resource" id="Resource_0tw70"]
+script = ExtResource("6_6j1cp")
+Penetration = 1
+metadata/_custom_type_script = "uid://cxcg364uu2exq"
+
+[sub_resource type="Resource" id="Resource_dh6n2"]
+script = ExtResource("7_lkxir")
+Amount = 100.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_567l0"]
+script = ExtResource("5_agrnv")
+AttackRateIncrease = 50.0
+metadata/_custom_type_script = "uid://civl0ns7ngbc6"
+
+[sub_resource type="Resource" id="Resource_kyfbt"]
+script = ExtResource("4_f3jx6")
+Spread = 1
+metadata/_custom_type_script = "uid://c7f6e6ejy2j0y"
+
+[sub_resource type="Resource" id="Resource_a1efr"]
+script = ExtResource("7_lkxir")
+Amount = 50.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_7bkbm"]
+script = ExtResource("5_agrnv")
+AttackRateIncrease = 200.0
+metadata/_custom_type_script = "uid://civl0ns7ngbc6"
+
+[resource]
+script = ExtResource("2_sr46h")
+Name = "Greg"
+Occupation = 5
+Cost = 10
+Description = "Throws a bunch of paper clips!"
+Picture = ExtResource("1_bfmt5")
+Projectile = ExtResource("2_7qxdr")
+Spread = 2
+Upgrades = Array[ExtResource("1_sjvf1")]([SubResource("Resource_lajlj"), SubResource("Resource_uju6c"), SubResource("Resource_fev4i"), SubResource("Resource_0tw70"), SubResource("Resource_dh6n2"), SubResource("Resource_567l0"), SubResource("Resource_kyfbt"), SubResource("Resource_a1efr"), SubResource("Resource_7bkbm")])
+metadata/_custom_type_script = "uid://dadt4pa7kewb"

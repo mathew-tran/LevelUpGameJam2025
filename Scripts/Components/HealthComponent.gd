@@ -16,6 +16,14 @@ enum STATE {
 
 var CurrentState = STATE.ALIVE
 
+var bDisabled = false
+
+func Enable():
+	bDisabled = false
+	
+func Disable():
+	bDisabled = true
+	
 func _ready() -> void:
 	Setup()
 	
@@ -38,6 +46,8 @@ func Heal(amount):
 	OnTakeDamage.emit(0)
 	
 func TakeDamage(amount):
+	if bDisabled:
+		return
 	CurrentHealth -= amount
 	OnTakeDamage.emit(amount)
 	
