@@ -1,7 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://drny8xxvq6ide"]
+[gd_scene load_steps=6 format=3 uid="uid://drny8xxvq6ide"]
 
 [ext_resource type="Script" uid="uid://dgf0qvwkernp7" path="res://Scripts/Pickups/EXP.gd" id="1_cpms5"]
 [ext_resource type="Texture2D" uid="uid://cgru2l1wrc00p" path="res://Art/Pickups/EXP.png" id="1_xc8gy"]
+[ext_resource type="Shader" uid="uid://dmf4uxkb8ekdt" path="res://Prefabs/Shaders/Pickup.gdshader" id="2_pdtw0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rripr"]
+resource_local_to_scene = true
+shader = ExtResource("2_pdtw0")
+shader_parameter/size_effect = 0.1
+shader_parameter/speed = 0.5
+shader_parameter/highlight_strength = 0.5
+shader_parameter/color_mode_toggle = false
+shader_parameter/is_horizontal = true
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cpms5"]
 
@@ -12,6 +22,7 @@ script = ExtResource("1_cpms5")
 Amount = 500
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_rripr")
 texture = ExtResource("1_xc8gy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

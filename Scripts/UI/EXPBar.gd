@@ -19,17 +19,24 @@ func OnEXPUpdate(amount):
 	EXPCache += amount
 	
 func _process(delta: float) -> void:
-	if EXPCache != 0:
-		EXP += 1
-		EXPCache -= 1
+	if EXPCache > 0.0:
+		var amountToRemove = lerp(1.0, float(EXPCache) /10.0,.2)
+		if amountToRemove >= MaxEXP:
+			amountToRemove /= 20
+		if amountToRemove <= 0:
+			amountToRemove = 1
+		EXP += amountToRemove
+		EXPCache -= amountToRemove
 		Jukebox.PlayXPSFX(lerp(1.0, 2.5, value))
 		if EXP >= MaxEXP:
 			EXP = 0
-			MaxEXP *= 1.2
+			MaxEXP *= 1.1
+			if MaxEXP >= 2000:
+				MaxEXP = 2000
 			Level += 1
 			OnLevelUp.emit()
 		Update()
 
 func Update():
-	$Label.text = "Lv" + str(Level)
+	$Label.text = "Lv " + str(Level)
 	value = float(EXP) / float(MaxEXP)
