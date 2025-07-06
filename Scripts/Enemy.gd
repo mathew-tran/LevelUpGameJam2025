@@ -7,7 +7,7 @@ var Direction = Vector2.ZERO
 @export var Damage = 4
 @export var Penetration = 0
 @export var EXPToDrop = 10
-@export var MoneyDropChance = 100.0
+@export var MoneyDropChance = 2.0
 
 var Velocity=  Vector2.ZERO
 func _ready() -> void:
@@ -44,8 +44,7 @@ func _process(delta: float) -> void:
 	Velocity = Vector2.ZERO
 	Velocity += Direction * Speed * delta
 	$Sprite2D.flip_h = Direction.x <= 0
-	if test_move(transform, Velocity) == false:
-		move_and_collide(Velocity)
+	move_and_collide(Velocity)
 	
 
 func ChangeDirection():
