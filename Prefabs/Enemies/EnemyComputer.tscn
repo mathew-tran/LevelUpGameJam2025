@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://8o410opvsox0"]
+
+[ext_resource type="PackedScene" uid="uid://cae8gsfov06bs" path="res://Prefabs/Enemies/BaseEnemy.tscn" id="1_dqxag"]
+[ext_resource type="Texture2D" uid="uid://hhn86fjykcuv" path="res://Art/Enemy/Computer.png" id="2_dqxag"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cr30j"]
+size = Vector2(126, 104)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s2ufn"]
+radius = 56.0803
+
+[node name="BaseEnemy" instance=ExtResource("1_dqxag")]
+mass = 20.0
+Speed = 200
+EXPToDrop = 300
+MoneyDropChance = 20.0
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_dqxag")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-4, 11)
+shape = SubResource("RectangleShape2D_cr30j")
+
+[node name="HealthComponent" parent="." index="2"]
+MaxHealth = 500
+
+[node name="Timer" parent="." index="4"]
+wait_time = 4.0
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-6, 13)
+shape = SubResource("CircleShape2D_s2ufn")

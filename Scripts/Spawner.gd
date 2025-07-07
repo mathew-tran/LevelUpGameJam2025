@@ -13,9 +13,9 @@ func SpawnNextWave():
 	if Waves.size() > 0:
 		var newWave = load(Waves.pop_front()) as EnemyWaveData
 		Round += 1
-		newWave.CreateEnemies()
-		Finder.GetGame().OnRoundUpdate.emit(Round, newWave.bIsBossWave)
 		
+		Finder.GetGame().OnRoundUpdate.emit(Round, newWave.bIsBossWave)
+		await newWave.CreateEnemies()
 		print(newWave.resource_path + " START")
 		$Timer.start()
 	else:

@@ -5,7 +5,8 @@ class_name EnemyWavePairingData
 enum ENEMY_TYPE {
 	WEAK_A,
 	WEAK_B,
-	FAST_A
+	FAST_A,
+	MINIBOSS
 }
 @export var EnemyTypeToSpawn : ENEMY_TYPE
 @export var AmountToSpawn = 20
@@ -19,3 +20,5 @@ func GetEnemyPath():
 			return "res://Prefabs/Enemies/BaseEnemy.tscn"
 		ENEMY_TYPE.FAST_A:
 			return "res://Prefabs/Enemies/EnemyDisk.tscn"
+		ENEMY_TYPE.MINIBOSS:
+			return "res://Prefabs/Enemies/EnemyComputer.tscn"

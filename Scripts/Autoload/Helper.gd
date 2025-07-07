@@ -24,4 +24,8 @@ func DropEXPOrb(amount, position):
 func GetRandomPositionAroundPoint(pos, distance):
 	var direction = Vector2.RIGHT
 	return pos + direction.rotated(randf_range(0, 360)) * distance
+	
+func GetPositionAroundPoint(pos, distance, rotation):
+	var direction = Vector2.LEFT
+	return pos + direction.rotated(deg_to_rad(rotation)) * distance
 			

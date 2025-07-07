@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyWaveData" load_steps=4 format=3 uid="uid://100ehfhk0iow"]
+[gd_resource type="Resource" script_class="EnemyWaveData" load_steps=5 format=3 uid="uid://100ehfhk0iow"]
 
 [ext_resource type="Script" uid="uid://bqsegjg1rqs3m" path="res://Content/EnemyWavePairingData.gd" id="1_ljidi"]
 [ext_resource type="Script" uid="uid://u601p82tca2h" path="res://Content/EnemyWaveData.gd" id="2_0r62m"]
@@ -6,11 +6,19 @@
 [sub_resource type="Resource" id="Resource_ljidi"]
 script = ExtResource("1_ljidi")
 EnemyTypeToSpawn = 2
-AmountToSpawn = 15
+AmountToSpawn = 3
+metadata/_custom_type_script = "uid://bqsegjg1rqs3m"
+
+[sub_resource type="Resource" id="Resource_0r62m"]
+script = ExtResource("1_ljidi")
+EnemyTypeToSpawn = 3
+AmountToSpawn = 1
 metadata/_custom_type_script = "uid://bqsegjg1rqs3m"
 
 [resource]
 script = ExtResource("2_0r62m")
-EnemyWavePairings = Array[ExtResource("1_ljidi")]([SubResource("Resource_ljidi")])
+EnemyWavePairings = Array[ExtResource("1_ljidi")]([SubResource("Resource_ljidi"), SubResource("Resource_0r62m")])
 bIsBossWave = true
+WaveType = 4
+TimeBetweenSpawn = -1.0
 metadata/_custom_type_script = "uid://u601p82tca2h"
