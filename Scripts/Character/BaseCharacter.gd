@@ -27,7 +27,12 @@ var Spread = 1
 var ProjectileSpeed = 5
 
 var bCanBeHit = true
-			
+
+
+
+var BulletSpread : CharacterData.BULLET_SPREAD
+var ShootType : CharacterData.SHOOT_TYPE
+
 func GetNextUpgrade():
 	if CharacterLevel > CharacterDataRef.Upgrades.size():
 		return null
@@ -71,6 +76,7 @@ func OnTakeDamage(_amount):
 	$Healthbar.value = float($HealthComponent.CurrentHealth) / float($HealthComponent.MaxHealth)
 	if _amount > 0:
 		Jukebox.PlayerHurtSFX()
+		
 func OnDeath():
 	OnCharacterDeath.emit()
 	var upgradesToUndo = CharacterLevel
@@ -87,6 +93,8 @@ func Setup(newData):
 	ProjectileSpeed = CharacterDataRef.ProjectileSpeed
 	Penetration = CharacterDataRef.Penetration
 	Speed = Finder.GetGame().SubStateTeamSpeed.Get().GetValue()
+	BulletSpread = CharacterDataRef.BulletSpread
+	ShootType = CharacterDataRef.ShootType
 	
 	SubStatDamage = SubStatResourceData.new()
 	SubStatDamage.StatResourceRef = load("res://Content/Stats/CHAR_DAMAGE.tres")
@@ -106,35 +114,59 @@ func OnAttackRateUpdate(rate):
 	$ShootTimer.wait_time = 1/rate
 	
 func GetBulletAngles(amount):
-	var value = amount
-	if value <= 1:
-		return [0]
-		
-	var totalSpreadAngle = PI / 8
-	
-	var bulletAngle = totalSpreadAngle / (value - 1)
-	var startAngle = -totalSpreadAngle / 2
-	
-	var rotations = []
-	for i in range(value):
-		rotations.append(rad_to_deg(startAngle + i * bulletAngle))
-	return rotations
-	
+	match BulletSpread:
+		CharacterData.BULLET_SPREAD.NORMAL:
+			var value = amount
+			if value <= 1:
+				return [0]
+				
+			var totalSpreadAngle = PI / 8
+			
+			var bulletAngle = totalSpreadAngle / (value - 1)
+			var startAngle = -totalSpreadAngle / 2
+			
+			var rotations = []
+			for i in range(value):
+				rotations.append(rad_to_deg(startAngle + i * bulletAngle))
+			return rotations
+		CharacterData.BULLET_SPREAD.RADIAL:
+			var increment = TAU / amount
+			var rotations = []
+			for x in range(0, amount):
+				rotations.append(rad_to_deg(x * increment))
+			return rotations
+			
 func _on_shoot_timer_timeout() -> void:
 	if CharacterDataRef.Projectile:
-		var enemy = Finder.GetClosestEnemy(global_position)
-		if enemy:
-			for angle in GetBulletAngles(Spread):
-				var instance = CharacterDataRef.Projectile.instantiate()
-				instance.Direction = (enemy.global_position - global_position).normalized()
-				instance.Speed = ProjectileSpeed
-				var radians = float(deg_to_rad(angle))
-				instance.Direction = instance.Direction.rotated(radians)
-				instance.global_position = global_position
-				instance.Damage = SubStatDamage.Get().GetValue() + randi_range(0, 4)
-				instance.Penetration = Penetration
-				instance.Bounces += Bounces
-				Finder.GetBulletsGroup().add_child(instance)
+		var delay = -1.0
+		var amountOfTimesToShoot = 1
+		if ShootType == CharacterData.SHOOT_TYPE.DOUBLE_SHOT:
+			amountOfTimesToShoot += 1
+			delay = .1
+		if ShootType == CharacterData.SHOOT_TYPE.TRIPLE_SHOT:
+			amountOfTimesToShoot += 2
+			delay = .12
+		
+		for shootAmount in range(0, amountOfTimesToShoot):
+			var enemy = Finder.GetClosestEnemy(global_position)
+			if enemy:
+				for angle in GetBulletAngles(Spread):
+					var instance = CharacterDataRef.Projectile.instantiate()
+					instance.Direction = (enemy.global_position - global_position).normalized()
+					instance.Speed = ProjectileSpeed
+					var radians = float(deg_to_rad(angle))
+					instance.Direction = instance.Direction.rotated(radians)
+					instance.global_position = global_position
+					instance.Damage = SubStatDamage.Get().GetValue() + randi_range(0, 4)
+					instance.Penetration = Penetration
+					instance.Bounces += Bounces
+					Finder.GetBulletsGroup().add_child(instance)
+			if delay > 0:
+				$ShootTimer.stop()
+				await get_tree().create_timer(delay).timeout
+				
+		$ShootTimer.start()
+		
 
 func _process(delta: float) -> void:
 	if $HitTimer.time_left == 0.0:

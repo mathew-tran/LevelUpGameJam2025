@@ -1,0 +1,77 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=19 format=3 uid="uid://cuphog52r6bl"]
+
+[ext_resource type="Texture2D" uid="uid://drtvl7gt3vaig" path="res://Art/Character/Ron.png" id="1_rr2f1"]
+[ext_resource type="Script" uid="uid://b1crlyox21yx2" path="res://Content/CharacterUpgradeData.gd" id="1_ubdpy"]
+[ext_resource type="Script" uid="uid://dadt4pa7kewb" path="res://Content/CharacterData.gd" id="2_8ie8b"]
+[ext_resource type="PackedScene" uid="uid://dknitg7bybj83" path="res://Prefabs/Projectiles/RubberBandProjectile.tscn" id="2_sast8"]
+[ext_resource type="Script" uid="uid://b6h68mdjtk5lp" path="res://Content/UpgradeTypes/CharacterUpgradeBounces.gd" id="4_0by6j"]
+[ext_resource type="Script" uid="uid://bqa6hwpbpw3x0" path="res://Content/UpgradeTypes/CharacterUpgradeBaseAttack.gd" id="5_4ru0t"]
+[ext_resource type="Script" uid="uid://c7f6e6ejy2j0y" path="res://Content/UpgradeTypes/CharacterUpgradeSpread.gd" id="6_t85y3"]
+[ext_resource type="Script" uid="uid://civl0ns7ngbc6" path="res://Content/UpgradeTypes/CharacterUpgradeBaseAttackRate.gd" id="7_qff1p"]
+
+[sub_resource type="Resource" id="Resource_orbo6"]
+script = ExtResource("4_0by6j")
+Bounces = 1
+metadata/_custom_type_script = "uid://b6h68mdjtk5lp"
+
+[sub_resource type="Resource" id="Resource_6aybl"]
+script = ExtResource("5_4ru0t")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_ecosi"]
+script = ExtResource("5_4ru0t")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_s7pb8"]
+script = ExtResource("6_t85y3")
+Spread = 2
+metadata/_custom_type_script = "uid://c7f6e6ejy2j0y"
+
+[sub_resource type="Resource" id="Resource_nam5h"]
+script = ExtResource("4_0by6j")
+Bounces = 2
+metadata/_custom_type_script = "uid://b6h68mdjtk5lp"
+
+[sub_resource type="Resource" id="Resource_yyhn1"]
+script = ExtResource("7_qff1p")
+AttackRateIncrease = 10.0
+metadata/_custom_type_script = "uid://civl0ns7ngbc6"
+
+[sub_resource type="Resource" id="Resource_yj8li"]
+script = ExtResource("7_qff1p")
+AttackRateIncrease = 10.0
+metadata/_custom_type_script = "uid://civl0ns7ngbc6"
+
+[sub_resource type="Resource" id="Resource_p2apr"]
+script = ExtResource("5_4ru0t")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_mjvk5"]
+script = ExtResource("5_4ru0t")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_232m0"]
+script = ExtResource("7_qff1p")
+AttackRateIncrease = 250.0
+metadata/_custom_type_script = "uid://civl0ns7ngbc6"
+
+[resource]
+script = ExtResource("2_8ie8b")
+Name = "Ron"
+Occupation = 6
+Cost = 10
+Description = "Throws Rubber Bands everywhere"
+Picture = ExtResource("1_rr2f1")
+Projectile = ExtResource("2_sast8")
+Spread = 16
+AttackSpeed = 0.5
+Damage = 2
+ProjectileSpeed = 5
+Penetration = 0
+BulletSpread = 1
+Upgrades = Array[ExtResource("1_ubdpy")]([SubResource("Resource_orbo6"), SubResource("Resource_6aybl"), SubResource("Resource_ecosi"), SubResource("Resource_s7pb8"), SubResource("Resource_nam5h"), SubResource("Resource_yyhn1"), SubResource("Resource_yj8li"), SubResource("Resource_p2apr"), SubResource("Resource_mjvk5"), SubResource("Resource_232m0")])
+metadata/_custom_type_script = "uid://dadt4pa7kewb"

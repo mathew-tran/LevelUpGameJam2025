@@ -14,6 +14,8 @@ class_name CharacterData
 @export var ProjectileSpeed = 5
 @export var Penetration = 0
 
+@export var BulletSpread : BULLET_SPREAD
+@export var ShootType : SHOOT_TYPE
 @export var Upgrades : Array[CharacterUpgradeData]
 enum DEPARTMENT {
 	ACCOUNTING,
@@ -23,6 +25,16 @@ enum DEPARTMENT {
 	AUDIO,
 	MARKETING,
 	QA
+}
+enum BULLET_SPREAD {
+	NORMAL,
+	RADIAL
+}
+
+enum SHOOT_TYPE {
+	SINGLE_SHOT,
+	DOUBLE_SHOT,
+	TRIPLE_SHOT
 }
 
 func GetOccupationString():

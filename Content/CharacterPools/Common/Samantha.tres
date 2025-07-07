@@ -72,5 +72,7 @@ AttackSpeed = 5.0
 Damage = 2
 ProjectileSpeed = 20
 Penetration = 0
+BulletSpread = 0
+ShootType = 2
 Upgrades = Array[ExtResource("1_7ggyt")]([SubResource("Resource_bsnjl"), SubResource("Resource_2d2ap"), SubResource("Resource_arssk"), SubResource("Resource_6kf5l"), SubResource("Resource_t25h1"), SubResource("Resource_8ouqm"), SubResource("Resource_jt3av"), SubResource("Resource_3dady"), SubResource("Resource_6u4sj"), SubResource("Resource_14n8x")])
 metadata/_custom_type_script = "uid://dadt4pa7kewb"
