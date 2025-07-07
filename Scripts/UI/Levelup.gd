@@ -84,7 +84,7 @@ func DetermineUpgradeState():
 		CurrentUpgradeState = UPGRADE_STATE.CHARACTER_UPGRADES
 		if HasMoreCharacters():
 			var value = randf_range(0, 100)
-			if value <= 60:
+			if value <= 30:
 				CurrentUpgradeState = UPGRADE_STATE.CHARACTER_UNLOCK
 		else:
 			CurrentUpgradeState = UPGRADE_STATE.CHARACTER_UPGRADES
@@ -140,6 +140,7 @@ func OnPurchased():
 	Close()
 	
 func OnRemoveCharFromGame(char):
+	return
 	var index = 0
 	for x in CharactersToUnlock:
 		if char.to_lower() in x.to_lower():

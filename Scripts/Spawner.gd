@@ -20,7 +20,8 @@ func SpawnNextWave():
 		$Timer.start()
 	else:
 		print("Game Over!")
-		$Timer.stop()
+		Waves = Helper.GetAllFilePaths(WavesDirectory)
+		SpawnNextWave()
 		
 
 

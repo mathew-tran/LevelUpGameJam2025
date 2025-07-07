@@ -5,7 +5,7 @@ class_name BaseCharacter
 @export var CharacterDataRef : CharacterData
 
 signal OnCharacterDeath
-var Speed = 300
+var Speed = 1
 var FollowObject = null
 
 var Velocity = Vector2.ZERO
@@ -18,7 +18,6 @@ var CharacterLevel = 1
 var Penetration = 0
 var Bounces = 0
 
-var MaxMovementSpeed = 1
 var BaseHealthValue = 10
 
 var RegenSpeed = 1
@@ -87,6 +86,7 @@ func Setup(newData):
 	Damage = CharacterDataRef.Damage
 	ProjectileSpeed = CharacterDataRef.ProjectileSpeed
 	Penetration = CharacterDataRef.Penetration
+	Speed = Finder.GetGame().SubStateTeamSpeed.Get().GetValue()
 	
 	SubStatDamage = SubStatResourceData.new()
 	SubStatDamage.StatResourceRef = load("res://Content/Stats/CHAR_DAMAGE.tres")
@@ -148,13 +148,15 @@ func _process(delta: float) -> void:
 		followObjectPosition = FollowObject.global_position
 		
 
+	
 	if global_position.distance_to(followObjectPosition) > 50:
+		Velocity = Vector2.ZERO
 		var dir = (followObjectPosition - global_position).normalized()
 		Velocity += dir * Speed * delta
 		$Sprite2D.flip_h = Velocity.x <= 0
+	else:
+		pass
 	
-	if Velocity.length() > MaxMovementSpeed:
-		Velocity = Velocity.normalized() * MaxMovementSpeed
 	move_and_collide(Velocity)
 	
 

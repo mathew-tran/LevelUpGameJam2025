@@ -1,0 +1,71 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=18 format=3 uid="uid://cj6fpl8v47hn3"]
+
+[ext_resource type="Texture2D" uid="uid://cj0tuc0njq1l3" path="res://Art/Character/Mark.png" id="1_ia558"]
+[ext_resource type="PackedScene" uid="uid://csm5aoidl1x0s" path="res://Prefabs/Projectiles/BaseProjectile.tscn" id="2_8w7eq"]
+[ext_resource type="Script" uid="uid://b1crlyox21yx2" path="res://Content/CharacterUpgradeData.gd" id="3_i4kpn"]
+[ext_resource type="Script" uid="uid://cxcg364uu2exq" path="res://Content/UpgradeTypes/CharacterUpgradePenetration.gd" id="4_86ash"]
+[ext_resource type="Script" uid="uid://civl0ns7ngbc6" path="res://Content/UpgradeTypes/CharacterUpgradeBaseAttackRate.gd" id="5_n5akq"]
+[ext_resource type="Script" uid="uid://bqa6hwpbpw3x0" path="res://Content/UpgradeTypes/CharacterUpgradeBaseAttack.gd" id="6_4s1jd"]
+[ext_resource type="Script" uid="uid://b6h68mdjtk5lp" path="res://Content/UpgradeTypes/CharacterUpgradeBounces.gd" id="7_tnret"]
+[ext_resource type="Script" uid="uid://dadt4pa7kewb" path="res://Content/CharacterData.gd" id="8_yeiny"]
+
+[sub_resource type="Resource" id="Resource_ia558"]
+script = ExtResource("4_86ash")
+Penetration = 1
+metadata/_custom_type_script = "uid://cxcg364uu2exq"
+
+[sub_resource type="Resource" id="Resource_8w7eq"]
+script = ExtResource("5_n5akq")
+AttackRateIncrease = 15.0
+metadata/_custom_type_script = "uid://civl0ns7ngbc6"
+
+[sub_resource type="Resource" id="Resource_i4kpn"]
+script = ExtResource("6_4s1jd")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_sr8xb"]
+script = ExtResource("6_4s1jd")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_dums4"]
+script = ExtResource("7_tnret")
+Bounces = 1
+metadata/_custom_type_script = "uid://b6h68mdjtk5lp"
+
+[sub_resource type="Resource" id="Resource_86ash"]
+script = ExtResource("6_4s1jd")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_n5akq"]
+script = ExtResource("5_n5akq")
+AttackRateIncrease = 40.0
+metadata/_custom_type_script = "uid://civl0ns7ngbc6"
+
+[sub_resource type="Resource" id="Resource_4s1jd"]
+script = ExtResource("6_4s1jd")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_tnret"]
+script = ExtResource("6_4s1jd")
+Amount = 300.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[resource]
+script = ExtResource("8_yeiny")
+Name = "Mark"
+Occupation = 0
+Cost = 4
+Description = "Has extra pencils to throw around."
+Picture = ExtResource("1_ia558")
+Projectile = ExtResource("2_8w7eq")
+Spread = 1
+AttackSpeed = 1.0
+Damage = 22
+ProjectileSpeed = 8
+Penetration = 0
+Upgrades = Array[ExtResource("3_i4kpn")]([SubResource("Resource_ia558"), SubResource("Resource_8w7eq"), SubResource("Resource_i4kpn"), SubResource("Resource_sr8xb"), SubResource("Resource_ia558"), SubResource("Resource_dums4"), SubResource("Resource_86ash"), SubResource("Resource_n5akq"), SubResource("Resource_4s1jd"), SubResource("Resource_tnret")])
+metadata/_custom_type_script = "uid://dadt4pa7kewb"
