@@ -3,8 +3,13 @@ extends Resource
 class_name EnemyWaveData
 
 @export var EnemyWavePairings : Array[EnemyWavePairingData]
+@export var bIsBossWave = false
 
 func CreateEnemies():
+	if bIsBossWave:
+		Jukebox.ChangeFightMusic(load("res://Audio/Music/bosstheme (1).ogg"))
+	else:
+		Jukebox.ChangeFightMusic(load("res://Audio/Music/level25-battle (1).ogg"))
 	var enemiesSpawned = []
 	for wave in EnemyWavePairings:
 		var enemyClass = load(wave.GetEnemyPath())
@@ -25,8 +30,4 @@ func CreateEnemies():
 			
 			
 func GetSpawnPosition():
-		var playerPosition = Finder.GetPlayer().GetPlayerPosition()
-		var distanceAwayFromPlayer = 800
-		var direction = Vector2.RIGHT
-		return playerPosition + direction.rotated(randf_range(0, 360)) * distanceAwayFromPlayer
-			
+	return Helper.GetRandomPositionAroundPoint(Finder.GetPlayer().GetPlayerPosition(), 800)

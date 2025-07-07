@@ -18,4 +18,5 @@ metadata/_custom_type_script = "uid://bqsegjg1rqs3m"
 [resource]
 script = ExtResource("2_2jt27")
 EnemyWavePairings = Array[ExtResource("1_athsv")]([SubResource("Resource_l0poy"), SubResource("Resource_0evdo")])
+bIsBossWave = false
 metadata/_custom_type_script = "uid://u601p82tca2h"

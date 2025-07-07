@@ -6,6 +6,7 @@ signal OnEXPUpdate(amount)
 signal OnGameOver
 signal OnRemoveCharFromGame(char)
 signal OnMoneyUpdate(amount)
+signal OnRoundUpdate(roundNumber, bIsBoss)
 var SubStatTeamHealth : Resource
 
 var Money = 10
@@ -14,6 +15,7 @@ func _enter_tree() -> void:
 	Setup()
 func _ready() -> void:
 	Jukebox.PlayMusic(JukeboxPlayer.MUSIC_TYPE.FIGHT)
+	
 
 func Setup():
 	SubStatTeamHealth = SubStatResourceData.new()

@@ -14,3 +14,14 @@ func GetAllFilePaths(path: String) -> Array[String]:
 			file_paths.append(file_path)
 		file_name = dir.get_next()
 	return file_paths
+
+func DropEXPOrb(amount, position):
+	var instance = load("res://Prefabs/Pickups/EXP.tscn").instantiate()
+	instance.global_position = position
+	instance.Amount = amount
+	Finder.GetPickupGroup().call_deferred("add_child", instance)
+
+func GetRandomPositionAroundPoint(pos, distance):
+	var direction = Vector2.RIGHT
+	return pos + direction.rotated(randf_range(0, 360)) * distance
+			

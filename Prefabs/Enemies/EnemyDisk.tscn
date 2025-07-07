@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://fk8yyp4pv7ng"]
+
+[ext_resource type="PackedScene" uid="uid://cae8gsfov06bs" path="res://Prefabs/Enemies/BaseEnemy.tscn" id="1_7fj1c"]
+[ext_resource type="Texture2D" uid="uid://bt2pr2vdqrkp" path="res://Art/Enemy/Disk.png" id="2_i1ixp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtmvh"]
+size = Vector2(39, 41)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_74wva"]
+radius = 19.0263
+
+[node name="BaseEnemy" instance=ExtResource("1_7fj1c")]
+mass = 3.0
+Speed = 120
+Damage = 1
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_i1ixp")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-0.5, 2.5)
+shape = SubResource("RectangleShape2D_dtmvh")
+
+[node name="HealthComponent" parent="." index="2"]
+MaxHealth = 100
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_74wva")

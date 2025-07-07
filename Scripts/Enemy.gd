@@ -28,10 +28,7 @@ func OnTakeDamage(amount):
 	Jukebox.PlaySFX(load("res://Audio/SFX/hit.wav"))
 	
 func OnDeath():
-	var instance = load("res://Prefabs/Pickups/EXP.tscn").instantiate()
-	instance.global_position = global_position
-	instance.Amount = EXPToDrop
-	Finder.GetPickupGroup().call_deferred("add_child", instance)
+	Helper.DropEXPOrb(EXPToDrop, global_position)
 	var result = randi() % 100
 	if result <= MoneyDropChance:
 		var moneyInstance = load("res://Prefabs/Pickups/Money.tscn").instantiate()

@@ -7,6 +7,7 @@ enum MUSIC_TYPE {
 	CONTINUE,
 	SHOP,
 	FIGHT,
+	BOSS,
 	DEAD
 }
 
@@ -65,6 +66,10 @@ func PlayMusic(musicType : MUSIC_TYPE):
 		MUSIC_TYPE.CONTINUE:
 			return
 
+func ChangeFightMusic(audioStream):
+	if stream != audioStream:
+		stream = audioStream
+		Resume(self)
 	
 func PlaySFX(audiostream : AudioStream):
 	if audiostream:

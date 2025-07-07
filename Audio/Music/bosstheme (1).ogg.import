@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cfdj6tsq3ikq0"
+path="res://.godot/imported/bosstheme (1).ogg-75e5ecdc1f4e0ee947564d1548268a9d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/Music/bosstheme (1).ogg"
+dest_files=["res://.godot/imported/bosstheme (1).ogg-75e5ecdc1f4e0ee947564d1548268a9d.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

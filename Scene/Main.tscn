@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cq0pg18wpqef1"]
+[gd_scene load_steps=11 format=3 uid="uid://cq0pg18wpqef1"]
 
 [ext_resource type="PackedScene" uid="uid://bqy51bgry7fi5" path="res://Prefabs/Environment/Desk.tscn" id="1_djkur"]
 [ext_resource type="Script" uid="uid://dokag847w5cfs" path="res://Scripts/Game.gd" id="1_togfq"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://wxay2kx6dg3m" path="res://Prefabs/UI/EXPBar.tscn" id="6_aan6j"]
 [ext_resource type="PackedScene" uid="uid://cu8sskt8qxtpq" path="res://Prefabs/UI/LevelUp.tscn" id="7_hueuk"]
 [ext_resource type="PackedScene" uid="uid://davv3kxe782ay" path="res://Prefabs/UI/GameOverPanel.tscn" id="8_6a8me"]
+[ext_resource type="PackedScene" uid="uid://dbxbafkso5jls" path="res://Prefabs/UI/WavePanel.tscn" id="9_vm4ek"]
 [ext_resource type="PackedScene" uid="uid://bbf88e2kibbpj" path="res://Prefabs/UI/MoneyUI.tscn" id="9_yg4ot"]
 [ext_resource type="PackedScene" uid="uid://bjgcp7sfsa22j" path="res://Prefabs/PickupCleaner.tscn" id="11_vm4ek"]
 
@@ -47,5 +48,8 @@ offset_left = 11.0
 offset_top = 19.0
 offset_right = 57.0
 offset_bottom = 42.0
+
+[node name="WavePanel" parent="CanvasLayer" instance=ExtResource("9_vm4ek")]
+visible = false
 
 [node name="PickupCleaner" parent="." instance=ExtResource("11_vm4ek")]
