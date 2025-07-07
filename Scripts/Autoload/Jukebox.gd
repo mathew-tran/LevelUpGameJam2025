@@ -79,3 +79,15 @@ func PlaySFXMenu(audiostream : AudioStream):
 func PlayXPSFX(pitch):
 	$EXP.pitch_scale = pitch
 	$EXP.play()
+
+func PlayPickupSFX():
+	$Pickup.pitch_scale = randf_range(1.0, 1.1)
+	$Pickup.play()
+
+func PlayEnemyDeathSFX():
+	$EnemyDeath.pitch_scale = randf_range(1.0, 1.3)
+	$EnemyDeath.play()
+
+func PlayerHurtSFX():
+	$PlayerHurt.pitch_scale = randf_range(1.0, 1.3)
+	$PlayerHurt.play()

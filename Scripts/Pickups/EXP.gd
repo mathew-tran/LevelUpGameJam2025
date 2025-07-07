@@ -21,11 +21,13 @@ func SetFollowing():
 	
 func Pickup():
 	Finder.GetGame().AddEXP(Amount)
+	Jukebox.PlayPickupSFX()
 	queue_free()
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is BaseCharacter:
 		Pickup()
+		
 		
 func _process(delta: float) -> void:
 	if bMoveTowardsPlayer:

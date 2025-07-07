@@ -32,8 +32,10 @@ func OnLevelup():
 	Setup()
 
 func Setup():
-	get_tree().paused = true
-	Jukebox.PlayMusic(JukeboxPlayer.MUSIC_TYPE.SHOP)
+	if get_tree().paused == false:
+		get_tree().paused = true
+		Jukebox.PlayMusic(JukeboxPlayer.MUSIC_TYPE.SHOP)
+		$AudioStreamPlayer2D.play()
 	await Cleanup()
 	var characters = Finder.GetWorkerGroup().get_children()
 	UpgradeableCharacters.clear()

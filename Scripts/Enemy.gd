@@ -37,7 +37,7 @@ func OnDeath():
 		var moneyInstance = load("res://Prefabs/Pickups/Money.tscn").instantiate()
 		moneyInstance.global_position = global_position
 		Finder.GetPickupGroup().call_deferred("add_child", moneyInstance)
-		
+	Jukebox.PlayEnemyDeathSFX()
 	queue_free()
 	
 func _process(delta: float) -> void:

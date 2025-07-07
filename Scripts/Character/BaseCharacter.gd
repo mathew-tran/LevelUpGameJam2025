@@ -70,7 +70,8 @@ func GiveTempInvincibility(amount = .3):
 	
 func OnTakeDamage(_amount):
 	$Healthbar.value = float($HealthComponent.CurrentHealth) / float($HealthComponent.MaxHealth)
-
+	if _amount > 0:
+		Jukebox.PlayerHurtSFX()
 func OnDeath():
 	OnCharacterDeath.emit()
 	var upgradesToUndo = CharacterLevel

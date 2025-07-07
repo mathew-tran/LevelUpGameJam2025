@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cu8sskt8qxtpq"]
+[gd_scene load_steps=6 format=3 uid="uid://cu8sskt8qxtpq"]
 
 [ext_resource type="PackedScene" uid="uid://bevhto76bb856" path="res://Prefabs/UI/PurchaseButton.tscn" id="1_m8v2k"]
 [ext_resource type="Script" uid="uid://dlrrspdtty0hr" path="res://Scripts/UI/Levelup.gd" id="1_tee8a"]
 [ext_resource type="PackedScene" uid="uid://duiayraokc07y" path="res://Prefabs/UI/RerollButton.tscn" id="3_an5oa"]
 [ext_resource type="PackedScene" uid="uid://ruheheucmcn7" path="res://Prefabs/UI/Skipbutton.tscn" id="4_hejj1"]
+[ext_resource type="AudioStream" uid="uid://ckd6b04d765md" path="res://Audio/SFX/Levelup.wav" id="5_psnld"]
 
 [node name="Levelup" type="Panel" groups=["Levelup"]]
 process_mode = 3
@@ -60,3 +61,8 @@ layout_mode = 2
 
 [node name="SkipButton" parent="HBoxContainer" instance=ExtResource("4_hejj1")]
 layout_mode = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("5_psnld")
+volume_db = 10.0

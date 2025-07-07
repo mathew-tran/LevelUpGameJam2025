@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cye8k8oevgpyr"]
+[gd_scene load_steps=9 format=3 uid="uid://cye8k8oevgpyr"]
 
 [ext_resource type="Script" uid="uid://dpcwu8b7cjfy6" path="res://Scripts/Autoload/Jukebox.gd" id="1_c6xn0"]
 [ext_resource type="AudioStream" uid="uid://d1sx8f64p3ws7" path="res://Audio/Music/level25-battle (1).ogg" id="1_ovhlw"]
 [ext_resource type="AudioStream" uid="uid://bjx431v1rhgcx" path="res://Audio/Music/leveup25-shop-music.ogg" id="3_viemr"]
 [ext_resource type="AudioStream" uid="uid://baj85g8dxs07o" path="res://Audio/SFX/levelup25-dead (2).ogg" id="4_viemr"]
 [ext_resource type="AudioStream" uid="uid://di4hstwva3oq1" path="res://Audio/SFX/XPgain.wav" id="5_wjgsl"]
+[ext_resource type="AudioStream" uid="uid://dj7dgs5sa8knp" path="res://Audio/SFX/pickup.wav" id="6_r80sq"]
+[ext_resource type="AudioStream" uid="uid://dprwa505tt07n" path="res://Audio/SFX/playerhurt.wav" id="7_5hmi3"]
+[ext_resource type="AudioStream" uid="uid://vlw6xc0iqwyn" path="res://Audio/SFX/enemydeath.wav" id="7_bpc3e"]
 
 [node name="Jukebox" type="AudioStreamPlayer"]
 process_mode = 3
@@ -17,6 +20,7 @@ script = ExtResource("1_c6xn0")
 
 [node name="Shop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_viemr")
+volume_db = -10.0
 
 [node name="Dead" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_viemr")
@@ -24,3 +28,14 @@ stream = ExtResource("4_viemr")
 [node name="EXP" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_wjgsl")
 volume_db = 3.0
+
+[node name="Pickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_r80sq")
+volume_db = 3.0
+
+[node name="EnemyDeath" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_bpc3e")
+volume_db = 3.0
+
+[node name="PlayerHurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_5hmi3")
