@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwisx3ityp5k7"]
+
+[ext_resource type="PackedScene" uid="uid://cae8gsfov06bs" path="res://Prefabs/Enemies/BaseEnemy.tscn" id="1_f14lw"]
+[ext_resource type="Texture2D" uid="uid://cqhjhasnxa8ib" path="res://Art/Enemy/StickyNote.png" id="2_ndyo3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wn3hh"]
+size = Vector2(29, 27)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ndyo3"]
+radius = 16.0
+
+[node name="BaseEnemy" instance=ExtResource("1_f14lw")]
+Speed = 80
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_ndyo3")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-0.5, 3.5)
+shape = SubResource("RectangleShape2D_wn3hh")
+
+[node name="HealthComponent" parent="." index="2"]
+MaxHealth = 25
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(2, 3)
+shape = SubResource("CircleShape2D_ndyo3")

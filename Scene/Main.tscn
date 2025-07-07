@@ -1,12 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://cq0pg18wpqef1"]
+[gd_scene load_steps=10 format=3 uid="uid://cq0pg18wpqef1"]
 
 [ext_resource type="PackedScene" uid="uid://bqy51bgry7fi5" path="res://Prefabs/Environment/Desk.tscn" id="1_djkur"]
 [ext_resource type="Script" uid="uid://dokag847w5cfs" path="res://Scripts/Game.gd" id="1_togfq"]
 [ext_resource type="PackedScene" uid="uid://d1demcer6jenb" path="res://Prefabs/Player.tscn" id="1_xhtwi"]
-[ext_resource type="PackedScene" uid="uid://cae8gsfov06bs" path="res://Prefabs/Enemies/BaseEnemy.tscn" id="3_djkur"]
-[ext_resource type="Script" uid="uid://bf85xq505mf43" path="res://Scripts/Spawner.gd" id="4_h3nmf"]
+[ext_resource type="PackedScene" uid="uid://dxmvkm2aj3lpq" path="res://Prefabs/Spawner.tscn" id="4_vm4ek"]
 [ext_resource type="PackedScene" uid="uid://wxay2kx6dg3m" path="res://Prefabs/UI/EXPBar.tscn" id="6_aan6j"]
-[ext_resource type="PackedScene" uid="uid://drny8xxvq6ide" path="res://Prefabs/Pickups/EXP.tscn" id="6_h3nmf"]
 [ext_resource type="PackedScene" uid="uid://cu8sskt8qxtpq" path="res://Prefabs/UI/LevelUp.tscn" id="7_hueuk"]
 [ext_resource type="PackedScene" uid="uid://davv3kxe782ay" path="res://Prefabs/UI/GameOverPanel.tscn" id="8_6a8me"]
 [ext_resource type="PackedScene" uid="uid://bbf88e2kibbpj" path="res://Prefabs/UI/MoneyUI.tscn" id="9_yg4ot"]
@@ -24,22 +22,11 @@ position = Vector2(5, -59)
 
 [node name="Head" parent="." instance=ExtResource("1_xhtwi")]
 
-[node name="Spawner" type="Node2D" parent="."]
-script = ExtResource("4_h3nmf")
-
-[node name="Timer" type="Timer" parent="Spawner"]
-wait_time = 3.0
-autostart = true
+[node name="Spawner" parent="." instance=ExtResource("4_vm4ek")]
 
 [node name="PickupGroup" type="Node2D" parent="." groups=["PickupGroup"]]
 
-[node name="EXP" parent="PickupGroup" instance=ExtResource("6_h3nmf")]
-position = Vector2(138, -115)
-
 [node name="EnemyGroup" type="Node2D" parent="." groups=["EnemyGroup"]]
-
-[node name="Area2D" parent="EnemyGroup" instance=ExtResource("3_djkur")]
-position = Vector2(202, -15)
 
 [node name="EffectGroup" type="Node2D" parent="." groups=["EffectGroup"]]
 
@@ -62,5 +49,3 @@ offset_right = 57.0
 offset_bottom = 42.0
 
 [node name="PickupCleaner" parent="." instance=ExtResource("11_vm4ek")]
-
-[connection signal="timeout" from="Spawner/Timer" to="Spawner" method="_on_timer_timeout"]

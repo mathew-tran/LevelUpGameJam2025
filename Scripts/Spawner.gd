@@ -1,19 +1,25 @@
 extends Node2D
 
-var MaxEnemyCount = 100
-func _on_timer_timeout() -> void:
-	SpawnEnemies()
+@export_dir var WavesDirectory
 
-func SpawnEnemies():
-	var enemiesToSpawn = 100
-	var currentEnemies = Finder.GetEnemyGroup().get_children().size()
-	enemiesToSpawn = clamp(enemiesToSpawn, 0, MaxEnemyCount - currentEnemies)
+var Waves = []
+func _ready() -> void:
+	Waves = Helper.GetAllFilePaths(WavesDirectory)
+	SpawnNextWave()
+	
+func SpawnNextWave():
+	if Waves.size() > 0:
+		var newWave = load(Waves.pop_front()) as EnemyWaveData
+		await newWave.CreateEnemies()
+		print(newWave.resource_path + " START")
+		$Timer.start()
+	else:
+		print("Game Over!")
+		$Timer.stop()
 		
-	var playerPosition = Finder.GetPlayer().GetPlayerPosition()
-	var distanceAwayFromPlayer = 800
-	var direction = Vector2.RIGHT
-	for x in range(0, enemiesToSpawn):
-		var instance = load("res://Prefabs/Enemies/BaseEnemy.tscn").instantiate()
-		instance.global_position = playerPosition + direction.rotated(randf_range(0, 360)) * distanceAwayFromPlayer
-		Finder.GetEnemyGroup().add_child(instance)
-		
+
+
+func _on_timer_timeout() -> void:
+	if Finder.GetEnemyGroup().get_child_count() <= 0:
+		SpawnNextWave()
+		$Timer.stop()
