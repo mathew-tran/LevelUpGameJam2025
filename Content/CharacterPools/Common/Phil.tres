@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=19 format=3 uid="uid://bhdty4bfqutx2"]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=23 format=3 uid="uid://bhdty4bfqutx2"]
 
 [ext_resource type="Texture2D" uid="uid://cs8ycmju16lxt" path="res://Art/Character/Phil.png" id="1_a55og"]
 [ext_resource type="Script" uid="uid://b1crlyox21yx2" path="res://Content/CharacterUpgradeData.gd" id="1_aklkf"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://c7f6e6ejy2j0y" path="res://Content/UpgradeTypes/CharacterUpgradeSpread.gd" id="5_8t6pq"]
 [ext_resource type="Script" uid="uid://civl0ns7ngbc6" path="res://Content/UpgradeTypes/CharacterUpgradeBaseAttackRate.gd" id="6_2iemo"]
 [ext_resource type="Script" uid="uid://bqa6hwpbpw3x0" path="res://Content/UpgradeTypes/CharacterUpgradeBaseAttack.gd" id="7_nbkig"]
+[ext_resource type="Script" uid="uid://b6h68mdjtk5lp" path="res://Content/UpgradeTypes/CharacterUpgradeBounces.gd" id="8_8t6pq"]
 
 [sub_resource type="Resource" id="Resource_i7lrs"]
 script = ExtResource("4_yiwqv")
@@ -59,6 +60,21 @@ script = ExtResource("5_8t6pq")
 Spread = 3
 metadata/_custom_type_script = "uid://c7f6e6ejy2j0y"
 
+[sub_resource type="Resource" id="Resource_2iemo"]
+script = ExtResource("5_8t6pq")
+Spread = 1
+metadata/_custom_type_script = "uid://c7f6e6ejy2j0y"
+
+[sub_resource type="Resource" id="Resource_nbkig"]
+script = ExtResource("8_8t6pq")
+Bounces = 1
+metadata/_custom_type_script = "uid://b6h68mdjtk5lp"
+
+[sub_resource type="Resource" id="Resource_bd0vi"]
+script = ExtResource("6_2iemo")
+AttackRateIncrease = 10.0
+metadata/_custom_type_script = "uid://civl0ns7ngbc6"
+
 [resource]
 script = ExtResource("2_jmlae")
 Name = "Phil"
@@ -72,5 +88,8 @@ AttackSpeed = 0.5
 Damage = 5
 ProjectileSpeed = 3
 Penetration = 10
+BulletSpread = 0
+ShootType = 0
 Upgrades = Array[ExtResource("1_aklkf")]([SubResource("Resource_i7lrs"), SubResource("Resource_u0d1d"), SubResource("Resource_j75yf"), SubResource("Resource_dvm7j"), SubResource("Resource_xi44f"), SubResource("Resource_mg6cu"), SubResource("Resource_h4c2s"), SubResource("Resource_optm0"), SubResource("Resource_gnudc"), SubResource("Resource_d2fhf")])
+WeakUpgrades = Array[ExtResource("1_aklkf")]([SubResource("Resource_2iemo"), SubResource("Resource_nbkig"), SubResource("Resource_bd0vi")])
 metadata/_custom_type_script = "uid://dadt4pa7kewb"

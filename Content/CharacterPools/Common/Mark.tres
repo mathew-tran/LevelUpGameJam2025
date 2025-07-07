@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=18 format=3 uid="uid://cj6fpl8v47hn3"]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=21 format=3 uid="uid://cj6fpl8v47hn3"]
 
 [ext_resource type="Texture2D" uid="uid://cj0tuc0njq1l3" path="res://Art/Character/Mark.png" id="1_ia558"]
 [ext_resource type="PackedScene" uid="uid://csm5aoidl1x0s" path="res://Prefabs/Projectiles/BaseProjectile.tscn" id="2_8w7eq"]
@@ -54,6 +54,21 @@ script = ExtResource("6_4s1jd")
 Amount = 300.0
 metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
 
+[sub_resource type="Resource" id="Resource_yeiny"]
+script = ExtResource("6_4s1jd")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_bavub"]
+script = ExtResource("5_n5akq")
+AttackRateIncrease = 10.0
+metadata/_custom_type_script = "uid://civl0ns7ngbc6"
+
+[sub_resource type="Resource" id="Resource_fnwd8"]
+script = ExtResource("4_86ash")
+Penetration = 1
+metadata/_custom_type_script = "uid://cxcg364uu2exq"
+
 [resource]
 script = ExtResource("8_yeiny")
 Name = "Mark"
@@ -70,4 +85,5 @@ Penetration = 0
 BulletSpread = 0
 ShootType = 1
 Upgrades = Array[ExtResource("3_i4kpn")]([SubResource("Resource_ia558"), SubResource("Resource_8w7eq"), SubResource("Resource_i4kpn"), SubResource("Resource_sr8xb"), SubResource("Resource_ia558"), SubResource("Resource_dums4"), SubResource("Resource_86ash"), SubResource("Resource_n5akq"), SubResource("Resource_4s1jd"), SubResource("Resource_tnret")])
+WeakUpgrades = Array[ExtResource("3_i4kpn")]([SubResource("Resource_yeiny"), SubResource("Resource_bavub"), SubResource("Resource_fnwd8")])
 metadata/_custom_type_script = "uid://dadt4pa7kewb"

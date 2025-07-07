@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=19 format=3 uid="uid://dmu3xrwyb68fp"]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=22 format=3 uid="uid://dmu3xrwyb68fp"]
 
 [ext_resource type="Script" uid="uid://b1crlyox21yx2" path="res://Content/CharacterUpgradeData.gd" id="1_7ggyt"]
 [ext_resource type="Texture2D" uid="uid://d30fxpesxioev" path="res://Art/Character/Samantha.png" id="1_gfgr1"]
@@ -59,6 +59,21 @@ script = ExtResource("7_ul77h")
 Spread = 2
 metadata/_custom_type_script = "uid://c7f6e6ejy2j0y"
 
+[sub_resource type="Resource" id="Resource_r4aox"]
+script = ExtResource("5_n3gpu")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_n3gpu"]
+script = ExtResource("6_uf01l")
+Penetration = 1
+metadata/_custom_type_script = "uid://cxcg364uu2exq"
+
+[sub_resource type="Resource" id="Resource_uf01l"]
+script = ExtResource("5_n3gpu")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
 [resource]
 script = ExtResource("2_shfyc")
 Name = "Samantha"
@@ -75,4 +90,5 @@ Penetration = 0
 BulletSpread = 0
 ShootType = 2
 Upgrades = Array[ExtResource("1_7ggyt")]([SubResource("Resource_bsnjl"), SubResource("Resource_2d2ap"), SubResource("Resource_arssk"), SubResource("Resource_6kf5l"), SubResource("Resource_t25h1"), SubResource("Resource_8ouqm"), SubResource("Resource_jt3av"), SubResource("Resource_3dady"), SubResource("Resource_6u4sj"), SubResource("Resource_14n8x")])
+WeakUpgrades = Array[ExtResource("1_7ggyt")]([SubResource("Resource_r4aox"), SubResource("Resource_n3gpu"), SubResource("Resource_uf01l")])
 metadata/_custom_type_script = "uid://dadt4pa7kewb"

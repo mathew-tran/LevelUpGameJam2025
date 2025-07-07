@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=19 format=3 uid="uid://bsnl1ig5jc517"]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=22 format=3 uid="uid://bsnl1ig5jc517"]
 
 [ext_resource type="Texture2D" uid="uid://c8leus6amashe" path="res://Art/Character/Monica.png" id="1_2stus"]
 [ext_resource type="PackedScene" uid="uid://ci1kral7aqcp8" path="res://Prefabs/Projectiles/CalculatorProjectile.tscn" id="2_yl862"]
@@ -59,6 +59,21 @@ script = ExtResource("4_yl862")
 Amount = 50.0
 metadata/_custom_type_script = "uid://cdjo2krv2klit"
 
+[sub_resource type="Resource" id="Resource_vdoj6"]
+script = ExtResource("5_qgjdo")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_3mepr"]
+script = ExtResource("4_vdoj6")
+AttackRateIncrease = 10.0
+metadata/_custom_type_script = "uid://civl0ns7ngbc6"
+
+[sub_resource type="Resource" id="Resource_0gmu6"]
+script = ExtResource("4_yl862")
+Amount = 10.0
+metadata/_custom_type_script = "uid://cdjo2krv2klit"
+
 [resource]
 script = ExtResource("8_wfvt0")
 Name = "Monica"
@@ -72,5 +87,8 @@ AttackSpeed = 0.25
 Damage = 15
 ProjectileSpeed = 30
 Penetration = 2
+BulletSpread = 0
+ShootType = 0
 Upgrades = Array[ExtResource("3_83bc3")]([SubResource("Resource_ivtal"), SubResource("Resource_83bc3"), SubResource("Resource_k6d6l"), SubResource("Resource_qgjdo"), SubResource("Resource_6hd2d"), SubResource("Resource_8b7km"), SubResource("Resource_wfvt0"), SubResource("Resource_27ucy"), SubResource("Resource_h5qhg"), SubResource("Resource_y85oo")])
+WeakUpgrades = Array[ExtResource("3_83bc3")]([SubResource("Resource_vdoj6"), SubResource("Resource_3mepr"), SubResource("Resource_0gmu6")])
 metadata/_custom_type_script = "uid://dadt4pa7kewb"

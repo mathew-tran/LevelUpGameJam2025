@@ -38,6 +38,9 @@ func GetNextUpgrade():
 		return null
 	return CharacterDataRef.Upgrades[CharacterLevel - 1]
 	
+func GetNextWeakUpgrade():
+	return CharacterDataRef.WeakUpgrades.pick_random()
+	
 func AdjustHealth():
 	$HealthComponent.MaxHealth = BaseHealthValue * Finder.GetGame().SubStatTeamHealth.Get().GetValue()
 	print($HealthComponent.MaxHealth)
@@ -79,10 +82,6 @@ func OnTakeDamage(_amount):
 		
 func OnDeath():
 	OnCharacterDeath.emit()
-	var upgradesToUndo = CharacterLevel
-	while(upgradesToUndo >= 0):
-		CharacterDataRef.Upgrades[upgradesToUndo].Remove(self)
-		upgradesToUndo -= 1
 	Jukebox.PlaySFX(load("res://Audio/SFX/levelup25-remove.wav"))
 	queue_free()
 

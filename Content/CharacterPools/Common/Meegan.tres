@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=19 format=3 uid="uid://cnfaf0g2kv0ff"]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=22 format=3 uid="uid://cnfaf0g2kv0ff"]
 
 [ext_resource type="Script" uid="uid://b1crlyox21yx2" path="res://Content/CharacterUpgradeData.gd" id="1_7ru7e"]
 [ext_resource type="Texture2D" uid="uid://d0tue3nmfmh5e" path="res://Art/Character/Meegan.png" id="1_tcvd6"]
@@ -59,6 +59,21 @@ script = ExtResource("7_emh3o")
 AttackRateIncrease = 300.0
 metadata/_custom_type_script = "uid://civl0ns7ngbc6"
 
+[sub_resource type="Resource" id="Resource_cbhtb"]
+script = ExtResource("6_ig3pp")
+Bounces = 1
+metadata/_custom_type_script = "uid://b6h68mdjtk5lp"
+
+[sub_resource type="Resource" id="Resource_bwu8d"]
+script = ExtResource("5_emh3o")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_baesm"]
+script = ExtResource("4_rlp8v")
+Amount = 10.0
+metadata/_custom_type_script = "uid://b068slgsi0qfb"
+
 [resource]
 script = ExtResource("2_tcvd6")
 Name = "Meegan"
@@ -71,5 +86,9 @@ Spread = 1
 AttackSpeed = 1.0
 Damage = 7
 ProjectileSpeed = 3
+Penetration = 0
+BulletSpread = 0
+ShootType = 0
 Upgrades = Array[ExtResource("1_7ru7e")]([SubResource("Resource_p8obt"), SubResource("Resource_6cv73"), SubResource("Resource_p2kn4"), SubResource("Resource_ijecq"), SubResource("Resource_ig3pp"), SubResource("Resource_2r8qw"), SubResource("Resource_br1bi"), SubResource("Resource_urjpc"), SubResource("Resource_emh3o"), SubResource("Resource_k70v0")])
+WeakUpgrades = Array[ExtResource("1_7ru7e")]([SubResource("Resource_cbhtb"), SubResource("Resource_bwu8d"), SubResource("Resource_baesm")])
 metadata/_custom_type_script = "uid://dadt4pa7kewb"

@@ -14,15 +14,17 @@ func SetupCharUnlock(data : Dictionary):
 	$TextureRect.texture = charData.Picture
 	$Level.text = ""
 	
-func Setup(character : BaseCharacter):
+func Setup(character : BaseCharacter, bUseNext = true):
 	CharacterToApply = character
 	
 	var nextUpgrade = character.GetNextUpgrade()
+	if bUseNext == false:
+		nextUpgrade = character.GetNextWeakUpgrade()
 	UpgradeToMake = nextUpgrade
 	
 	$Label.text = nextUpgrade.GetUpgradeName()
 	$TextureRect.texture = character.CharacterDataRef.Picture
-	$Level.text = "LV" + str(character.CharacterLevel + 1)
+	$Level.text = "LV" + str(character.CharacterLevel)
 	$Name.text = character.CharacterDataRef.Name + " " +  character.CharacterDataRef.GetOccupationString()
 	
 func _on_button_up() -> void:

@@ -13,6 +13,7 @@ radius = 19.0263
 mass = 3.0
 Speed = 240
 Damage = 1
+EXPToDrop = 80
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_i1ixp")

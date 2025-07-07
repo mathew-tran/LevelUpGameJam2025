@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=18 format=3 uid="uid://cygdsjda3jivl"]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=21 format=3 uid="uid://cygdsjda3jivl"]
 
 [ext_resource type="Texture2D" uid="uid://d0xkmx3xkwdmb" path="res://Art/Character/Greg.png" id="1_bfmt5"]
 [ext_resource type="Script" uid="uid://b1crlyox21yx2" path="res://Content/CharacterUpgradeData.gd" id="1_sjvf1"]
@@ -54,6 +54,21 @@ script = ExtResource("5_agrnv")
 AttackRateIncrease = 200.0
 metadata/_custom_type_script = "uid://civl0ns7ngbc6"
 
+[sub_resource type="Resource" id="Resource_f3jx6"]
+script = ExtResource("5_agrnv")
+AttackRateIncrease = 10.0
+metadata/_custom_type_script = "uid://civl0ns7ngbc6"
+
+[sub_resource type="Resource" id="Resource_agrnv"]
+script = ExtResource("5_agrnv")
+AttackRateIncrease = 10.0
+metadata/_custom_type_script = "uid://civl0ns7ngbc6"
+
+[sub_resource type="Resource" id="Resource_6j1cp"]
+script = ExtResource("4_f3jx6")
+Spread = 1
+metadata/_custom_type_script = "uid://c7f6e6ejy2j0y"
+
 [resource]
 script = ExtResource("2_sr46h")
 Name = "Greg"
@@ -66,5 +81,9 @@ Spread = 2
 AttackSpeed = 1.0
 Damage = 8
 ProjectileSpeed = 10
+Penetration = 0
+BulletSpread = 0
+ShootType = 0
 Upgrades = Array[ExtResource("1_sjvf1")]([SubResource("Resource_lajlj"), SubResource("Resource_uju6c"), SubResource("Resource_fev4i"), SubResource("Resource_0tw70"), SubResource("Resource_dh6n2"), SubResource("Resource_567l0"), SubResource("Resource_kyfbt"), SubResource("Resource_a1efr"), SubResource("Resource_7bkbm")])
+WeakUpgrades = Array[ExtResource("1_sjvf1")]([SubResource("Resource_f3jx6"), SubResource("Resource_agrnv"), SubResource("Resource_6j1cp")])
 metadata/_custom_type_script = "uid://dadt4pa7kewb"

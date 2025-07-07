@@ -17,6 +17,8 @@ class_name CharacterData
 @export var BulletSpread : BULLET_SPREAD
 @export var ShootType : SHOOT_TYPE
 @export var Upgrades : Array[CharacterUpgradeData]
+@export var WeakUpgrades : Array[CharacterUpgradeData]
+
 enum DEPARTMENT {
 	ACCOUNTING,
 	SECURITY,

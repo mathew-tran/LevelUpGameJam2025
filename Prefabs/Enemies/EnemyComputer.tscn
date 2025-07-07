@@ -12,7 +12,7 @@ radius = 56.0803
 [node name="BaseEnemy" instance=ExtResource("1_dqxag")]
 mass = 20.0
 Speed = 200
-EXPToDrop = 300
+EXPToDrop = 600
 MoneyDropChance = 20.0
 
 [node name="Sprite2D" parent="." index="0"]

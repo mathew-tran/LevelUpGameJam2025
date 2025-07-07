@@ -7,6 +7,7 @@ class_name Levelup
 enum UPGRADE_STATE {
 	CHARACTER_UPGRADES,
 	CHARACTER_UNLOCK,
+	WEAK_UPGRADES,
 	SKIP
 }
 
@@ -17,7 +18,7 @@ var UpgradeableCharacters = []
 var CharactersToUnlock = []
 var CurrentCharacters =[]
 
-var MaxCharacterAmount = 6
+var MaxCharacterAmount = 3
 func _ready() -> void:
 	Finder.GetEXPBar().OnLevelUp.connect(OnLevelup)
 	Finder.GetGame().OnGameOver.connect(OnGameOver)
@@ -53,6 +54,8 @@ func Setup():
 			CreateCharacterUpgrades()
 		UPGRADE_STATE.CHARACTER_UNLOCK:
 			CreateCharacterUnlocks()
+		UPGRADE_STATE.WEAK_UPGRADES:
+			CreateWeakUpgrades()
 		UPGRADE_STATE.SKIP:
 			Close()
 
@@ -65,31 +68,24 @@ func HasMoreCharacters():
 func HasFullTeam():
 	return CurrentCharacters.size() >= MaxCharacterAmount
 func DetermineUpgradeState():
-	if HasMoreCharacters() == false and HasUpgradeableCharacters() == false:
-		CurrentUpgradeState = UPGRADE_STATE.SKIP
-		return
 	if HasUpgradeableCharacters() == false and HasFullTeam():
-			CurrentUpgradeState = UPGRADE_STATE.SKIP
+			# should provide weak upgrades
+			CurrentUpgradeState = UPGRADE_STATE.WEAK_UPGRADES
 			return
 		
-	if HasMoreCharacters() == false and HasUpgradeableCharacters():
-		CurrentUpgradeState = UPGRADE_STATE.CHARACTER_UPGRADES
-		return
-
 	if HasUpgradeableCharacters() and HasFullTeam():
 		CurrentUpgradeState = UPGRADE_STATE.CHARACTER_UPGRADES
 		return
 		
-	if HasFullTeam() == false and HasUpgradeableCharacters():	
+	if HasUpgradeableCharacters() and HasFullTeam() == false:	
 		CurrentUpgradeState = UPGRADE_STATE.CHARACTER_UPGRADES
 		if HasMoreCharacters():
 			var value = randf_range(0, 100)
-			if value <= 30:
+			if value <= 50:
 				CurrentUpgradeState = UPGRADE_STATE.CHARACTER_UNLOCK
 		else:
 			CurrentUpgradeState = UPGRADE_STATE.CHARACTER_UPGRADES
 	
-
 
 func CreateCharacterUpgrades():
 	var characters = Finder.GetWorkerGroup().get_children()
@@ -104,6 +100,17 @@ func CreateCharacterUpgrades():
 			upgradeAmount -= 1
 	visible = true
 		
+func CreateWeakUpgrades():
+	CurrentCharacters.shuffle()
+	var upgradeAmount = 3
+	var index = 0
+	while upgradeAmount > 0:
+		CreateCharacterUpgrade(CurrentCharacters[index], false)
+		index += 1
+		upgradeAmount -= 1
+	
+	visible = true
+	
 func CreateCharacterUnlocks():
 	var characterAmount = 3
 	var index = 0
@@ -119,11 +126,11 @@ func CreateCharacterUnlocks():
 
 	visible = true
 	
-func CreateCharacterUpgrade(char : BaseCharacter):
+func CreateCharacterUpgrade(char : BaseCharacter, bUseNext = true):
 	var instance = load("res://Prefabs/UI/PurchaseButton.tscn").instantiate()
 	PurchaseContainer.add_child(instance)
 	instance.OnPurchased.connect(OnPurchased)
-	instance.Setup(char)
+	instance.Setup(char, bUseNext)
 	
 func CreateCharacterUnlock(data):
 	var instance = load("res://Prefabs/UI/PurchaseButton.tscn").instantiate()
