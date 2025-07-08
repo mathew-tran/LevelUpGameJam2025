@@ -28,7 +28,7 @@ var ProjectileSpeed = 5
 
 var bCanBeHit = true
 
-
+var ContactMultiplier = .5
 
 var BulletSpread : CharacterData.BULLET_SPREAD
 var ShootType : CharacterData.SHOOT_TYPE
@@ -58,7 +58,7 @@ func _ready() -> void:
 	GiveTempInvincibility(2)
 	
 func OnLevelup():
-	GiveTempInvincibility(.5)
+	GiveTempInvincibility(2)
 	
 func GiveTempInvincibility(amount = .3):
 	if bCanBeHit == false:
@@ -166,13 +166,24 @@ func _on_shoot_timer_timeout() -> void:
 				
 		$ShootTimer.start()
 		
-
+func GetContactDamage():
+	var dmg = Damage
+	if Spread > 0:
+		dmg *= Spread
+	if Penetration > 0:
+		dmg *= Penetration
+	if Bounces > 0:
+		dmg *= Bounces
+	dmg *= ContactMultiplier
+	return dmg
+	
 func _process(delta: float) -> void:
 	if $HitTimer.time_left == 0.0:
 		var areas = $Hitbox.get_overlapping_bodies()
 		for area in areas:
 			if area is Enemy:
 				$HealthComponent.TakeDamage(area.Damage)
+				area.TakeDamage(GetContactDamage())
 				$HitTimer.start()	
 	var followObjectPosition = get_global_mouse_position()
 	if FollowObject:
