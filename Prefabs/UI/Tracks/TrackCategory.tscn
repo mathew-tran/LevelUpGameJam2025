@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://vb2kwbwkbeps"]
+
+[ext_resource type="Script" uid="uid://br17ffhmfs0gv" path="res://Scripts/UI/Tracks/TrackCategory.gd" id="1_von7i"]
+[ext_resource type="PackedScene" uid="uid://cauito5ljv82u" path="res://Prefabs/UI/Tracks/TrackUpgradePip.tscn" id="2_orncj"]
+
+[node name="TrackCategory" type="HBoxContainer"]
+script = ExtResource("1_von7i")
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "MARKETING"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="UpgradePip" parent="HBoxContainer" instance=ExtResource("2_orncj")]
+layout_mode = 2
+
+[node name="UpgradePip2" parent="HBoxContainer" instance=ExtResource("2_orncj")]
+layout_mode = 2
+
+[node name="UpgradePip3" parent="HBoxContainer" instance=ExtResource("2_orncj")]
+layout_mode = 2
+
+[node name="UpgradePip4" parent="HBoxContainer" instance=ExtResource("2_orncj")]
+layout_mode = 2
+
+[node name="UpgradePip5" parent="HBoxContainer" instance=ExtResource("2_orncj")]
+layout_mode = 2
+
+[node name="UpgradePip6" parent="HBoxContainer" instance=ExtResource("2_orncj")]
+layout_mode = 2

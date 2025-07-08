@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cu8sskt8qxtpq"]
+[gd_scene load_steps=9 format=3 uid="uid://cu8sskt8qxtpq"]
 
 [ext_resource type="PackedScene" uid="uid://bevhto76bb856" path="res://Prefabs/UI/PurchaseButton.tscn" id="1_m8v2k"]
 [ext_resource type="Script" uid="uid://dlrrspdtty0hr" path="res://Scripts/UI/Levelup.gd" id="1_tee8a"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ruheheucmcn7" path="res://Prefabs/UI/Skipbutton.tscn" id="4_hejj1"]
 [ext_resource type="AudioStream" uid="uid://ckd6b04d765md" path="res://Audio/SFX/Levelup.wav" id="5_psnld"]
 [ext_resource type="PackedScene" uid="uid://c0shcn412sqvw" path="res://Prefabs/UI/TeamSizeUI.tscn" id="7_jui30"]
+[ext_resource type="PackedScene" uid="uid://dwxtp5avlfbub" path="res://Prefabs/UI/TracksUI.tscn" id="8_jui30"]
 
 [node name="Levelup" type="Panel" groups=["Levelup"]]
 process_mode = 3
@@ -82,3 +83,23 @@ offset_top = 11.0
 offset_right = -11.0
 offset_bottom = 51.0
 grow_horizontal = 0
+
+[node name="Tracks" parent="." instance=ExtResource("8_jui30")]
+visible = false
+layout_mode = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 138.0
+offset_right = 268.0
+offset_bottom = 35.0
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 37.0
+text = "TRACKS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

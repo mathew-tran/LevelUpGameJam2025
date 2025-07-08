@@ -78,7 +78,7 @@ metadata/_custom_type_script = "uid://cdjo2krv2klit"
 [resource]
 script = ExtResource("8_wfvt0")
 Name = "Monica"
-Occupation = 0
+Occupation = 2
 Description = "Increases movement speed"
 Picture = ExtResource("1_2stus")
 Voice = ExtResource("8_ivtal")

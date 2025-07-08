@@ -176,3 +176,8 @@ func Close():
 	Cleanup()
 	get_tree().paused = false
 	Jukebox.PlayMusic(JukeboxPlayer.MUSIC_TYPE.FIGHT)
+
+
+func _on_button_button_up() -> void:
+	$Tracks.visible = !$Tracks.visible
+	pass # Replace with function body.

@@ -85,7 +85,7 @@ func OnTakeDamage(_amount):
 		
 func OnDeath():
 	OnCharacterDeath.emit()
-	var expAmount = (CharacterLevel + 1) * 30
+	
 	var damageClass = load("res://Prefabs/UI/DamageText.tscn")
 	var instance = damageClass.instantiate()
 	instance.global_position = global_position
@@ -97,6 +97,7 @@ func OnDeath():
 	instance.data = data
 	Finder.GetEffectGroup().add_child(instance)
 	
+	var expAmount = (CharacterLevel + 1) * 50
 	var increments = 360 / (CharacterLevel + 6)
 	for x in range(0, CharacterLevel + 6):
 		var spawnPosition = Helper.GetPositionAroundPoint(global_position, 400, increments * x)
@@ -184,7 +185,7 @@ func _on_shoot_timer_timeout() -> void:
 					var radians = float(deg_to_rad(angle))
 					instance.Direction = instance.Direction.rotated(radians)
 					instance.global_position = global_position
-					instance.Damage = SubStatDamage.Get().GetValue() + randi_range(0, 4)
+					instance.Damage = Finder.GetGame().SubStatTeamDamage.Get().GetValue() * (SubStatDamage.Get().GetValue() + randi_range(0, 4))
 					instance.Penetration = Penetration
 					instance.Bounces += Bounces
 					Finder.GetBulletsGroup().add_child(instance)

@@ -78,7 +78,7 @@ metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
 [resource]
 script = ExtResource("2_shfyc")
 Name = "Samantha"
-Occupation = 2
+Occupation = 1
 Description = "Throws pens and lightning speeds."
 Picture = ExtResource("1_gfgr1")
 Voice = ExtResource("8_n3gpu")

@@ -31,12 +31,9 @@ class_name CharacterData
 
 
 enum DEPARTMENT {
-	ACCOUNTING,
-	SECURITY,
 	DEVELOPMENT,
 	ART,
 	AUDIO,
-	MARKETING,
 	QA
 }
 enum BULLET_SPREAD {

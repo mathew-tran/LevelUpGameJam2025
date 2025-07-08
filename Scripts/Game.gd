@@ -7,8 +7,11 @@ signal OnGameOver
 signal OnRemoveCharFromGame(char)
 signal OnMoneyUpdate(amount)
 signal OnRoundUpdate(roundNumber, customText)
+signal OnInvestDepartment(department)
+
 var SubStatTeamHealth : Resource
 var SubStateTeamSpeed : Resource
+var SubStatTeamDamage : Resource
 
 var Money = 10
 
@@ -43,6 +46,10 @@ func Setup():
 	SubStateTeamSpeed.StatResourceRef = load("res://Content/Stats/TEAM_SPEED.tres")
 	SubStateTeamSpeed.Init()
 	SubStateTeamSpeed.ModifiedResource.ValueUpdated.connect(OnTeamSpeedUpdated)
+	
+	SubStatTeamDamage = SubStatResourceData.new()
+	SubStatTeamDamage.StatResourceRef = load("res://Content/Stats/TEAM_DAMAGE.tres")
+	SubStatTeamDamage.Init()
 	
 func OnTeamHealthUpdated(value):
 	var workers = Finder.GetWorkerGroup()

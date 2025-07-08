@@ -31,10 +31,13 @@ func _on_button_up() -> void:
 	Jukebox.PlaySFXMenu(load("res://Audio/SFX/levelup25-purchase.wav"))
 	if is_instance_valid(UpgradeToMake):
 		UpgradeToMake.Apply(CharacterToApply)
+		Finder.GetGame().OnInvestDepartment.emit(CharacterToApply.CharacterDataRef.Occupation)
 	elif is_instance_valid(CharacterToAdd):
 		CharacterToAdd.Create()
 		Finder.GetGame().RemoveCharacterFromGame(CharacterToAdd.Name)
+		Finder.GetGame().OnInvestDepartment.emit(CharacterToAdd.Occupation)
 	OnPurchased.emit()
+	
 
 
 func _on_mouse_entered() -> void:
