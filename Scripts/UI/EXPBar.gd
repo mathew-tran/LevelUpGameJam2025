@@ -16,7 +16,8 @@ func _ready() -> void:
 	Update()
 	
 func OnEXPUpdate(amount):
-	EXPCache += amount
+	
+	EXPCache += amount * Finder.GetGame().SubStatTeamExperience.Get().GetValue()
 	
 func _process(delta: float) -> void:
 	if EXPCache > 0.0:

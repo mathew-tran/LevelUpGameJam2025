@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fttaamrnpfhj"
-path="res://.godot/imported/TickOnBig.png-1e90c69c5ed6ab07bc551b95bec4e96a.ctex"
+uid="uid://kg3u0vlrf86k"
+path="res://.godot/imported/TickOn.png-cbf0f032d093d9a4fece5333503586a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/UI/TickOnBig.png"
-dest_files=["res://.godot/imported/TickOnBig.png-1e90c69c5ed6ab07bc551b95bec4e96a.ctex"]
+source_file="res://Art/UI/UI/UI/UI/TickOn.png"
+dest_files=["res://.godot/imported/TickOn.png-cbf0f032d093d9a4fece5333503586a3.ctex"]
 
 [params]
 

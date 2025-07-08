@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cauito5ljv82u"]
 
-[ext_resource type="Texture2D" uid="uid://rgo8jxbsm84p" path="res://Art/UI/TickOff.png" id="1_7minp"]
+[ext_resource type="Texture2D" uid="uid://bhfms3pmvp45s" path="res://Art/UI/TickOn.png" id="1_7u4uk"]
 [ext_resource type="Script" uid="uid://cauh7noi8dpc" path="res://Scripts/UI/Tracks/TrackUpgradePip.gd" id="2_7u4uk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7u4uk"]
@@ -11,7 +11,7 @@ border_width_right = 2
 border_width_bottom = 2
 
 [node name="UpgradePip" type="TextureRect"]
-texture = ExtResource("1_7minp")
+texture = ExtResource("1_7u4uk")
 script = ExtResource("2_7u4uk")
 
 [node name="Panel" type="Panel" parent="."]

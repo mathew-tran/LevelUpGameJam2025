@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fttaamrnpfhj"
-path="res://.godot/imported/TickOnBig.png-1e90c69c5ed6ab07bc551b95bec4e96a.ctex"
+uid="uid://bkxv0rldjc843"
+path="res://.godot/imported/Magnet.png-960297e2c1219f3bcbeff9f4c38beb6a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/UI/TickOnBig.png"
-dest_files=["res://.godot/imported/TickOnBig.png-1e90c69c5ed6ab07bc551b95bec4e96a.ctex"]
+source_file="res://Art/Pickups/Magnet.png"
+dest_files=["res://.godot/imported/Magnet.png-960297e2c1219f3bcbeff9f4c38beb6a.ctex"]
 
 [params]
 

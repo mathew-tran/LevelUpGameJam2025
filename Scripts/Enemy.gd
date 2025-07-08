@@ -34,6 +34,13 @@ func OnDeath():
 		var moneyInstance = load("res://Prefabs/Pickups/Money.tscn").instantiate()
 		moneyInstance.global_position = Helper.GetRandomPositionAroundPoint(global_position,100)
 		Finder.GetPickupGroup().call_deferred("add_child", moneyInstance)
+		
+	if Finder.GetGame().bCanDropMagnet:
+		result = randi() % 200
+		if result <= 1:
+			var moneyInstance = load("res://Prefabs/Pickups/Magnet.tscn").instantiate()
+			moneyInstance.global_position = Helper.GetRandomPositionAroundPoint(global_position,100)
+			Finder.GetPickupGroup().call_deferred("add_child", moneyInstance)
 	Jukebox.PlayEnemyDeathSFX()
 	queue_free()
 	

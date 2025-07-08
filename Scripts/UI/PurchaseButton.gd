@@ -11,6 +11,7 @@ func SetupCharUnlock(data : Dictionary):
 	CharacterToAdd = charData
 	$Label.text = charData.Description
 	$Name.text = charData.Name + " " +  charData.GetOccupationString()
+	$Name.modulate = charData.GetDepartmentColor(charData.Occupation)
 	$TextureRect.texture = charData.Picture
 	$Level.text = ""
 	
@@ -26,6 +27,7 @@ func Setup(character : BaseCharacter, bUseNext = true):
 	$TextureRect.texture = character.CharacterDataRef.Picture
 	$Level.text = "LV" + str(character.CharacterLevel)
 	$Name.text = character.CharacterDataRef.Name + " " +  character.CharacterDataRef.GetOccupationString()
+	$Name.modulate = CharacterData.GetDepartmentColor(character.CharacterDataRef.Occupation)
 	
 func _on_button_up() -> void:
 	Jukebox.PlaySFXMenu(load("res://Audio/SFX/levelup25-purchase.wav"))

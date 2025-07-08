@@ -33,6 +33,6 @@ func Update():
 	for upgrade in Upgrades:
 		var instance = pipClass.instantiate()
 		UpgradeContainer.add_child(instance)
-		instance.Setup(upgrade)
+		instance.Setup(upgrade, CharacterData.GetDepartmentColor(Category))
 	
 	MaxIndex = len(Upgrades)

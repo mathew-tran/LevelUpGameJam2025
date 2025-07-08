@@ -36,6 +36,18 @@ enum DEPARTMENT {
 	AUDIO,
 	QA
 }
+
+static func GetDepartmentColor(dep):
+	match dep:
+		DEPARTMENT.DEVELOPMENT:
+			return Color.BLUE
+		DEPARTMENT.ART:
+			return Color.RED
+		DEPARTMENT.AUDIO:
+			return Color.ORANGE
+		DEPARTMENT.QA:
+			return Color.BLUE_VIOLET
+		
 enum BULLET_SPREAD {
 	NORMAL,
 	RADIAL

@@ -4,7 +4,8 @@ var UpgradeTrackRef : TrackUpgradeData
 
 var bActivated = false
 
-func Setup(trackRef):
+func Setup(trackRef, themeColor):
+	self_modulate = themeColor
 	UpgradeTrackRef = trackRef
 	if UpgradeTrackRef:
 		texture = load("res://Art/UI/TickOffBig.png")
