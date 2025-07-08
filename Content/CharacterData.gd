@@ -4,9 +4,15 @@ class_name CharacterData
 
 @export var Name = ""
 @export var Occupation : DEPARTMENT
-@export var Cost = 10
 @export var Description = ""
 @export var Picture : Texture2D
+
+@export_category("Voice")
+@export var Voice : AudioStream
+@export var Pitch = 1.0
+@export var WelcomePhrase = ""
+@export var UpgradePhrases : Array[String]
+@export_category("Stats")
 @export var Projectile : PackedScene
 @export var Spread = 1
 @export var AttackSpeed = 1.0 # per second
@@ -16,8 +22,11 @@ class_name CharacterData
 
 @export var BulletSpread : BULLET_SPREAD
 @export var ShootType : SHOOT_TYPE
+
+@export_category("Upgrades")
 @export var Upgrades : Array[CharacterUpgradeData]
 @export var WeakUpgrades : Array[CharacterUpgradeData]
+
 
 enum DEPARTMENT {
 	ACCOUNTING,

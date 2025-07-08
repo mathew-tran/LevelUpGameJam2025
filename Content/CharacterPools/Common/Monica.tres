@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=22 format=3 uid="uid://bsnl1ig5jc517"]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=23 format=3 uid="uid://bsnl1ig5jc517"]
 
 [ext_resource type="Texture2D" uid="uid://c8leus6amashe" path="res://Art/Character/Monica.png" id="1_2stus"]
 [ext_resource type="PackedScene" uid="uid://ci1kral7aqcp8" path="res://Prefabs/Projectiles/CalculatorProjectile.tscn" id="2_yl862"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cdjo2krv2klit" path="res://Content/UpgradeTypes/CharacterUpgradeTeamSpeed.gd" id="4_yl862"]
 [ext_resource type="Script" uid="uid://b6h68mdjtk5lp" path="res://Content/UpgradeTypes/CharacterUpgradeBounces.gd" id="5_k6d6l"]
 [ext_resource type="Script" uid="uid://bqa6hwpbpw3x0" path="res://Content/UpgradeTypes/CharacterUpgradeBaseAttack.gd" id="5_qgjdo"]
+[ext_resource type="AudioStream" uid="uid://dg02y7olabbd" path="res://Audio/Voices/voice3.wav" id="8_ivtal"]
 [ext_resource type="Script" uid="uid://dadt4pa7kewb" path="res://Content/CharacterData.gd" id="8_wfvt0"]
 
 [sub_resource type="Resource" id="Resource_ivtal"]
@@ -78,9 +79,12 @@ metadata/_custom_type_script = "uid://cdjo2krv2klit"
 script = ExtResource("8_wfvt0")
 Name = "Monica"
 Occupation = 0
-Cost = 10
 Description = "Increases movement speed"
 Picture = ExtResource("1_2stus")
+Voice = ExtResource("8_ivtal")
+Pitch = 1.6
+WelcomePhrase = "GOTTA GO FAST"
+UpgradePhrases = Array[String](["FASTER.", "SPEED OF SOUND.", "GO GO GO!"])
 Projectile = ExtResource("2_yl862")
 Spread = 1
 AttackSpeed = 0.25

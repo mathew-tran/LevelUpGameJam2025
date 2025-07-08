@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://bw4tawl36852h"]
+
+[ext_resource type="Texture2D" uid="uid://dn8otjx8rpves" path="res://Art/TalkBubble.png" id="1_xabbg"]
+[ext_resource type="Script" uid="uid://bybdli270wkfh" path="res://Scripts/UI/TalkBubble.gd" id="2_e1tc5"]
+
+[node name="TalkBubble" type="Sprite2D"]
+z_index = 3
+z_as_relative = false
+texture = ExtResource("1_xabbg")
+script = ExtResource("2_e1tc5")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -37.0
+offset_top = -27.0
+offset_right = 83.0
+offset_bottom = 51.0
+scale = Vector2(0.6, 0.6)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "LET'S GOO!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+visible_characters_behavior = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = 20.0
+
+[node name="SpeechTimer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
+[node name="FinishedSpeechTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="FinishedSpeechTimer" to="." method="_on_finished_speech_timer_timeout"]

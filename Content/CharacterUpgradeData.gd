@@ -8,6 +8,7 @@ func GetUpgradeName():
 func Apply(char : BaseCharacter):
 	ApplyUpgrade(char)
 	char.CharacterLevel += 1
+	char.Speak(char.CharacterDataRef.UpgradePhrases.pick_random())
 	
 func Remove(char : BaseCharacter):
 	RemoveUpgrade(char)

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=21 format=3 uid="uid://cygdsjda3jivl"]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=22 format=3 uid="uid://cygdsjda3jivl"]
 
 [ext_resource type="Texture2D" uid="uid://d0xkmx3xkwdmb" path="res://Art/Character/Greg.png" id="1_bfmt5"]
 [ext_resource type="Script" uid="uid://b1crlyox21yx2" path="res://Content/CharacterUpgradeData.gd" id="1_sjvf1"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://civl0ns7ngbc6" path="res://Content/UpgradeTypes/CharacterUpgradeBaseAttackRate.gd" id="5_agrnv"]
 [ext_resource type="Script" uid="uid://cxcg364uu2exq" path="res://Content/UpgradeTypes/CharacterUpgradePenetration.gd" id="6_6j1cp"]
 [ext_resource type="Script" uid="uid://bqa6hwpbpw3x0" path="res://Content/UpgradeTypes/CharacterUpgradeBaseAttack.gd" id="7_lkxir"]
+[ext_resource type="AudioStream" uid="uid://dg02y7olabbd" path="res://Audio/Voices/voice3.wav" id="8_agrnv"]
 
 [sub_resource type="Resource" id="Resource_lajlj"]
 script = ExtResource("4_f3jx6")
@@ -73,9 +74,12 @@ metadata/_custom_type_script = "uid://c7f6e6ejy2j0y"
 script = ExtResource("2_sr46h")
 Name = "Greg"
 Occupation = 5
-Cost = 10
 Description = "Throws a bunch of paper clips!"
 Picture = ExtResource("1_bfmt5")
+Voice = ExtResource("8_agrnv")
+Pitch = 1.0
+WelcomePhrase = "ITS TIME TO DANCE"
+UpgradePhrases = Array[String](["I GOT THE MOVES", "STAY GOLDEN PONY BOY", "!!!"])
 Projectile = ExtResource("2_7qxdr")
 Spread = 2
 AttackSpeed = 1.0

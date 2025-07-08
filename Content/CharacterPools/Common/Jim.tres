@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=22 format=3 uid="uid://dsj3abnbjh0q0"]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=23 format=3 uid="uid://dsj3abnbjh0q0"]
 
 [ext_resource type="Script" uid="uid://b1crlyox21yx2" path="res://Content/CharacterUpgradeData.gd" id="1_c05vt"]
 [ext_resource type="Texture2D" uid="uid://dyc6newsjc7yy" path="res://Art/Character/Jim.png" id="1_rn5iy"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://civl0ns7ngbc6" path="res://Content/UpgradeTypes/CharacterUpgradeBaseAttackRate.gd" id="5_foiv3"]
 [ext_resource type="Script" uid="uid://bqa6hwpbpw3x0" path="res://Content/UpgradeTypes/CharacterUpgradeBaseAttack.gd" id="6_su8px"]
 [ext_resource type="Script" uid="uid://c7f6e6ejy2j0y" path="res://Content/UpgradeTypes/CharacterUpgradeSpread.gd" id="7_foiv3"]
+[ext_resource type="AudioStream" uid="uid://bag3xickg4lyb" path="res://Audio/Voices/voice4.wav" id="8_su8px"]
 
 [sub_resource type="Resource" id="Resource_4lvpt"]
 script = ExtResource("4_tbwa4")
@@ -78,9 +79,12 @@ metadata/_custom_type_script = "uid://b6h68mdjtk5lp"
 script = ExtResource("2_rn5iy")
 Name = "Jim"
 Occupation = 3
-Cost = 10
 Description = "Throws a bouncy projectile"
 Picture = ExtResource("1_rn5iy")
+Voice = ExtResource("8_su8px")
+Pitch = 0.6
+WelcomePhrase = "UMM.. ACTUALLY."
+UpgradePhrases = Array[String](["...", "I LOOK GOOD!", "THANKS!"])
 Projectile = ExtResource("2_fqx34")
 Spread = 1
 AttackSpeed = 1.0

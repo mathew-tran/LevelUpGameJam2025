@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=22 format=3 uid="uid://dmu3xrwyb68fp"]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=23 format=3 uid="uid://dmu3xrwyb68fp"]
 
 [ext_resource type="Script" uid="uid://b1crlyox21yx2" path="res://Content/CharacterUpgradeData.gd" id="1_7ggyt"]
 [ext_resource type="Texture2D" uid="uid://d30fxpesxioev" path="res://Art/Character/Samantha.png" id="1_gfgr1"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bqa6hwpbpw3x0" path="res://Content/UpgradeTypes/CharacterUpgradeBaseAttack.gd" id="5_n3gpu"]
 [ext_resource type="Script" uid="uid://cxcg364uu2exq" path="res://Content/UpgradeTypes/CharacterUpgradePenetration.gd" id="6_uf01l"]
 [ext_resource type="Script" uid="uid://c7f6e6ejy2j0y" path="res://Content/UpgradeTypes/CharacterUpgradeSpread.gd" id="7_ul77h"]
+[ext_resource type="AudioStream" uid="uid://ciu8pma24vg3o" path="res://Audio/Voices/voice2.wav" id="8_n3gpu"]
 
 [sub_resource type="Resource" id="Resource_bsnjl"]
 script = ExtResource("4_r4aox")
@@ -78,9 +79,12 @@ metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
 script = ExtResource("2_shfyc")
 Name = "Samantha"
 Occupation = 2
-Cost = 10
 Description = "Throws pens and lightning speeds."
 Picture = ExtResource("1_gfgr1")
+Voice = ExtResource("8_n3gpu")
+Pitch = 1.0
+WelcomePhrase = "ZZZZ"
+UpgradePhrases = Array[String](["I CAN GO FASTER!", "THIS WORKS GOT NOTHING ON ME!", "LET'S TANGO"])
 Projectile = ExtResource("1_shfyc")
 Spread = 1
 AttackSpeed = 5.0

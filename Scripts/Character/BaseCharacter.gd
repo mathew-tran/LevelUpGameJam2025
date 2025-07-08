@@ -85,6 +85,13 @@ func OnDeath():
 	Jukebox.PlaySFX(load("res://Audio/SFX/levelup25-remove.wav"))
 	queue_free()
 
+func Speak(message):
+	var data = {}
+	data["message"] = message
+	data["pitch"] = CharacterDataRef.Pitch
+	data["audio"] = CharacterDataRef.Voice
+	$TalkBubble.Talk(data)
+	
 func Setup(newData):
 	CharacterDataRef = newData
 	$Sprite2D.texture = CharacterDataRef.Picture
@@ -94,6 +101,8 @@ func Setup(newData):
 	Speed = Finder.GetGame().SubStateTeamSpeed.Get().GetValue()
 	BulletSpread = CharacterDataRef.BulletSpread
 	ShootType = CharacterDataRef.ShootType
+	
+	Speak(CharacterDataRef.WelcomePhrase)
 	
 	SubStatDamage = SubStatResourceData.new()
 	SubStatDamage.StatResourceRef = load("res://Content/Stats/CHAR_DAMAGE.tres")
