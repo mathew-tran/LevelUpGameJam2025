@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://davv3kxe782ay" path="res://Prefabs/UI/GameOverPanel.tscn" id="8_6a8me"]
 [ext_resource type="PackedScene" uid="uid://dbxbafkso5jls" path="res://Prefabs/UI/WavePanel.tscn" id="9_vm4ek"]
 [ext_resource type="PackedScene" uid="uid://bbf88e2kibbpj" path="res://Prefabs/UI/MoneyUI.tscn" id="9_yg4ot"]
+[ext_resource type="PackedScene" uid="uid://dbgqqm1j1g5er" path="res://Prefabs/UI/PowerupPanel.tscn" id="11_4qtod"]
 [ext_resource type="PackedScene" uid="uid://bjgcp7sfsa22j" path="res://Prefabs/PickupCleaner.tscn" id="11_vm4ek"]
-[ext_resource type="PackedScene" uid="uid://boa4x576b2nlk" path="res://Prefabs/Pickups/Magnet.tscn" id="12_4qtod"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4qtod"]
 texture = ExtResource("2_vm4ek")
@@ -1090,10 +1090,10 @@ offset_bottom = 42.0
 [node name="WavePanel" parent="CanvasLayer" instance=ExtResource("9_vm4ek")]
 visible = false
 
+[node name="PowerupPanel" parent="CanvasLayer" instance=ExtResource("11_4qtod")]
+visible = false
+
 [node name="PickupCleaner" parent="." instance=ExtResource("11_vm4ek")]
 
 [node name="RoundTimer" type="Timer" parent="."]
 one_shot = true
-
-[node name="Magnet" parent="." instance=ExtResource("12_4qtod")]
-position = Vector2(252, -144)

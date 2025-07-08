@@ -11,6 +11,7 @@ var MaxIndex = -1
 func _ready() -> void:
 	Finder.GetGame().OnInvestDepartment.connect(OnInvestDepartment)
 	$Label.text = CharacterData.DEPARTMENT.keys()[Category]
+	$Level.text = str(Index) 
 	Update()
 	
 func OnInvestDepartment(department):
@@ -21,6 +22,7 @@ func Increment():
 	if Index < MaxIndex:
 		UpgradeContainer.get_child(Index).Activate()
 		Index += 1
+		$Level.text = str(Index) 
 		
 func Update():
 	for child in UpgradeContainer.get_children():

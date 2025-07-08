@@ -16,6 +16,7 @@ func Activate():
 	if UpgradeTrackRef:
 		texture = load("res://Art/UI/TickOnBig.png")
 		UpgradeTrackRef.ApplyUpgrade()
+		Finder.GetGame().OnPowerupGained.emit(get_parent().get_parent().Category, UpgradeTrackRef.GetUpgradeName())
 	else:
 		texture = load("res://Art/UI/TickON.png")
 		

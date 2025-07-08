@@ -8,7 +8,7 @@ signal OnRemoveCharFromGame(char)
 signal OnMoneyUpdate(amount)
 signal OnRoundUpdate(roundNumber, customText)
 signal OnInvestDepartment(department)
-
+signal OnPowerupGained(department, text)
 var SubStatTeamHealth : Resource
 var SubStateTeamSpeed : Resource
 var SubStatTeamDamage : Resource

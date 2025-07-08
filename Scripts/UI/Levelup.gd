@@ -100,7 +100,9 @@ func DetermineUpgradeState():
 				CurrentUpgradeState = UPGRADE_STATE.CHARACTER_UNLOCK
 		else:
 			CurrentUpgradeState = UPGRADE_STATE.CHARACTER_UPGRADES
-	
+		return
+	if HasFullTeam() == false:
+		CurrentUpgradeState = UPGRADE_STATE.CHARACTER_UNLOCK
 
 func CreateCharacterUpgrades():
 	var characters = Finder.GetWorkerGroup().get_children()

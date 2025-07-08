@@ -6,6 +6,13 @@
 [node name="TrackCategory" type="HBoxContainer"]
 script = ExtResource("1_von7i")
 
+[node name="Level" type="Label" parent="."]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "(23)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Label" type="Label" parent="."]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
