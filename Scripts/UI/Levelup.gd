@@ -19,6 +19,18 @@ var CharactersToUnlock = []
 var CurrentCharacters =[]
 
 var MaxCharacterAmount = 3
+
+signal OnIncreaseCharacterAmount
+signal OnLevelUpMenuOpened
+
+func IncreaseCharacterAmount():
+	MaxCharacterAmount += 1
+	OnIncreaseCharacterAmount.emit()
+
+func GetCharacterCountString():
+	var playerAmount = Finder.GetWorkerGroup().get_children().size()
+	return  str(playerAmount) + "/" + str(MaxCharacterAmount)
+	
 func _ready() -> void:
 	Finder.GetEXPBar().OnLevelUp.connect(OnLevelup)
 	Finder.GetGame().OnGameOver.connect(OnGameOver)
@@ -33,6 +45,7 @@ func OnLevelup():
 	Setup()
 
 func Setup():
+	OnLevelUpMenuOpened.emit()
 	if get_tree().paused == false:
 		get_tree().paused = true
 		Jukebox.PlayMusic(JukeboxPlayer.MUSIC_TYPE.SHOP)
@@ -102,7 +115,9 @@ func CreateCharacterUpgrades():
 		
 func CreateWeakUpgrades():
 	CurrentCharacters.shuffle()
-	var upgradeAmount = 3
+	var upgradeAmount = CurrentCharacters.size()
+	if upgradeAmount > 3:
+		upgradeAmount = 3
 	var index = 0
 	while upgradeAmount > 0:
 		CreateCharacterUpgrade(CurrentCharacters[index], false)

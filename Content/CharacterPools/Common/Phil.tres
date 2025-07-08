@@ -86,6 +86,7 @@ Voice = ExtResource("8_2iemo")
 Pitch = 0.8
 WelcomePhrase = "REPORTING FOR DUTY"
 UpgradePhrases = Array[String](["MY REPORTING SKILLS HAVE INCREASED", "NOTHING LIKE A GOOD REPORT", "IT ALL COMES WITH EXPERIENCE"])
+DeathPhrase = Array[String]([".", "...", "."])
 Projectile = ExtResource("2_xskfd")
 Spread = 1
 AttackSpeed = 0.5

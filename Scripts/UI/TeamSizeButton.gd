@@ -1,7 +1,6 @@
 extends Button
 
-var RerollCost = 3
-var DefaultCost = 3
+var Cost = 4
 
 func _ready() -> void:
 	Finder.GetGame().OnMoneyUpdate.connect(OnMoneyUpdate)
@@ -9,19 +8,19 @@ func _ready() -> void:
 	OnLevelup()
 	
 func OnLevelup():
-	RerollCost = DefaultCost
 	OnMoneyUpdate()
 	
 func OnMoneyUpdate():
-	$HBoxContainer/MoneyText.Update(RerollCost)
+	$HBoxContainer/MoneyText.Update(Cost)
 
 
 func _on_button_up() -> void:
-	if RerollCost <= Finder.GetGame().GetMoney():
+	if Cost <= Finder.GetGame().GetMoney():
 		Jukebox.PlaySFXMenu(load("res://Audio/SFX/MenuSelect.wav"))
+		Finder.GetLevelUp().IncreaseCharacterAmount()
 		Finder.GetLevelUp().Setup()
-		Finder.GetGame().RemoveMoney(RerollCost)
-		RerollCost += 2
+		Finder.GetGame().RemoveMoney(Cost)
+		Cost += 3
 		OnMoneyUpdate()
 
 

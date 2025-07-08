@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0shcn412sqvw"]
+
+[ext_resource type="Script" uid="uid://f1nyrsx2cwd6" path="res://Scripts/UI/TeamSizeUI.gd" id="1_f6wpa"]
+[ext_resource type="Texture2D" uid="uid://dwsf1leil0pni" path="res://Art/TeamSizeIcon.png" id="1_wgh6w"]
+
+[node name="TeamSizeUI" type="HBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_f6wpa")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_wgh6w")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "0/7"

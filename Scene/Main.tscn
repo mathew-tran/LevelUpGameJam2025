@@ -53,3 +53,6 @@ offset_bottom = 42.0
 visible = false
 
 [node name="PickupCleaner" parent="." instance=ExtResource("11_vm4ek")]
+
+[node name="RoundTimer" type="Timer" parent="."]
+one_shot = true

@@ -1,14 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://duiayraokc07y"]
+[gd_scene load_steps=3 format=3 uid="uid://bw2epmiey7yqu"]
 
-[ext_resource type="Script" uid="uid://bla0xgxia3i86" path="res://Scripts/UI/RerollButton.gd" id="1_jhcih"]
-[ext_resource type="PackedScene" uid="uid://bbf88e2kibbpj" path="res://Prefabs/UI/MoneyUI.tscn" id="2_eva6c"]
+[ext_resource type="Script" uid="uid://dpi4f7cybhklp" path="res://Scripts/UI/TeamSizeButton.gd" id="1_8j4vx"]
+[ext_resource type="PackedScene" uid="uid://bbf88e2kibbpj" path="res://Prefabs/UI/MoneyUI.tscn" id="2_7hwaq"]
 
 [node name="Button" type="Button"]
 process_mode = 3
 custom_minimum_size = Vector2(221, 56)
 offset_right = 221.0
 offset_bottom = 56.0
-script = ExtResource("1_jhcih")
+script = ExtResource("1_8j4vx")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
@@ -20,10 +20,10 @@ offset_bottom = 44.0
 [node name="Label" type="Label" parent="HBoxContainer"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-text = "REROLL"
+text = "Team Size ++"
 horizontal_alignment = 1
 
-[node name="MoneyText" parent="HBoxContainer" instance=ExtResource("2_eva6c")]
+[node name="MoneyText" parent="HBoxContainer" instance=ExtResource("2_7hwaq")]
 layout_mode = 2
 MoneyUIType = 1
 

@@ -21,6 +21,17 @@ func DropEXPOrb(amount, position):
 	instance.Amount = amount
 	Finder.GetPickupGroup().call_deferred("add_child", instance)
 
+func DropEXPOrbMoveFromXtoY(amount, position, nextPosition, time = 0.2):
+	var instance = load("res://Prefabs/Pickups/EXP.tscn").instantiate()
+	instance.global_position = position
+	instance.Amount = amount
+	instance.bIsUsable = false
+	Finder.GetPickupGroup().call_deferred("add_child", instance)
+	var tween = get_tree().create_tween()
+	tween.tween_property(instance, "global_position", nextPosition, time)
+	await tween.finished
+	instance.bIsUsable = true
+	
 func GetRandomPositionAroundPoint(pos, distance):
 	var direction = Vector2.RIGHT
 	return pos + direction.rotated(randf_range(0, 360)) * distance

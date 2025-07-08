@@ -6,16 +6,29 @@ signal OnEXPUpdate(amount)
 signal OnGameOver
 signal OnRemoveCharFromGame(char)
 signal OnMoneyUpdate(amount)
-signal OnRoundUpdate(roundNumber, bIsBoss)
+signal OnRoundUpdate(roundNumber, customText)
 var SubStatTeamHealth : Resource
 var SubStateTeamSpeed : Resource
 
 var Money = 10
 
+
+func SetTimer(amount):
+	$RoundTimer.wait_time = amount
+	$RoundTimer.start()
+	
+func IsTimerDone():
+	return $RoundTimer.time_left == 0.0
+	
+func GetTimerProgress():
+	return $RoundTimer.wait_time / $RoundTimer.time_left
+	
 func _enter_tree() -> void:
 	Setup()
+	
 func _ready() -> void:
 	Jukebox.PlayMusic(JukeboxPlayer.MUSIC_TYPE.FIGHT)
+	Slomo(1,.001)
 	
 
 func Setup():
@@ -41,6 +54,11 @@ func OnTeamSpeedUpdated(value):
 	for worker in workers.get_children():
 		worker.Speed = value
 		print(worker.Speed)
+	
+func Slomo(amount, time):
+	Engine.time_scale = amount
+	await get_tree().create_timer(time).timeout
+	Engine.time_scale = 1
 	
 func AddMoney(amount):
 	Money += amount

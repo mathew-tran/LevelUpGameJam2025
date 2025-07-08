@@ -80,6 +80,7 @@ Voice = ExtResource("8_8w7eq")
 Pitch = 0.6
 WelcomePhrase = "THIS WAS CALCULATED."
 UpgradePhrases = Array[String](["GREAT CHOICE.", "I AM IN YOUR DEBT.", "LET'S DO THIS."])
+DeathPhrase = Array[String](["YOU WILL PAY FOR THIS!!", "HOW DARE YOU!", "WHY NOT ME?!"])
 Projectile = ExtResource("2_8w7eq")
 Spread = 1
 AttackSpeed = 1.0

@@ -36,6 +36,16 @@ func _on_workers_child_entered_tree(node: Node) -> void:
 func _on_workers_child_exiting_tree(node: Node) -> void:
 	print(node.name + "exited")
 	UpdateBody()
+	await get_tree().create_timer(.1).timeout
+	if $Workers.get_child_count() > 0:
+		$AnimationPlayer.play("death")
+		Finder.GetGame().Slomo(.2, 1)
+		var workers = $Workers.get_children()
+		for worker in workers:
+			worker.GiveTempInvincibility(.5)
+			worker.SayDeathPhrase()
+	
+	
 
 func _process(delta: float) -> void:
 	if is_instance_valid(Headbody):

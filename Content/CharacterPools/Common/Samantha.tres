@@ -85,6 +85,7 @@ Voice = ExtResource("8_n3gpu")
 Pitch = 1.0
 WelcomePhrase = "ZZZZ"
 UpgradePhrases = Array[String](["I CAN GO FASTER!", "THIS WORKS GOT NOTHING ON ME!", "LET'S TANGO"])
+DeathPhrase = Array[String](["I WILL AVENGE YOU!", "HOW COULD THIS HAPPEN!?", "NOOOOOOOOO"])
 Projectile = ExtResource("1_shfyc")
 Spread = 1
 AttackSpeed = 5.0

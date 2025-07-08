@@ -10,14 +10,14 @@ texture = ExtResource("1_xabbg")
 script = ExtResource("2_e1tc5")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -37.0
+offset_left = -34.0
 offset_top = -27.0
-offset_right = 83.0
+offset_right = 88.0
 offset_bottom = 51.0
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.55, 0.55)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 15
-text = "LET'S GOO!"
+theme_override_font_sizes/font_size = 14
+text = "IT ALL COMES WITH EXPERIENCE"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

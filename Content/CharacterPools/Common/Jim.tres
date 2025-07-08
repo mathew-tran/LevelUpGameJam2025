@@ -85,6 +85,7 @@ Voice = ExtResource("8_su8px")
 Pitch = 0.6
 WelcomePhrase = "UMM.. ACTUALLY."
 UpgradePhrases = Array[String](["...", "I LOOK GOOD!", "THANKS!"])
+DeathPhrase = Array[String](["...", "GOOD RIDDANCE!", "I AM NOT CRYING!"])
 Projectile = ExtResource("2_fqx34")
 Spread = 1
 AttackSpeed = 1.0

@@ -4,6 +4,7 @@ class_name EXPPickup
 
 @export var Amount = 5
 var bMoveTowardsPlayer  = false
+var bIsUsable = true
 
 func _enter_tree() -> void:
 	scale = Vector2.ZERO
@@ -32,6 +33,8 @@ func Pickup():
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is BaseCharacter:
+		if bIsUsable == false:
+			return
 		Pickup()
 		
 		

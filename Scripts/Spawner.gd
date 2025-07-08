@@ -4,17 +4,20 @@ extends Node2D
 
 var Waves = []
 var Round = 0
+
+var CurrentWave : EnemyBaseWaveData
 func _ready() -> void:
 	Waves = Helper.GetAllFilePaths(WavesDirectory)
 	print(Waves)
+	await get_tree().create_timer(.3).timeout
 	SpawnNextWave()
 	
 func SpawnNextWave():
 	if Waves.size() > 0:
-		var newWave = load(Waves.pop_front()) as EnemyWaveData
+		var newWave = load(Waves.pop_front()) as EnemyBaseWaveData
 		Round += 1
-		
-		Finder.GetGame().OnRoundUpdate.emit(Round, newWave.bIsBossWave)
+		CurrentWave = newWave
+		Finder.GetGame().OnRoundUpdate.emit(Round, newWave.GetWaveText())
 		await newWave.CreateEnemies()
 		print(newWave.resource_path + " START")
 		$Timer.start()
@@ -26,10 +29,8 @@ func SpawnNextWave():
 
 
 func _on_timer_timeout() -> void:
-	if Finder.GetEnemyGroup().get_child_count() <= 0:
-		$Timer.stop()
-		
-		
+	if CurrentWave.CanContinue() == false:
+		$Timer.stop()		
 		for x in range(0, Round):
 			var spawnPosition = Helper.GetRandomPositionAroundPoint(Finder.GetPlayer().GetPlayerPosition(),
 			200)

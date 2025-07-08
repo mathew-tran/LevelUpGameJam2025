@@ -2,10 +2,10 @@ extends Panel
 
 func _ready() -> void:
 	Finder.GetGame().OnRoundUpdate.connect(OnRoundUpdate)
-	OnRoundUpdate(0, false)
-func OnRoundUpdate(number, bIsBoss):
-	if bIsBoss:
-		$Label.text = "BOSS WAVE"
+	
+func OnRoundUpdate(number, customText):
+	if customText != "":
+		$Label.text = customText
 	else:
 		$Label.text = "ROUND " + str(number)
 	visible = true

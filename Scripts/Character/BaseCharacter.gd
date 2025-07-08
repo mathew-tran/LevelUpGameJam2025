@@ -33,6 +33,9 @@ var ContactMultiplier = .5
 var BulletSpread : CharacterData.BULLET_SPREAD
 var ShootType : CharacterData.SHOOT_TYPE
 
+func SayDeathPhrase():
+	Speak(CharacterDataRef.DeathPhrase.pick_random())
+	
 func GetNextUpgrade():
 	if CharacterLevel > CharacterDataRef.Upgrades.size():
 		return null
@@ -66,7 +69,7 @@ func GiveTempInvincibility(amount = .3):
 	bCanBeHit = false
 	var tween = get_tree().create_tween()
 	$HealthComponent.Disable()
-	tween.tween_property($Sprite2D, "modulate", Color.YELLOW, .1)
+	tween.tween_property($Sprite2D, "modulate", Color(1.3,1.3,1.3,.6), .1)
 	await tween.finished
 	await get_tree().create_timer(amount).timeout
 	tween = get_tree().create_tween()
@@ -82,6 +85,22 @@ func OnTakeDamage(_amount):
 		
 func OnDeath():
 	OnCharacterDeath.emit()
+	var expAmount = (CharacterLevel + 1) * 30
+	var damageClass = load("res://Prefabs/UI/DamageText.tscn")
+	var instance = damageClass.instantiate()
+	instance.global_position = global_position
+	var data = {}
+	data["text"] = CharacterDataRef.Name.to_upper() + "\nHAS RESIGNED"
+	data["color"] = Color.WHITE
+	data["position"] = Vector2.ZERO
+	data["time"] = 3
+	instance.data = data
+	Finder.GetEffectGroup().add_child(instance)
+	
+	var increments = 360 / (CharacterLevel + 6)
+	for x in range(0, CharacterLevel + 6):
+		var spawnPosition = Helper.GetPositionAroundPoint(global_position, 400, increments * x)
+		Helper.DropEXPOrbMoveFromXtoY(expAmount, global_position, spawnPosition, .4)
 	Jukebox.PlaySFX(load("res://Audio/SFX/levelup25-remove.wav"))
 	queue_free()
 

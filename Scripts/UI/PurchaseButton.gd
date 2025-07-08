@@ -35,3 +35,8 @@ func _on_button_up() -> void:
 		CharacterToAdd.Create()
 		Finder.GetGame().RemoveCharacterFromGame(CharacterToAdd.Name)
 	OnPurchased.emit()
+
+
+func _on_mouse_entered() -> void:
+	Jukebox.PlaySFXMenu(load("res://Audio/SFX/Menuhover.wav"))
+	pass # Replace with function body.

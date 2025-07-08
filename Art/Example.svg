@@ -24,9 +24,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.71891835"
-     inkscape:cx="-181.5227"
-     inkscape:cy="-118.92867"
+     inkscape:zoom="1.4378367"
+     inkscape:cx="-268.11111"
+     inkscape:cy="-202.03963"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
      inkscape:window-x="-8"
@@ -844,8 +844,11 @@
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" /><path
        style="fill:#f0e0e0;fill-opacity:1;stroke:#f0e0e0;stroke-width:0.358;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       d="m -30.832883,100.03796 1.2881,3.03625 1.9403,-3.360691 z"
-       id="path136" /><path
+       d="m -25.864482,100.59 1.2881,3.03625 1.9403,-3.36069 z"
+       id="path136"
+       inkscape:export-filename="TalkBubble.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" /><path
        style="fill:#f0e0e0;fill-opacity:1;stroke:#f0e0e0;stroke-width:0.358;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       d="m -38.740983,90.801869 c -0.52047,0.84577 -0.26023,9.693811 -0.26023,9.693811 l 19.32254,-0.0651 -0.78071,-11.125101 z"
+       d="m -33.772582,91.353914 c -0.52047,0.84577 -0.26023,9.693806 -0.26023,9.693806 l 19.32254,-0.0651 -0.78071,-11.125096 z"
        id="path137" /></g></svg>

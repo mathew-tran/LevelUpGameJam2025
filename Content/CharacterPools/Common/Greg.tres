@@ -80,6 +80,7 @@ Voice = ExtResource("8_agrnv")
 Pitch = 1.0
 WelcomePhrase = "ITS TIME TO DANCE"
 UpgradePhrases = Array[String](["I GOT THE MOVES", "STAY GOLDEN PONY BOY", "!!!"])
+DeathPhrase = Array[String](["I WILL MISS YOU!!", "..", "NO!!"])
 Projectile = ExtResource("2_7qxdr")
 Spread = 2
 AttackSpeed = 1.0

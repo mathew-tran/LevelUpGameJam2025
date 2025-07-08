@@ -85,6 +85,7 @@ Voice = ExtResource("8_sast8")
 Pitch = 0.5
 WelcomePhrase = "LETS GET TO WORK!"
 UpgradePhrases = Array[String](["LET'S GO!!", "I. AM. STRONGER!", "DOWN WITH WORK!"])
+DeathPhrase = Array[String](["!!", "NO!", "HOW COULD THIS HAPPEN?"])
 Projectile = ExtResource("2_sast8")
 Spread = 16
 AttackSpeed = 0.5

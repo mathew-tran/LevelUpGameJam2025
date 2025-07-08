@@ -85,6 +85,7 @@ Voice = ExtResource("8_ivtal")
 Pitch = 1.6
 WelcomePhrase = "GOTTA GO FAST"
 UpgradePhrases = Array[String](["FASTER.", "SPEED OF SOUND.", "GO GO GO!"])
+DeathPhrase = Array[String](["THEY WERE TOO SLOW", "...", "DARN YOU!"])
 Projectile = ExtResource("2_yl862")
 Spread = 1
 AttackSpeed = 0.25

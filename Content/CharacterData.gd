@@ -12,6 +12,8 @@ class_name CharacterData
 @export var Pitch = 1.0
 @export var WelcomePhrase = ""
 @export var UpgradePhrases : Array[String]
+@export var DeathPhrase : Array[String]
+
 @export_category("Stats")
 @export var Projectile : PackedScene
 @export var Spread = 1
