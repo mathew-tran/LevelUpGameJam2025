@@ -17,6 +17,7 @@ var SubStatTeamExperience : Resource
 var Money = 10
 
 var bCanDropMagnet = false
+var bExplodeOnDeath = false
 
 
 func SetTimer(amount):

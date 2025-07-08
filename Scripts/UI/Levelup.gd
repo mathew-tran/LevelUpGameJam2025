@@ -71,6 +71,8 @@ func Setup():
 			CreateWeakUpgrades()
 		UPGRADE_STATE.SKIP:
 			Close()
+			
+	print(UPGRADE_STATE.keys()[CurrentUpgradeState] + " was selected")
 
 func HasUpgradeableCharacters():
 	return UpgradeableCharacters.size() > 0

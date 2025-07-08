@@ -86,6 +86,11 @@ func OnTakeDamage(_amount):
 func OnDeath():
 	OnCharacterDeath.emit()
 	
+	if Finder.GetGame().bExplodeOnDeath:
+		_on_shoot_timer_timeout()
+		_on_shoot_timer_timeout()
+		_on_shoot_timer_timeout()
+		
 	var damageClass = load("res://Prefabs/UI/DamageText.tscn")
 	var instance = damageClass.instantiate()
 	instance.global_position = global_position
@@ -103,6 +108,7 @@ func OnDeath():
 		var spawnPosition = Helper.GetPositionAroundPoint(global_position, 400, increments * x)
 		Helper.DropEXPOrbMoveFromXtoY(expAmount, global_position, spawnPosition, .4)
 	Jukebox.PlaySFX(load("res://Audio/SFX/levelup25-remove.wav"))
+
 	queue_free()
 
 func Speak(message):

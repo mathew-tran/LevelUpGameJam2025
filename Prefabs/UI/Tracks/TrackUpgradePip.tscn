@@ -11,7 +11,10 @@ border_width_right = 2
 border_width_bottom = 2
 
 [node name="UpgradePip" type="TextureRect"]
+custom_minimum_size = Vector2(8, 0)
 texture = ExtResource("1_7u4uk")
+expand_mode = 2
+stretch_mode = 5
 script = ExtResource("2_7u4uk")
 
 [node name="Panel" type="Panel" parent="."]

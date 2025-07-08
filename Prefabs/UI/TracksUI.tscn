@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://dwxtp5avlfbub"]
+[gd_scene load_steps=16 format=3 uid="uid://dwxtp5avlfbub"]
 
 [ext_resource type="Script" uid="uid://dvllkpq7nonc8" path="res://Scripts/UI/TracksUI.gd" id="1_7dty6"]
 [ext_resource type="PackedScene" uid="uid://vb2kwbwkbeps" path="res://Prefabs/UI/Tracks/TrackCategory.tscn" id="1_xjvdj"]
 [ext_resource type="Script" uid="uid://cr6vuqnsiug53" path="res://Content/TrackUpgradeData.gd" id="2_i6fpy"]
 [ext_resource type="Script" uid="uid://60nui5865u0y" path="res://Content/TrackUpgradeTypes/TrackUpgradeBaseAttack.gd" id="4_oei07"]
+[ext_resource type="Script" uid="uid://cp2r2qun10u1j" path="res://Content/TrackUpgradeTypes/TrackUpgradeGainExplodeOnDeath.gd" id="5_6dvx0"]
 [ext_resource type="Script" uid="uid://3reikkrh7078" path="res://Content/TrackUpgradeTypes/TrackUpgradeBaseExperience.gd" id="5_yojl4"]
 [ext_resource type="Script" uid="uid://b2ls5u6lxuyb3" path="res://Content/TrackUpgradeTypes/TrackUpgradeGainMagnet.gd" id="6_dtp4c"]
 
@@ -20,23 +21,27 @@ script = ExtResource("4_oei07")
 Amount = 100.0
 metadata/_custom_type_script = "uid://60nui5865u0y"
 
-[sub_resource type="Resource" id="Resource_dtp4c"]
+[sub_resource type="Resource" id="Resource_7pwmq"]
 script = ExtResource("5_yojl4")
-Amount = 3.0
+Amount = 10.0
 metadata/_custom_type_script = "uid://3reikkrh7078"
 
 [sub_resource type="Resource" id="Resource_5dlre"]
 script = ExtResource("6_dtp4c")
 metadata/_custom_type_script = "uid://b2ls5u6lxuyb3"
 
+[sub_resource type="Resource" id="Resource_ye3a6"]
+script = ExtResource("5_6dvx0")
+metadata/_custom_type_script = "uid://cp2r2qun10u1j"
+
 [sub_resource type="Resource" id="Resource_6dvx0"]
 script = ExtResource("5_yojl4")
-Amount = 5.0
+Amount = 10.0
 metadata/_custom_type_script = "uid://3reikkrh7078"
 
 [sub_resource type="Resource" id="Resource_fme0h"]
 script = ExtResource("5_yojl4")
-Amount = 8.0
+Amount = 20.0
 metadata/_custom_type_script = "uid://3reikkrh7078"
 
 [node name="Tracks" type="Panel"]
@@ -87,7 +92,7 @@ Upgrades = Array[ExtResource("2_i6fpy")]([null, null, null, null, null, null, nu
 [node name="TrackCategory4" parent="VBoxContainer" instance=ExtResource("1_xjvdj")]
 layout_mode = 2
 Category = 3
-Upgrades = Array[ExtResource("2_i6fpy")]([null, null, SubResource("Resource_dtp4c"), null, SubResource("Resource_5dlre"), null, null, null, null, null, SubResource("Resource_6dvx0"), null, null, null, null, null, null, null, SubResource("Resource_fme0h"), null])
+Upgrades = Array[ExtResource("2_i6fpy")]([SubResource("Resource_7pwmq"), null, null, null, SubResource("Resource_5dlre"), null, null, null, SubResource("Resource_ye3a6"), null, null, null, null, SubResource("Resource_6dvx0"), null, null, null, null, null, SubResource("Resource_fme0h")])
 
 [node name="Button" type="Button" parent="."]
 custom_minimum_size = Vector2(200, 100)
