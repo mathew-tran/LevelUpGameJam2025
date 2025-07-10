@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://dwxtp5avlfbub"]
+[gd_scene load_steps=57 format=3 uid="uid://dwxtp5avlfbub"]
 
 [ext_resource type="Script" uid="uid://dvllkpq7nonc8" path="res://Scripts/UI/TracksUI.gd" id="1_7dty6"]
 [ext_resource type="PackedScene" uid="uid://vb2kwbwkbeps" path="res://Prefabs/UI/Tracks/TrackCategory.tscn" id="1_xjvdj"]
@@ -21,7 +21,10 @@
 [ext_resource type="Script" uid="uid://e7vwmuen6anh" path="res://Content/TrackUpgradeTypes/TrackUpgradeFirstRerollFree.gd" id="8_c3m2p"]
 [ext_resource type="Script" uid="uid://v4dsab1xpn21" path="res://Content/TrackUpgradeTypes/TrackUpgradeGainShootOnAttacked.gd" id="8_fme0h"]
 [ext_resource type="Script" uid="uid://dtvnvw661ko6w" path="res://Content/TrackUpgradeTypes/TrackUpgradeBaseHealth.gd" id="8_nwdge"]
+[ext_resource type="Script" uid="uid://bndw1xvun2g4p" path="res://Content/TrackUpgradeTypes/TrackUpgradeBerserkMode.gd" id="9_i4ttg"]
 [ext_resource type="Script" uid="uid://cydakddlflwpa" path="res://Content/TrackUpgradeTypes/TrackUpgradeGainHealthOnMoneyPickup.gd" id="10_jindf"]
+[ext_resource type="Script" uid="uid://cshu8ljt8yifj" path="res://Content/TrackUpgradeTypes/TrackUpgradeInvincibleMode.gd" id="15_eamjb"]
+[ext_resource type="Script" uid="uid://by822qjgkxcwt" path="res://Content/TrackUpgradeTypes/TrackUpgradeGainHawkMode.gd" id="19_3cnpm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6fpy"]
 bg_color = Color(0, 0, 0, 1)
@@ -52,6 +55,10 @@ metadata/_custom_type_script = "uid://e7vwmuen6anh"
 [sub_resource type="Resource" id="Resource_fmh6w"]
 script = ExtResource("6_xo6vh")
 metadata/_custom_type_script = "uid://cvf1yy2qyk80j"
+
+[sub_resource type="Resource" id="Resource_jpsg2"]
+script = ExtResource("9_i4ttg")
+metadata/_custom_type_script = "uid://bndw1xvun2g4p"
 
 [sub_resource type="Resource" id="Resource_0g2k7"]
 script = ExtResource("4_ikhr0")
@@ -90,6 +97,10 @@ metadata/_custom_type_script = "uid://bshasrmjy63ri"
 script = ExtResource("6_qngum")
 metadata/_custom_type_script = "uid://bqjbylyasvoi"
 
+[sub_resource type="Resource" id="Resource_6wo2x"]
+script = ExtResource("15_eamjb")
+metadata/_custom_type_script = "uid://cshu8ljt8yifj"
+
 [sub_resource type="Resource" id="Resource_ikhr0"]
 script = ExtResource("5_jnwyr")
 Amount = 10.0
@@ -111,6 +122,10 @@ metadata/_custom_type_script = "uid://b5d6t7yimipkx"
 [sub_resource type="Resource" id="Resource_qngum"]
 script = ExtResource("6_7pwmq")
 metadata/_custom_type_script = "uid://br5xo1nh65rm8"
+
+[sub_resource type="Resource" id="Resource_qmhut"]
+script = ExtResource("19_3cnpm")
+metadata/_custom_type_script = "uid://by822qjgkxcwt"
 
 [sub_resource type="Resource" id="Resource_ovivv"]
 script = ExtResource("7_gse3p")
@@ -180,22 +195,22 @@ text = "(Improve in tracks by investing in different departments!)"
 
 [node name="TrackCategory" parent="VBoxContainer" instance=ExtResource("1_xjvdj")]
 layout_mode = 2
-Upgrades = Array[ExtResource("2_i6fpy")]([SubResource("Resource_da2sp"), null, SubResource("Resource_yojl4"), SubResource("Resource_c7rff"), null, SubResource("Resource_c27l8"), SubResource("Resource_3cnpm"), null, null, SubResource("Resource_fmh6w"), null, null, SubResource("Resource_0g2k7"), null, null, null, SubResource("Resource_iunog"), null, SubResource("Resource_j78md"), null])
+Upgrades = Array[ExtResource("2_i6fpy")]([SubResource("Resource_da2sp"), null, SubResource("Resource_yojl4"), SubResource("Resource_c7rff"), null, SubResource("Resource_c27l8"), SubResource("Resource_3cnpm"), null, null, SubResource("Resource_fmh6w"), SubResource("Resource_jpsg2"), null, SubResource("Resource_0g2k7"), null, null, null, SubResource("Resource_iunog"), null, SubResource("Resource_j78md"), null, null, null, null, null, null, null, null, null, null, null])
 
 [node name="TrackCategory2" parent="VBoxContainer" instance=ExtResource("1_xjvdj")]
 layout_mode = 2
 Category = 1
-Upgrades = Array[ExtResource("2_i6fpy")]([SubResource("Resource_6v5x1"), null, SubResource("Resource_c3m2p"), null, SubResource("Resource_eamjb"), null, null, SubResource("Resource_xo6vh"), null, SubResource("Resource_jindf"), null, SubResource("Resource_ikhr0"), null, null, null, SubResource("Resource_nwdge"), null, null, null, SubResource("Resource_i4ttg")])
+Upgrades = Array[ExtResource("2_i6fpy")]([SubResource("Resource_6v5x1"), null, SubResource("Resource_c3m2p"), null, SubResource("Resource_eamjb"), null, null, SubResource("Resource_xo6vh"), null, SubResource("Resource_jindf"), SubResource("Resource_6wo2x"), SubResource("Resource_ikhr0"), null, null, null, SubResource("Resource_nwdge"), null, null, null, SubResource("Resource_i4ttg"), null, null, null, null, null, null, null, null, null, null])
 
 [node name="TrackCategory3" parent="VBoxContainer" instance=ExtResource("1_xjvdj")]
 layout_mode = 2
 Category = 2
-Upgrades = Array[ExtResource("2_i6fpy")]([null, SubResource("Resource_jnwyr"), null, null, null, null, SubResource("Resource_qngum"), null, null, null, null, SubResource("Resource_ovivv"), null, null, SubResource("Resource_64fdg"), null, null, null, null, null])
+Upgrades = Array[ExtResource("2_i6fpy")]([null, SubResource("Resource_jnwyr"), null, null, null, null, SubResource("Resource_qngum"), null, null, SubResource("Resource_qmhut"), null, SubResource("Resource_ovivv"), null, null, SubResource("Resource_64fdg"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
 
 [node name="TrackCategory4" parent="VBoxContainer" instance=ExtResource("1_xjvdj")]
 layout_mode = 2
 Category = 3
-Upgrades = Array[ExtResource("2_i6fpy")]([SubResource("Resource_7pwmq"), null, null, null, SubResource("Resource_5dlre"), null, null, null, SubResource("Resource_ye3a6"), null, null, null, null, SubResource("Resource_6dvx0"), null, null, SubResource("Resource_gse3p"), null, null, SubResource("Resource_fme0h")])
+Upgrades = Array[ExtResource("2_i6fpy")]([SubResource("Resource_7pwmq"), null, null, null, SubResource("Resource_5dlre"), null, null, null, SubResource("Resource_ye3a6"), null, null, null, null, SubResource("Resource_6dvx0"), null, null, SubResource("Resource_gse3p"), null, null, SubResource("Resource_fme0h"), null, null, null, null, null, null, null, null, null, null])
 
 [node name="Button" type="Button" parent="."]
 custom_minimum_size = Vector2(200, 100)

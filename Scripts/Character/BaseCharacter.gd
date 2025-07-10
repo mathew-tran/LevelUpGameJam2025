@@ -33,6 +33,8 @@ var ContactMultiplier = .4
 var BulletSpread : CharacterData.BULLET_SPREAD
 var ShootType : CharacterData.SHOOT_TYPE
 
+var bDoubleDamage = false
+
 func SayDeathPhrase():
 	Speak(CharacterDataRef.DeathPhrase.pick_random())
 	
@@ -225,6 +227,8 @@ func _on_shoot_timer_timeout() -> void:
 						var result = randi() % 100
 						if result <= 10:
 							instance.Damage *= 1.5
+					if bDoubleDamage:
+						instance.Damage *= 2
 					Finder.GetBulletsGroup().add_child(instance)
 			if delay > 0:
 				$ShootTimer.stop()
@@ -283,3 +287,6 @@ func Deactivate():
 
 func _on_regen_timer_timeout() -> void:
 	$HealthComponent.Heal(RegenAmount)
+
+func GetBuffsHolder():
+	return $Buffs

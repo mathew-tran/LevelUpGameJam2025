@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dj2x7c8nbk7ri"]
+
+[ext_resource type="PackedScene" uid="uid://b5aulgxcq48el" path="res://Prefabs/Buffs/Buff.tscn" id="1_l75dv"]
+[ext_resource type="Texture2D" uid="uid://d1wbqtyopmkkb" path="res://Art/TempBuff/DamageBuff.png" id="2_ucnig"]
+[ext_resource type="Script" uid="uid://n7ong5088ny6" path="res://Scripts/Buff/DamageBuff.gd" id="3_20jj0"]
+
+[node name="Buff" instance=ExtResource("1_l75dv")]
+modulate = Color(0.981106, 0.438696, 0, 1)
+texture = ExtResource("2_ucnig")
+script = ExtResource("3_20jj0")
+
+[node name="Timer" parent="." index="0"]
+wait_time = 20.0
+
+[node name="PollTimer" type="Timer" parent="." index="2"]
+wait_time = 0.3
+autostart = true
+
+[connection signal="timeout" from="PollTimer" to="." method="_on_poll_timer_timeout"]

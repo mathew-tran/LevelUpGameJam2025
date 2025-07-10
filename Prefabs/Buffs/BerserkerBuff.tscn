@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://24fq466vjxkk"]
+
+[ext_resource type="PackedScene" uid="uid://b5aulgxcq48el" path="res://Prefabs/Buffs/Buff.tscn" id="1_so1q0"]
+[ext_resource type="Script" uid="uid://ebicdqdcdqa8" path="res://Scripts/Buff/BerserkerBuff.gd" id="2_8is7h"]
+
+[node name="Buff" instance=ExtResource("1_so1q0")]
+modulate = Color(0.981106, 0.438696, 0, 1)
+script = ExtResource("2_8is7h")
+
+[node name="Timer" parent="." index="0"]
+wait_time = 20.0
+
+[node name="PollTimer" type="Timer" parent="." index="2"]
+wait_time = 0.3
+autostart = true
+
+[connection signal="timeout" from="PollTimer" to="." method="_on_poll_timer_timeout"]

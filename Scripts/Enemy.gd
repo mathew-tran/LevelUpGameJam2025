@@ -51,6 +51,7 @@ func OnDeath():
 			moneyInstance.global_position = Helper.GetRandomPositionAroundPoint(global_position,100)
 			Finder.GetPickupGroup().call_deferred("add_child", moneyInstance)
 	Jukebox.PlayEnemyDeathSFX()
+	Finder.GetGame().BroadcastEnemyKilled()
 	queue_free()
 	
 func _process(delta: float) -> void:

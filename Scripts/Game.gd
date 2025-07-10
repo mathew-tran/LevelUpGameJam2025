@@ -9,6 +9,7 @@ signal OnMoneyUpdate(amount)
 signal OnRoundUpdate(roundNumber, customText)
 signal OnInvestDepartment(department)
 signal OnPowerupGained(department, text)
+signal OnEnemiesKilled()
 var SubStatTeamHealth : Resource
 var SubStateTeamSpeed : Resource
 var SubStatTeamDamage : Resource
@@ -18,6 +19,7 @@ var SubStatTeamProjectileSpeed : Resource
 
 
 var Money = 10
+var EnemiesKilled = 0
 
 var bCanDropMagnet = false
 var bExplodeOnDeath = false
@@ -33,7 +35,14 @@ var bStunChance = false
 var bGainExperienceOnHit = false
 var bGainHealthWhenMoneyPickedUp = false
 
+var bBerserkModeActive = false
+var bInvincibleModeActive = false
+var bDoubleDamageModeActive = false
 
+func BroadcastEnemyKilled():
+	EnemiesKilled += 1
+	OnEnemiesKilled.emit()
+	
 func SetTimer(amount):
 	$RoundTimer.wait_time = amount
 	$RoundTimer.start()

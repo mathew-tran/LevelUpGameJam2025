@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://dlomuxg3d5y55"]
+
+[ext_resource type="Texture2D" uid="uid://l608m8fep1is" path="res://Art/UI/Deaths.png" id="1_17tjc"]
+[ext_resource type="Script" uid="uid://dn6bweid5c6cd" path="res://Scripts/UI/KillsCount.gd" id="1_36j5r"]
+
+[sub_resource type="Animation" id="Animation_36j5r"]
+resource_name = "anim"
+length = 0.12
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 0.6), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hrrs8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xfpxu"]
+_data = {
+&"RESET": SubResource("Animation_hrrs8"),
+&"anim": SubResource("Animation_36j5r")
+}
+
+[node name="KillsCount" type="HBoxContainer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -56.0
+offset_top = 5.0
+offset_right = -4.0
+offset_bottom = 45.0
+grow_horizontal = 0
+script = ExtResource("1_36j5r")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "10"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+texture = ExtResource("1_17tjc")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xfpxu")
+}
