@@ -28,7 +28,7 @@ var ProjectileSpeed = 5
 
 var bCanBeHit = true
 
-var ContactMultiplier = .5
+var ContactMultiplier = .4
 
 var BulletSpread : CharacterData.BULLET_SPREAD
 var ShootType : CharacterData.SHOOT_TYPE
@@ -89,7 +89,18 @@ func OnTakeDamage(_amount):
 			if result <= 10:
 				_on_shoot_timer_timeout()
 				Speak("!!!")
-
+				
+	if Finder.GetGame().bInvulnerabilityChance:
+		if _amount > 0:
+			var result = randi() % 100
+			if result <= 10:
+				Speak("!!!")
+				GiveTempInvincibility(.5)
+				
+	if Finder.GetGame().bGainExperienceOnHit:
+		if _amount > 0:
+			Helper.DropEXPOrb(10, global_position)
+			
 func Heal(amount):
 	$HealthComponent.Heal(amount)
 	
@@ -199,7 +210,7 @@ func _on_shoot_timer_timeout() -> void:
 						return
 					var instance = CharacterDataRef.Projectile.instantiate()
 					instance.Direction = (enemy.global_position - global_position).normalized()
-					instance.Speed = ProjectileSpeed
+					instance.Speed = ProjectileSpeed * Finder.GetGame().SubStatTeamProjectileSpeed.Get().GetValue()
 					var radians = float(deg_to_rad(angle))
 					instance.Direction = instance.Direction.rotated(radians)
 					instance.global_position = global_position
@@ -229,15 +240,22 @@ func GetContactDamage():
 		dmg *= Penetration
 	if Bounces > 0:
 		dmg *= Bounces
-	dmg *= ContactMultiplier
+	dmg *= ContactMultiplier * Finder.GetGame().SubStatTeamContactDamage.Get().GetValue()
 	return dmg
 	
 func _process(delta: float) -> void:
 	if $HitTimer.time_left == 0.0:
 		var areas = $Hitbox.get_overlapping_bodies()
 		for area in areas:
+			var bTakeDamage = true
 			if area is Enemy:
-				$HealthComponent.TakeDamage(area.Damage)
+				if Finder.GetGame().bDodgeChance:
+					var result = randi() % 100
+					if result <= 10:
+						bTakeDamage = false
+						Speak("NICE TRY!")
+				if bTakeDamage:
+					$HealthComponent.TakeDamage(area.Damage)
 				area.TakeDamage(GetContactDamage())
 				$HitTimer.start()	
 	var followObjectPosition = get_global_mouse_position()

@@ -1,30 +1,108 @@
-[gd_scene load_steps=26 format=3 uid="uid://dwxtp5avlfbub"]
+[gd_scene load_steps=51 format=3 uid="uid://dwxtp5avlfbub"]
 
 [ext_resource type="Script" uid="uid://dvllkpq7nonc8" path="res://Scripts/UI/TracksUI.gd" id="1_7dty6"]
 [ext_resource type="PackedScene" uid="uid://vb2kwbwkbeps" path="res://Prefabs/UI/Tracks/TrackCategory.tscn" id="1_xjvdj"]
 [ext_resource type="Script" uid="uid://cr6vuqnsiug53" path="res://Content/TrackUpgradeData.gd" id="2_i6fpy"]
+[ext_resource type="Script" uid="uid://w2waj35n737p" path="res://Content/TrackUpgradeTypes/TrackUpgradeBaseProjectileSpeed.gd" id="4_ikhr0"]
 [ext_resource type="Script" uid="uid://60nui5865u0y" path="res://Content/TrackUpgradeTypes/TrackUpgradeBaseAttack.gd" id="4_oei07"]
 [ext_resource type="Script" uid="uid://b5d6t7yimipkx" path="res://Content/TrackUpgradeTypes/TrackUpgradeGainHealOnLevelup.gd" id="5_5dlre"]
 [ext_resource type="Script" uid="uid://cp2r2qun10u1j" path="res://Content/TrackUpgradeTypes/TrackUpgradeGainExplodeOnDeath.gd" id="5_6dvx0"]
+[ext_resource type="Script" uid="uid://bshasrmjy63ri" path="res://Content/TrackUpgradeTypes/TrackUpgradeBaseTeamContactDamage.gd" id="5_jnwyr"]
 [ext_resource type="Script" uid="uid://3reikkrh7078" path="res://Content/TrackUpgradeTypes/TrackUpgradeBaseExperience.gd" id="5_yojl4"]
+[ext_resource type="Script" uid="uid://8vb1ix46oa5p" path="res://Content/TrackUpgradeTypes/TrackUpgradeGainExperienceOnHit.gd" id="6_6v5x1"]
 [ext_resource type="Script" uid="uid://br5xo1nh65rm8" path="res://Content/TrackUpgradeTypes/TrackUpgradeGainExtraBounce.gd" id="6_7pwmq"]
 [ext_resource type="Script" uid="uid://b2ls5u6lxuyb3" path="res://Content/TrackUpgradeTypes/TrackUpgradeGainMagnet.gd" id="6_dtp4c"]
+[ext_resource type="Script" uid="uid://c8ev8a6bjl08x" path="res://Content/TrackUpgradeTypes/TrackUpgradeTeamSize.gd" id="6_ovivv"]
+[ext_resource type="Script" uid="uid://bqjbylyasvoi" path="res://Content/TrackUpgradeTypes/TrackUpgradeGainTempInvincibilityOnHit.gd" id="6_qngum"]
+[ext_resource type="Script" uid="uid://cvf1yy2qyk80j" path="res://Content/TrackUpgradeTypes/TrackUpgradeGainStunChance.gd" id="6_xo6vh"]
+[ext_resource type="Script" uid="uid://bfg5prsn76qaj" path="res://Content/TrackUpgradeTypes/TrackUpgradeGainSmallDodgeChance.gd" id="7_64fdg"]
 [ext_resource type="Script" uid="uid://chvhe2idf4mrt" path="res://Content/TrackUpgradeTypes/TrackUpgradeGainBonusDamage.gd" id="7_gse3p"]
 [ext_resource type="Script" uid="uid://dfv8adswpg0d8" path="res://Content/TrackUpgradeTypes/TrackUpgradeGainExtraPenetration.gd" id="7_ye3a6"]
+[ext_resource type="Script" uid="uid://e7vwmuen6anh" path="res://Content/TrackUpgradeTypes/TrackUpgradeFirstRerollFree.gd" id="8_c3m2p"]
 [ext_resource type="Script" uid="uid://v4dsab1xpn21" path="res://Content/TrackUpgradeTypes/TrackUpgradeGainShootOnAttacked.gd" id="8_fme0h"]
+[ext_resource type="Script" uid="uid://dtvnvw661ko6w" path="res://Content/TrackUpgradeTypes/TrackUpgradeBaseHealth.gd" id="8_nwdge"]
+[ext_resource type="Script" uid="uid://cydakddlflwpa" path="res://Content/TrackUpgradeTypes/TrackUpgradeGainHealthOnMoneyPickup.gd" id="10_jindf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6fpy"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Resource" id="Resource_da2sp"]
+script = ExtResource("4_ikhr0")
+Amount = 10.0
+metadata/_custom_type_script = "uid://w2waj35n737p"
 
 [sub_resource type="Resource" id="Resource_yojl4"]
 script = ExtResource("4_oei07")
 Amount = 10.0
 metadata/_custom_type_script = "uid://60nui5865u0y"
 
-[sub_resource type="Resource" id="Resource_oei07"]
+[sub_resource type="Resource" id="Resource_c7rff"]
+script = ExtResource("6_6v5x1")
+metadata/_custom_type_script = "uid://8vb1ix46oa5p"
+
+[sub_resource type="Resource" id="Resource_c27l8"]
+script = ExtResource("4_ikhr0")
+Amount = 10.0
+metadata/_custom_type_script = "uid://w2waj35n737p"
+
+[sub_resource type="Resource" id="Resource_3cnpm"]
+script = ExtResource("8_c3m2p")
+metadata/_custom_type_script = "uid://e7vwmuen6anh"
+
+[sub_resource type="Resource" id="Resource_fmh6w"]
+script = ExtResource("6_xo6vh")
+metadata/_custom_type_script = "uid://cvf1yy2qyk80j"
+
+[sub_resource type="Resource" id="Resource_0g2k7"]
+script = ExtResource("4_ikhr0")
+Amount = 10.0
+metadata/_custom_type_script = "uid://w2waj35n737p"
+
+[sub_resource type="Resource" id="Resource_iunog"]
+script = ExtResource("8_nwdge")
+Amount = 10.0
+metadata/_custom_type_script = "uid://dtvnvw661ko6w"
+
+[sub_resource type="Resource" id="Resource_j78md"]
+script = ExtResource("10_jindf")
+metadata/_custom_type_script = "uid://cydakddlflwpa"
+
+[sub_resource type="Resource" id="Resource_6v5x1"]
 script = ExtResource("4_oei07")
-Amount = 100.0
+Amount = 5.0
 metadata/_custom_type_script = "uid://60nui5865u0y"
+
+[sub_resource type="Resource" id="Resource_c3m2p"]
+script = ExtResource("5_jnwyr")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bshasrmjy63ri"
+
+[sub_resource type="Resource" id="Resource_eamjb"]
+script = ExtResource("6_ovivv")
+metadata/_custom_type_script = "uid://c8ev8a6bjl08x"
+
+[sub_resource type="Resource" id="Resource_xo6vh"]
+script = ExtResource("5_jnwyr")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bshasrmjy63ri"
+
+[sub_resource type="Resource" id="Resource_jindf"]
+script = ExtResource("6_qngum")
+metadata/_custom_type_script = "uid://bqjbylyasvoi"
+
+[sub_resource type="Resource" id="Resource_ikhr0"]
+script = ExtResource("5_jnwyr")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bshasrmjy63ri"
+
+[sub_resource type="Resource" id="Resource_nwdge"]
+script = ExtResource("5_jnwyr")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bshasrmjy63ri"
+
+[sub_resource type="Resource" id="Resource_i4ttg"]
+script = ExtResource("7_64fdg")
+metadata/_custom_type_script = "uid://bfg5prsn76qaj"
 
 [sub_resource type="Resource" id="Resource_jnwyr"]
 script = ExtResource("5_5dlre")
@@ -82,9 +160,9 @@ script = ExtResource("1_7dty6")
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 39.0
-offset_top = 52.0
+offset_top = 94.0
 offset_right = 827.0
-offset_bottom = 557.0
+offset_bottom = 599.0
 metadata/_edit_group_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
@@ -102,12 +180,12 @@ text = "(Improve in tracks by investing in different departments!)"
 
 [node name="TrackCategory" parent="VBoxContainer" instance=ExtResource("1_xjvdj")]
 layout_mode = 2
-Upgrades = Array[ExtResource("2_i6fpy")]([null, null, SubResource("Resource_yojl4"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+Upgrades = Array[ExtResource("2_i6fpy")]([SubResource("Resource_da2sp"), null, SubResource("Resource_yojl4"), SubResource("Resource_c7rff"), null, SubResource("Resource_c27l8"), SubResource("Resource_3cnpm"), null, null, SubResource("Resource_fmh6w"), null, null, SubResource("Resource_0g2k7"), null, null, null, SubResource("Resource_iunog"), null, SubResource("Resource_j78md"), null])
 
 [node name="TrackCategory2" parent="VBoxContainer" instance=ExtResource("1_xjvdj")]
 layout_mode = 2
 Category = 1
-Upgrades = Array[ExtResource("2_i6fpy")]([SubResource("Resource_oei07"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+Upgrades = Array[ExtResource("2_i6fpy")]([SubResource("Resource_6v5x1"), null, SubResource("Resource_c3m2p"), null, SubResource("Resource_eamjb"), null, null, SubResource("Resource_xo6vh"), null, SubResource("Resource_jindf"), null, SubResource("Resource_ikhr0"), null, null, null, SubResource("Resource_nwdge"), null, null, null, SubResource("Resource_i4ttg")])
 
 [node name="TrackCategory3" parent="VBoxContainer" instance=ExtResource("1_xjvdj")]
 layout_mode = 2

@@ -10,6 +10,10 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	Finder.GetGame().AddMoney(Amount)
 	Jukebox.PlayPickupSFX()
+	if Finder.GetGame().bGainHealthWhenMoneyPickedUp:
+		for worker in Finder.GetWorkerGroup().get_children():
+			worker.Heal(2)
+			
 	queue_free()
 
 

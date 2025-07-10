@@ -13,6 +13,9 @@ var SubStatTeamHealth : Resource
 var SubStateTeamSpeed : Resource
 var SubStatTeamDamage : Resource
 var SubStatTeamExperience : Resource
+var SubStatTeamContactDamage : Resource
+var SubStatTeamProjectileSpeed : Resource
+
 
 var Money = 10
 
@@ -24,6 +27,11 @@ var bHealOnLevelup = false
 var bExtraBounce = false
 var bExtraPenetration = false
 var bBonusDamage = false
+var bInvulnerabilityChance = false
+var bDodgeChance = false
+var bStunChance = false
+var bGainExperienceOnHit = false
+var bGainHealthWhenMoneyPickedUp = false
 
 
 func SetTimer(amount):
@@ -64,6 +72,14 @@ func Setup():
 	SubStatTeamExperience = SubStatResourceData.new()
 	SubStatTeamExperience.StatResourceRef = load("res://Content/Stats/TEAM_EXPERIENCE.tres")
 	SubStatTeamExperience.Init()
+	
+	SubStatTeamContactDamage = SubStatResourceData.new()
+	SubStatTeamContactDamage.StatResourceRef = load("res://Content/Stats/TEAM_CONTACT_DAMAGE.tres")
+	SubStatTeamContactDamage.Init()
+	
+	SubStatTeamProjectileSpeed = SubStatResourceData.new()
+	SubStatTeamProjectileSpeed.StatResourceRef = load("res://Content/Stats/TEAM_PROJECTILE_SPEED.tres")
+	SubStatTeamProjectileSpeed.Init()
 	
 func OnTeamHealthUpdated(value):
 	var workers = Finder.GetWorkerGroup()

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bla0xgxia3i86" path="res://Scripts/UI/RerollButton.gd" id="1_jhcih"]
 [ext_resource type="PackedScene" uid="uid://bbf88e2kibbpj" path="res://Prefabs/UI/MoneyUI.tscn" id="2_eva6c"]
 
-[node name="Button" type="Button"]
+[node name="Button" type="Button" groups=["Reroll"]]
 process_mode = 3
 custom_minimum_size = Vector2(221, 56)
 offset_right = 221.0

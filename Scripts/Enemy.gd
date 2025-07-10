@@ -9,6 +9,8 @@ var Direction = Vector2.ZERO
 @export var EXPToDrop = 10
 @export var MoneyDropChance = 2.0
 
+var bIsStunned = false
+
 var Velocity=  Vector2.ZERO
 func _ready() -> void:
 	$HealthComponent.OnDeath.connect(OnDeath)
@@ -26,6 +28,13 @@ func OnTakeDamage(amount):
 	instance.data = data
 	Finder.GetEffectGroup().add_child(instance)
 	Jukebox.PlaySFX(load("res://Audio/SFX/hit.wav"))
+	
+	if Finder.GetGame().bStunChance:
+		var result = randi() % 100
+		if result <= 5:
+			bIsStunned = true
+			$StunTimer.start()
+			modulate = Color.SKY_BLUE
 	
 func OnDeath():
 	Helper.DropEXPOrb(EXPToDrop, global_position)
@@ -45,6 +54,9 @@ func OnDeath():
 	queue_free()
 	
 func _process(delta: float) -> void:
+	if bIsStunned:
+		return
+		
 	Velocity = Vector2.ZERO
 	Velocity += Direction * Speed * delta
 	$Sprite2D.flip_h = Direction.x <= 0
@@ -66,3 +78,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area is BaseProjectile:
 		TakeDamage(area.Damage)
 		area.Hit()
+
+
+func _on_stun_timer_timeout() -> void:
+	bIsStunned = false
+	modulate = Color.WHITE
