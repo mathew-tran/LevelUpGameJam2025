@@ -193,6 +193,7 @@ offset_left = 87.0
 offset_top = 94.0
 offset_right = 875.0
 offset_bottom = 599.0
+theme_override_constants/separation = 20
 metadata/_edit_group_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
