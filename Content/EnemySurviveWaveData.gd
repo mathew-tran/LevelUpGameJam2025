@@ -9,7 +9,7 @@ class_name EnemySurviveWaveData
 @export var WaveFormation : EnemyWaveData.WAVE_TYPE
 func CreateEnemies():
 		Finder.GetGame().SetTimer(SurviveTimeLimit)
-		
+		Jukebox.ChangeFightMusic(load("res://Audio/Music/BattleSong2 (1).ogg"))
 		while Finder.GetGame().IsTimerDone() == false:
 			var index = 0
 			await Finder.GetGame().get_tree().create_timer(PollTime).timeout

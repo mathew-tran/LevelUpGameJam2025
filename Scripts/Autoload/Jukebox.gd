@@ -92,6 +92,10 @@ func PlayPickupSFX():
 func PlayEnemyDeathSFX():
 	$EnemyDeath.pitch_scale = randf_range(1.0, 1.3)
 	$EnemyDeath.play()
+	
+func PlayPlayerDeathSFX():
+	$PlayerDeath.pitch_scale = randf_range(1.0, 1.3)
+	$PlayerDeath.play()
 
 func PlayerHurtSFX():
 	$PlayerHurt.pitch_scale = randf_range(1.0, 1.3)

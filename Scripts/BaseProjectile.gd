@@ -25,6 +25,8 @@ func Hit():
 		queue_free()
 	else:
 		Penetration -= 1
+		if Finder.GetGame().bExtraPenetration:
+			Damage *= 1.5
 		
 func _on_live_timer_timeout() -> void:
 	queue_free()

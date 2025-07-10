@@ -1,12 +1,17 @@
-[gd_scene load_steps=16 format=3 uid="uid://dwxtp5avlfbub"]
+[gd_scene load_steps=26 format=3 uid="uid://dwxtp5avlfbub"]
 
 [ext_resource type="Script" uid="uid://dvllkpq7nonc8" path="res://Scripts/UI/TracksUI.gd" id="1_7dty6"]
 [ext_resource type="PackedScene" uid="uid://vb2kwbwkbeps" path="res://Prefabs/UI/Tracks/TrackCategory.tscn" id="1_xjvdj"]
 [ext_resource type="Script" uid="uid://cr6vuqnsiug53" path="res://Content/TrackUpgradeData.gd" id="2_i6fpy"]
 [ext_resource type="Script" uid="uid://60nui5865u0y" path="res://Content/TrackUpgradeTypes/TrackUpgradeBaseAttack.gd" id="4_oei07"]
+[ext_resource type="Script" uid="uid://b5d6t7yimipkx" path="res://Content/TrackUpgradeTypes/TrackUpgradeGainHealOnLevelup.gd" id="5_5dlre"]
 [ext_resource type="Script" uid="uid://cp2r2qun10u1j" path="res://Content/TrackUpgradeTypes/TrackUpgradeGainExplodeOnDeath.gd" id="5_6dvx0"]
 [ext_resource type="Script" uid="uid://3reikkrh7078" path="res://Content/TrackUpgradeTypes/TrackUpgradeBaseExperience.gd" id="5_yojl4"]
+[ext_resource type="Script" uid="uid://br5xo1nh65rm8" path="res://Content/TrackUpgradeTypes/TrackUpgradeGainExtraBounce.gd" id="6_7pwmq"]
 [ext_resource type="Script" uid="uid://b2ls5u6lxuyb3" path="res://Content/TrackUpgradeTypes/TrackUpgradeGainMagnet.gd" id="6_dtp4c"]
+[ext_resource type="Script" uid="uid://chvhe2idf4mrt" path="res://Content/TrackUpgradeTypes/TrackUpgradeGainBonusDamage.gd" id="7_gse3p"]
+[ext_resource type="Script" uid="uid://dfv8adswpg0d8" path="res://Content/TrackUpgradeTypes/TrackUpgradeGainExtraPenetration.gd" id="7_ye3a6"]
+[ext_resource type="Script" uid="uid://v4dsab1xpn21" path="res://Content/TrackUpgradeTypes/TrackUpgradeGainShootOnAttacked.gd" id="8_fme0h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6fpy"]
 bg_color = Color(0, 0, 0, 1)
@@ -20,6 +25,22 @@ metadata/_custom_type_script = "uid://60nui5865u0y"
 script = ExtResource("4_oei07")
 Amount = 100.0
 metadata/_custom_type_script = "uid://60nui5865u0y"
+
+[sub_resource type="Resource" id="Resource_jnwyr"]
+script = ExtResource("5_5dlre")
+metadata/_custom_type_script = "uid://b5d6t7yimipkx"
+
+[sub_resource type="Resource" id="Resource_qngum"]
+script = ExtResource("6_7pwmq")
+metadata/_custom_type_script = "uid://br5xo1nh65rm8"
+
+[sub_resource type="Resource" id="Resource_ovivv"]
+script = ExtResource("7_gse3p")
+metadata/_custom_type_script = "uid://chvhe2idf4mrt"
+
+[sub_resource type="Resource" id="Resource_64fdg"]
+script = ExtResource("7_ye3a6")
+metadata/_custom_type_script = "uid://dfv8adswpg0d8"
 
 [sub_resource type="Resource" id="Resource_7pwmq"]
 script = ExtResource("5_yojl4")
@@ -38,6 +59,10 @@ metadata/_custom_type_script = "uid://cp2r2qun10u1j"
 script = ExtResource("5_yojl4")
 Amount = 10.0
 metadata/_custom_type_script = "uid://3reikkrh7078"
+
+[sub_resource type="Resource" id="Resource_gse3p"]
+script = ExtResource("8_fme0h")
+metadata/_custom_type_script = "uid://v4dsab1xpn21"
 
 [sub_resource type="Resource" id="Resource_fme0h"]
 script = ExtResource("5_yojl4")
@@ -87,12 +112,12 @@ Upgrades = Array[ExtResource("2_i6fpy")]([SubResource("Resource_oei07"), null, n
 [node name="TrackCategory3" parent="VBoxContainer" instance=ExtResource("1_xjvdj")]
 layout_mode = 2
 Category = 2
-Upgrades = Array[ExtResource("2_i6fpy")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+Upgrades = Array[ExtResource("2_i6fpy")]([null, SubResource("Resource_jnwyr"), null, null, null, null, SubResource("Resource_qngum"), null, null, null, null, SubResource("Resource_ovivv"), null, null, SubResource("Resource_64fdg"), null, null, null, null, null])
 
 [node name="TrackCategory4" parent="VBoxContainer" instance=ExtResource("1_xjvdj")]
 layout_mode = 2
 Category = 3
-Upgrades = Array[ExtResource("2_i6fpy")]([SubResource("Resource_7pwmq"), null, null, null, SubResource("Resource_5dlre"), null, null, null, SubResource("Resource_ye3a6"), null, null, null, null, SubResource("Resource_6dvx0"), null, null, null, null, null, SubResource("Resource_fme0h")])
+Upgrades = Array[ExtResource("2_i6fpy")]([SubResource("Resource_7pwmq"), null, null, null, SubResource("Resource_5dlre"), null, null, null, SubResource("Resource_ye3a6"), null, null, null, null, SubResource("Resource_6dvx0"), null, null, SubResource("Resource_gse3p"), null, null, SubResource("Resource_fme0h")])
 
 [node name="Button" type="Button" parent="."]
 custom_minimum_size = Vector2(200, 100)

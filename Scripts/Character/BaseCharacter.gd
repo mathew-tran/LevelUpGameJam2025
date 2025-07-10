@@ -82,7 +82,17 @@ func OnTakeDamage(_amount):
 	$Healthbar.value = float($HealthComponent.CurrentHealth) / float($HealthComponent.MaxHealth)
 	if _amount > 0:
 		Jukebox.PlayerHurtSFX()
-		
+	
+	if Finder.GetGame().bShootOnHurt:
+		if _amount > 0:
+			var result = randi() % 100
+			if result <= 10:
+				_on_shoot_timer_timeout()
+				Speak("!!!")
+
+func Heal(amount):
+	$HealthComponent.Heal(amount)
+	
 func OnDeath():
 	OnCharacterDeath.emit()
 	
@@ -107,7 +117,7 @@ func OnDeath():
 	for x in range(0, CharacterLevel + 6):
 		var spawnPosition = Helper.GetPositionAroundPoint(global_position, 400, increments * x)
 		Helper.DropEXPOrbMoveFromXtoY(expAmount, global_position, spawnPosition, .4)
-	Jukebox.PlaySFX(load("res://Audio/SFX/levelup25-remove.wav"))
+	Jukebox.PlayPlayerDeathSFX()
 
 	queue_free()
 
@@ -185,6 +195,8 @@ func _on_shoot_timer_timeout() -> void:
 			var enemy = Finder.GetClosestEnemy(global_position)
 			if enemy:
 				for angle in GetBulletAngles(Spread):
+					if is_instance_valid(SubStatDamage) == false:
+						return
 					var instance = CharacterDataRef.Projectile.instantiate()
 					instance.Direction = (enemy.global_position - global_position).normalized()
 					instance.Speed = ProjectileSpeed
@@ -194,6 +206,14 @@ func _on_shoot_timer_timeout() -> void:
 					instance.Damage = Finder.GetGame().SubStatTeamDamage.Get().GetValue() * (SubStatDamage.Get().GetValue() + randi_range(0, 4))
 					instance.Penetration = Penetration
 					instance.Bounces += Bounces
+					if Finder.GetGame().bExtraBounce:
+						if Bounces > 0:
+							instance.Bounces += 1
+							
+					if Finder.GetGame().bBonusDamage:
+						var result = randi() % 100
+						if result <= 10:
+							instance.Damage *= 1.5
 					Finder.GetBulletsGroup().add_child(instance)
 			if delay > 0:
 				$ShootTimer.stop()

@@ -41,8 +41,12 @@ func _ready() -> void:
 func OnGameOver():
 	if visible:
 		Close()
+		
 func OnLevelup():
 	Setup()
+	if Finder.GetGame().bHealOnLevelup:
+		for child in Finder.GetWorkerGroup().get_children():
+			child.Heal(2)
 
 func Setup():
 	OnLevelUpMenuOpened.emit()

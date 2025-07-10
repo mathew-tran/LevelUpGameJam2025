@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t4dgywe37rmp"
-path="res://.godot/imported/Levelup25-titlemap.png-e86e63a178a7a23a5e03fc7089622d55.ctex"
+uid="uid://e68yjji2bpke"
+path="res://.godot/imported/Levelup25-titlemapd.webp-39a16dac56c625bf898f0a98238359de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Tilemaps/Levelup25-titlemap.png"
-dest_files=["res://.godot/imported/Levelup25-titlemap.png-e86e63a178a7a23a5e03fc7089622d55.ctex"]
+source_file="res://Art/tilemap/Levelup25-titlemapd.webp"
+dest_files=["res://.godot/imported/Levelup25-titlemapd.webp-39a16dac56c625bf898f0a98238359de.ctex"]
 
 [params]
 

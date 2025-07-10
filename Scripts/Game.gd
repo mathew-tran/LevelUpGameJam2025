@@ -18,6 +18,12 @@ var Money = 10
 
 var bCanDropMagnet = false
 var bExplodeOnDeath = false
+var bShootOnHurt = false
+
+var bHealOnLevelup = false
+var bExtraBounce = false
+var bExtraPenetration = false
+var bBonusDamage = false
 
 
 func SetTimer(amount):

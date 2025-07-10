@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cye8k8oevgpyr"]
+[gd_scene load_steps=10 format=3 uid="uid://cye8k8oevgpyr"]
 
 [ext_resource type="Script" uid="uid://dpcwu8b7cjfy6" path="res://Scripts/Autoload/Jukebox.gd" id="1_c6xn0"]
 [ext_resource type="AudioStream" uid="uid://d1sx8f64p3ws7" path="res://Audio/Music/level25-battle (1).ogg" id="1_ovhlw"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://dj7dgs5sa8knp" path="res://Audio/SFX/pickup.wav" id="6_r80sq"]
 [ext_resource type="AudioStream" uid="uid://dprwa505tt07n" path="res://Audio/SFX/playerhurt.wav" id="7_5hmi3"]
 [ext_resource type="AudioStream" uid="uid://vlw6xc0iqwyn" path="res://Audio/SFX/enemydeath.wav" id="7_bpc3e"]
+[ext_resource type="AudioStream" uid="uid://bbbwecukbjke4" path="res://Audio/SFX/Scream.wav" id="8_bpc3e"]
 
 [node name="Jukebox" type="AudioStreamPlayer"]
 process_mode = 3
@@ -36,6 +37,10 @@ volume_db = -10.0
 [node name="EnemyDeath" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_bpc3e")
 volume_db = 3.0
+
+[node name="PlayerDeath" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_bpc3e")
+volume_db = 20.0
 
 [node name="PlayerHurt" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_5hmi3")

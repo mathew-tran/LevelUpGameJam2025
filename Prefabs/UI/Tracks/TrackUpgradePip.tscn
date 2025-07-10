@@ -19,7 +19,7 @@ script = ExtResource("2_7u4uk")
 
 [node name="Panel" type="Panel" parent="."]
 visible = false
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(200, 100)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
