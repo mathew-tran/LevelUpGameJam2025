@@ -38,6 +38,10 @@ var bGainHealthWhenMoneyPickedUp = false
 var bBerserkModeActive = false
 var bInvincibleModeActive = false
 var bDoubleDamageModeActive = false
+var bStunModeActive = false
+var bStunExtraDamage = true
+
+var bExtraMoneyDrop = false
 
 func BroadcastEnemyKilled():
 	EnemiesKilled += 1

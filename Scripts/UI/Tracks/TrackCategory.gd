@@ -10,9 +10,15 @@ var Index = 0
 var MaxIndex = -1
 func _ready() -> void:
 	Finder.GetGame().OnInvestDepartment.connect(OnInvestDepartment)
+	Finder.GetGame().OnMoneyUpdate.connect(OnMoneyUpdate)
 	$Label.text = CharacterData.DEPARTMENT.keys()[Category]
 	$Level.text = str(Index) 
+	$Level/Button.Update()
 	Update()
+	
+func OnMoneyUpdate():
+	$Level/Button.Update()
+
 	
 func OnInvestDepartment(department):
 	if department == Category:
@@ -23,6 +29,8 @@ func Increment():
 		UpgradeContainer.get_child(Index).Activate()
 		Index += 1
 		$Level.text = str(Index) 
+		if Index >= MaxIndex:
+			$Level/Button.visible = false
 		
 func Update():
 	for child in UpgradeContainer.get_children():
@@ -38,3 +46,9 @@ func Update():
 		instance.Setup(upgrade, CharacterData.GetDepartmentColor(Category))
 	
 	MaxIndex = len(Upgrades)
+
+
+func _on_button_button_up() -> void:
+	Finder.GetGame().RemoveMoney($Level/Button.UpgradeCost)
+	Jukebox.PlaySFXMenu(load("res://Audio/SFX/levelup25-purchase.wav"))
+	Increment()

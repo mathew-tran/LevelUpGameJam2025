@@ -18,6 +18,9 @@ func OnEnemiesKilled():
 	if Finder.GetGame().bDoubleDamageModeActive:
 		ApplyBuffToRandomWorker(amountKilled, load("res://Prefabs/Buffs/DamageBuff.tscn"), 200)
 		
+	if Finder.GetGame().bStunModeActive:
+		ApplyBuffToRandomWorker(amountKilled, load("res://Prefabs/Buffs/StunBuff.tscn"), 125)
+		
 func ApplyBuffToRandomWorker(amount, bufScene, killCount):
 	if amount != 0 and amount % killCount == 0:
 		var childToChoose = null

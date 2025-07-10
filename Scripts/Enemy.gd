@@ -30,23 +30,28 @@ func OnTakeDamage(amount):
 	Jukebox.PlaySFX(load("res://Audio/SFX/hit.wav"))
 	
 	if Finder.GetGame().bStunChance:
-		var result = randi() % 100
-		if result <= 5:
-			bIsStunned = true
-			$StunTimer.start()
-			modulate = Color.SKY_BLUE
+		if Helper.Roll(5, 100):
+			Stun()
+	
+func Stun():
+	bIsStunned = true
+	$StunTimer.start()
+	modulate = Color.SKY_BLUE
 	
 func OnDeath():
 	Helper.DropEXPOrb(EXPToDrop, global_position)
-	var result = randi() % 100
-	if result <= MoneyDropChance:
+	if Helper.Roll(MoneyDropChance, 100):
 		var moneyInstance = load("res://Prefabs/Pickups/Money.tscn").instantiate()
 		moneyInstance.global_position = Helper.GetRandomPositionAroundPoint(global_position,100)
 		Finder.GetPickupGroup().call_deferred("add_child", moneyInstance)
+		if Finder.GetGame().bExtraMoneyDrop:
+			if Helper.Roll(50, 100):
+				var newMoney = load("res://Prefabs/Pickups/Money.tscn").instantiate()
+				newMoney.global_position = Helper.GetRandomPositionAroundPoint(global_position,100)
+				Finder.GetPickupGroup().call_deferred("add_child", newMoney)
 		
 	if Finder.GetGame().bCanDropMagnet:
-		result = randi() % 200
-		if result <= 1:
+		if Helper.Roll(1, 200):
 			var moneyInstance = load("res://Prefabs/Pickups/Magnet.tscn").instantiate()
 			moneyInstance.global_position = Helper.GetRandomPositionAroundPoint(global_position,100)
 			Finder.GetPickupGroup().call_deferred("add_child", moneyInstance)
@@ -77,9 +82,22 @@ func TakeDamage(amount):
 	
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area is BaseProjectile:
-		TakeDamage(area.Damage)
-		area.Hit()
 
+		if Finder.GetGame().bStunExtraDamage and bIsStunned:
+			TakeDamage(area.Damage * 2.5)
+			RemoveStun()
+		else:
+			TakeDamage(area.Damage)
+			
+
+		area.Hit()
+		if area.bStunEnemy:
+			Stun()
+
+func RemoveStun():
+	if bIsStunned:
+		$StunTimer.stop()
+		_on_stun_timer_timeout()
 
 func _on_stun_timer_timeout() -> void:
 	bIsStunned = false

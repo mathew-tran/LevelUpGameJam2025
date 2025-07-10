@@ -40,3 +40,8 @@ func GetPositionAroundPoint(pos, distance, rotation):
 	var direction = Vector2.LEFT
 	return pos + direction.rotated(deg_to_rad(rotation)) * distance
 			
+func Roll(chance, pool):
+	var result = randi() % pool
+	if result <= 0:
+		return false
+	return result <= chance

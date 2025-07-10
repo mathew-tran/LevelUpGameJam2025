@@ -7,6 +7,7 @@ var Speed = 5
 var Damage = 3
 var Penetration = 0
 
+var bStunEnemy = false
 @export var Bounces = 0
 
 func _ready():

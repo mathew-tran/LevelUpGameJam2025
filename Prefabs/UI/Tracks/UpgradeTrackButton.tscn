@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://cboymdjg4dycn"]
+
+[ext_resource type="PackedScene" uid="uid://bbf88e2kibbpj" path="res://Prefabs/UI/MoneyUI.tscn" id="1_2r7ja"]
+[ext_resource type="Script" uid="uid://7byfis3rlhc6" path="res://Scripts/UI/Tracks/UpgradeTrackButton.gd" id="1_k4teh"]
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(49, 25)
+offset_left = -41.0
+offset_top = -1.0
+offset_right = 8.0
+offset_bottom = 24.0
+script = ExtResource("1_k4teh")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 3.0
+offset_right = 78.0
+offset_bottom = 43.0
+scale = Vector2(0.5, 0.5)
+
+[node name="HBoxContainer" parent="HBoxContainer2" instance=ExtResource("1_2r7ja")]
+layout_mode = 2
+MoneyUIType = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -12.0
+offset_top = 1.0
+offset_right = 28.0
+offset_bottom = 24.0
+text = "+"
+horizontal_alignment = 1

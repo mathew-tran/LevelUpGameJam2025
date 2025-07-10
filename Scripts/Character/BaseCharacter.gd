@@ -35,6 +35,8 @@ var ShootType : CharacterData.SHOOT_TYPE
 
 var bDoubleDamage = false
 
+var StunChance = 0
+
 func SayDeathPhrase():
 	Speak(CharacterDataRef.DeathPhrase.pick_random())
 	
@@ -87,15 +89,13 @@ func OnTakeDamage(_amount):
 	
 	if Finder.GetGame().bShootOnHurt:
 		if _amount > 0:
-			var result = randi() % 100
-			if result <= 10:
+			if Helper.Roll(10, 100):
 				_on_shoot_timer_timeout()
 				Speak("!!!")
 				
 	if Finder.GetGame().bInvulnerabilityChance:
 		if _amount > 0:
-			var result = randi() % 100
-			if result <= 10:
+			if Helper.Roll(10, 100):
 				Speak("!!!")
 				GiveTempInvincibility(.5)
 				
@@ -219,13 +219,15 @@ func _on_shoot_timer_timeout() -> void:
 					instance.Damage = Finder.GetGame().SubStatTeamDamage.Get().GetValue() * (SubStatDamage.Get().GetValue() + randi_range(0, 4))
 					instance.Penetration = Penetration
 					instance.Bounces += Bounces
+					
+					if Helper.Roll(StunChance, 100):
+						instance.bStunEnemy = true
 					if Finder.GetGame().bExtraBounce:
 						if Bounces > 0:
 							instance.Bounces += 1
 							
 					if Finder.GetGame().bBonusDamage:
-						var result = randi() % 100
-						if result <= 10:
+						if Helper.Roll(10, 100):
 							instance.Damage *= 1.5
 					if bDoubleDamage:
 						instance.Damage *= 2
@@ -254,8 +256,7 @@ func _process(delta: float) -> void:
 			var bTakeDamage = true
 			if area is Enemy:
 				if Finder.GetGame().bDodgeChance:
-					var result = randi() % 100
-					if result <= 10:
+					if Helper.Roll(10, 100):
 						bTakeDamage = false
 						Speak("NICE TRY!")
 				if bTakeDamage:
