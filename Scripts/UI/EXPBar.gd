@@ -34,6 +34,13 @@ func _process(delta: float) -> void:
 			MaxEXP *= 1.2
 			if MaxEXP >= 4000:
 				MaxEXP = 4000
+			if Level >= 80:
+				MaxEXP = 6000
+			if Level >= 100:
+				MaxEXP = 8000
+			if Level >= 120:
+				MaxEXP = 10000
+				
 			Level += 1
 			OnLevelUp.emit()
 		Update()
