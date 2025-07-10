@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="EnemySurviveWaveData" load_steps=7 format=3 uid="uid://dghfofd5kqinn"]
+
+[ext_resource type="Script" uid="uid://bqsegjg1rqs3m" path="res://Content/EnemyWavePairingData.gd" id="1_orgo7"]
+[ext_resource type="Script" uid="uid://cx61gu3iskisd" path="res://Content/EnemySurviveWaveData.gd" id="2_f88ra"]
+
+[sub_resource type="Resource" id="Resource_rn2xj"]
+script = ExtResource("1_orgo7")
+EnemyTypeToSpawn = 4
+AmountToSpawn = 20
+metadata/_custom_type_script = "uid://bqsegjg1rqs3m"
+
+[sub_resource type="Resource" id="Resource_4egcs"]
+script = ExtResource("1_orgo7")
+EnemyTypeToSpawn = 2
+AmountToSpawn = 3
+metadata/_custom_type_script = "uid://bqsegjg1rqs3m"
+
+[sub_resource type="Resource" id="Resource_bqj52"]
+script = ExtResource("1_orgo7")
+EnemyTypeToSpawn = 3
+AmountToSpawn = 1
+metadata/_custom_type_script = "uid://bqsegjg1rqs3m"
+
+[sub_resource type="Resource" id="Resource_pjvjg"]
+script = ExtResource("1_orgo7")
+EnemyTypeToSpawn = 0
+AmountToSpawn = 75
+metadata/_custom_type_script = "uid://bqsegjg1rqs3m"
+
+[resource]
+script = ExtResource("2_f88ra")
+SurviveTimeLimit = 30.0
+PollTime = 3
+EnemyLimit = 100
+EnemiesToSpawn = Array[ExtResource("1_orgo7")]([SubResource("Resource_rn2xj"), SubResource("Resource_4egcs"), SubResource("Resource_bqj52"), SubResource("Resource_pjvjg")])
+WaveFormation = 0
+metadata/_custom_type_script = "uid://cx61gu3iskisd"

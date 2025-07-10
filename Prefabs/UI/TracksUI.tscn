@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://dwxtp5avlfbub"]
+[gd_scene load_steps=65 format=3 uid="uid://dwxtp5avlfbub"]
 
 [ext_resource type="Script" uid="uid://dvllkpq7nonc8" path="res://Scripts/UI/TracksUI.gd" id="1_7dty6"]
 [ext_resource type="PackedScene" uid="uid://vb2kwbwkbeps" path="res://Prefabs/UI/Tracks/TrackCategory.tscn" id="1_xjvdj"]
@@ -23,6 +23,7 @@
 [ext_resource type="Script" uid="uid://dtvnvw661ko6w" path="res://Content/TrackUpgradeTypes/TrackUpgradeBaseHealth.gd" id="8_nwdge"]
 [ext_resource type="Script" uid="uid://bndw1xvun2g4p" path="res://Content/TrackUpgradeTypes/TrackUpgradeBerserkMode.gd" id="9_i4ttg"]
 [ext_resource type="Script" uid="uid://cydakddlflwpa" path="res://Content/TrackUpgradeTypes/TrackUpgradeGainHealthOnMoneyPickup.gd" id="10_jindf"]
+[ext_resource type="Script" uid="uid://tvca6t5jmgav" path="res://Content/TrackUpgradeTypes/TrackUpgradeExtraMoneyOnSkip.gd" id="12_0g2k7"]
 [ext_resource type="Script" uid="uid://cshu8ljt8yifj" path="res://Content/TrackUpgradeTypes/TrackUpgradeInvincibleMode.gd" id="15_eamjb"]
 [ext_resource type="Script" uid="uid://by822qjgkxcwt" path="res://Content/TrackUpgradeTypes/TrackUpgradeGainHawkMode.gd" id="19_3cnpm"]
 [ext_resource type="Script" uid="uid://ix0eo3a2mqun" path="res://Content/TrackUpgradeTypes/TrackUpgradeGainExtraMoneyOnEnemyKill.gd" id="22_c27l8"]
@@ -76,6 +77,10 @@ metadata/_custom_type_script = "uid://dtvnvw661ko6w"
 [sub_resource type="Resource" id="Resource_j78md"]
 script = ExtResource("10_jindf")
 metadata/_custom_type_script = "uid://cydakddlflwpa"
+
+[sub_resource type="Resource" id="Resource_4qc8j"]
+script = ExtResource("12_0g2k7")
+metadata/_custom_type_script = "uid://tvca6t5jmgav"
 
 [sub_resource type="Resource" id="Resource_6v5x1"]
 script = ExtResource("4_oei07")
@@ -211,7 +216,7 @@ text = "(Improve in tracks by investing in different departments!)"
 
 [node name="TrackCategory" parent="VBoxContainer" instance=ExtResource("1_xjvdj")]
 layout_mode = 2
-Upgrades = Array[ExtResource("2_i6fpy")]([SubResource("Resource_da2sp"), null, SubResource("Resource_yojl4"), SubResource("Resource_c7rff"), null, SubResource("Resource_c27l8"), SubResource("Resource_3cnpm"), null, null, SubResource("Resource_fmh6w"), SubResource("Resource_jpsg2"), null, SubResource("Resource_0g2k7"), null, null, null, SubResource("Resource_iunog"), null, SubResource("Resource_j78md"), null, null, null, null, null, null, null, null, null, null, null])
+Upgrades = Array[ExtResource("2_i6fpy")]([SubResource("Resource_da2sp"), null, SubResource("Resource_yojl4"), SubResource("Resource_c7rff"), null, SubResource("Resource_c27l8"), SubResource("Resource_3cnpm"), null, null, SubResource("Resource_fmh6w"), SubResource("Resource_jpsg2"), null, SubResource("Resource_0g2k7"), null, null, null, SubResource("Resource_iunog"), null, SubResource("Resource_j78md"), null, null, SubResource("Resource_4qc8j"), null, null, null, null, null, null, null, null])
 
 [node name="TrackCategory2" parent="VBoxContainer" instance=ExtResource("1_xjvdj")]
 layout_mode = 2

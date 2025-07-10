@@ -42,6 +42,7 @@ var bStunModeActive = false
 var bStunExtraDamage = true
 
 var bExtraMoneyDrop = false
+var bExtraMoneyOnSkip = false
 
 func BroadcastEnemyKilled():
 	EnemiesKilled += 1
