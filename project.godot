@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="levelupjam"
-run/main_scene="uid://cq0pg18wpqef1"
+run/main_scene="uid://bu4n5thl27cyp"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Finder="*res://Scripts/Autoload/Finder.gd"
 Helper="*res://Scripts/Autoload/Helper.gd"
 Jukebox="*res://Prefabs/Autoload/Jukebox.tscn"
+GameData="*res://Scripts/Autoload/GameData.gd"
 
 [display]
 

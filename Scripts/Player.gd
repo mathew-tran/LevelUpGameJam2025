@@ -8,6 +8,7 @@ var LastKnownPosition = Vector2.ZERO
 
 
 func _ready() -> void:
+	GameData.ChosenCharacter.Create()
 	UpdateBody()
 	
 func UpdateBody():

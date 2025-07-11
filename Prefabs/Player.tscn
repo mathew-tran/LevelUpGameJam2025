@@ -1,8 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1demcer6jenb"]
+[gd_scene load_steps=5 format=3 uid="uid://d1demcer6jenb"]
 
 [ext_resource type="Script" uid="uid://bxjtbewgs4xrw" path="res://Scripts/Player.gd" id="1_b43ah"]
-[ext_resource type="PackedScene" uid="uid://uf5h3c2dv0a2" path="res://Prefabs/Characters/BaseCharacter.tscn" id="1_x3d5u"]
-[ext_resource type="Resource" uid="uid://octutniwfiqg" path="res://Content/CharacterPools/Common/Annette.tres" id="3_b43ah"]
 
 [sub_resource type="Animation" id="Animation_shmu5"]
 length = 0.001
@@ -45,9 +43,6 @@ _data = {
 script = ExtResource("1_b43ah")
 
 [node name="Workers" type="Node2D" parent="." groups=["WorkerGroup"]]
-
-[node name="RigidBody2D" parent="Workers" instance=ExtResource("1_x3d5u")]
-CharacterDataRef = ExtResource("3_b43ah")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

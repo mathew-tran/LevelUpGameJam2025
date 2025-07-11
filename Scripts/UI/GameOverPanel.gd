@@ -7,3 +7,7 @@ func OnGameOver():
 	visible = true
 func _on_button_button_up() -> void:
 	get_tree().reload_current_scene()
+
+
+func _on_char_select_button_button_up() -> void:
+	get_tree().change_scene_to_packed(load("res://Prefabs/UI/CharacterSelect/CharacterSelectScreen.tscn"))

@@ -49,7 +49,6 @@ func GetNextWeakUpgrade():
 	
 func AdjustHealth():
 	$HealthComponent.MaxHealth = BaseHealthValue * Finder.GetGame().SubStatTeamHealth.Get().GetValue()
-	print($HealthComponent.MaxHealth)
 	OnTakeDamage(0)
 	
 func _ready() -> void:

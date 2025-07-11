@@ -30,7 +30,6 @@ func _process(delta: float) -> void:
 			$AudioStreamPlayer2D.play()
 			$SpeechTimer.start()
 		$Label.visible_characters = lerp(0, TextAmount, Progress)
-		print(Progress)
 		if Progress >= 1:
 			$FinishedSpeechTimer.start()
 			$AudioStreamPlayer2D.stop()

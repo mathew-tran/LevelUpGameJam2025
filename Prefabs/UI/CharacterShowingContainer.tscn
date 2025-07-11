@@ -1,14 +1,33 @@
-[gd_scene load_steps=2 format=3 uid="uid://750jspop8us0"]
+[gd_scene load_steps=5 format=3 uid="uid://750jspop8us0"]
 
 [ext_resource type="Script" uid="uid://g3m2fr4g5as2" path="res://Scripts/UI/CharacterShowingContainer.gd" id="1_pjx2k"]
+[ext_resource type="PackedScene" uid="uid://cmnohjcebk0t7" path="res://Prefabs/UI/CharacterPip.tscn" id="1_xddqs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pjx2k"]
+
+[sub_resource type="Theme" id="Theme_p1r2u"]
+Panel/styles/panel = SubResource("StyleBoxFlat_pjx2k")
 
 [node name="CharacterShowingContainer" type="GridContainer"]
 offset_left = 17.0
 offset_top = 112.0
 offset_right = 102.0
 offset_bottom = 550.0
+theme = SubResource("Theme_p1r2u")
 theme_override_constants/h_separation = 15
 theme_override_constants/v_separation = 20
 columns = 2
 script = ExtResource("1_pjx2k")
 metadata/_edit_group_ = true
+
+[node name="TextureRect" parent="." instance=ExtResource("1_xddqs")]
+layout_mode = 2
+
+[node name="TextureRect2" parent="." instance=ExtResource("1_xddqs")]
+layout_mode = 2
+
+[node name="TextureRect3" parent="." instance=ExtResource("1_xddqs")]
+layout_mode = 2
+
+[node name="TextureRect4" parent="." instance=ExtResource("1_xddqs")]
+layout_mode = 2

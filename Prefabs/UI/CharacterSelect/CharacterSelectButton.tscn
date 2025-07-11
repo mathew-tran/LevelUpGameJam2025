@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://ciqmk26rjom28"]
+
+[ext_resource type="Script" uid="uid://xe5sxi2h5cn3" path="res://Scripts/UI/CharacterSelect/CharacterSelectButton.gd" id="1_mke1x"]
+[ext_resource type="Texture2D" uid="uid://gpfmgs0w15ie" path="res://Art/Character/Annette.png" id="1_yoirv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mke1x"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(96, 96)
+script = ExtResource("1_mke1x")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 96.0
+texture = ExtResource("1_yoirv")
+
+[node name="Panel" type="Panel" parent="."]
+show_behind_parent = true
+custom_minimum_size = Vector2(105, 105)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mke1x")
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

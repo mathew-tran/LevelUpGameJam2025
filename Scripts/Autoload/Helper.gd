@@ -13,6 +13,7 @@ func GetAllFilePaths(path: String) -> Array[String]:
 		else:
 			file_paths.append(file_path)
 		file_name = dir.get_next()
+	file_paths.sort()
 	return file_paths
 
 func DropEXPOrb(amount, position):

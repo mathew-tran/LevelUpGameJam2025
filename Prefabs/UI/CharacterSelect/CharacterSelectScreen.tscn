@@ -1,0 +1,150 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu4n5thl27cyp"]
+
+[ext_resource type="Script" uid="uid://cs02y81ql6h8b" path="res://Scripts/UI/CharacterSelect/CharacterSelectScreen.gd" id="1_3p0qi"]
+[ext_resource type="PackedScene" uid="uid://ciqmk26rjom28" path="res://Prefabs/UI/CharacterSelect/CharacterSelectButton.tscn" id="1_s1ndi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3p0qi"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="CharacterSelect" type="CanvasLayer"]
+script = ExtResource("1_3p0qi")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 63.0
+offset_top = -272.0
+offset_right = 533.0
+offset_bottom = -166.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "CHOOSE YOUR CHARACTER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_top = -194.0
+offset_right = 561.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 5
+
+[node name="Button" parent="GridContainer" instance=ExtResource("1_s1ndi")]
+layout_mode = 2
+
+[node name="Button2" parent="GridContainer" instance=ExtResource("1_s1ndi")]
+layout_mode = 2
+
+[node name="Button3" parent="GridContainer" instance=ExtResource("1_s1ndi")]
+layout_mode = 2
+
+[node name="Button4" parent="GridContainer" instance=ExtResource("1_s1ndi")]
+layout_mode = 2
+
+[node name="Button5" parent="GridContainer" instance=ExtResource("1_s1ndi")]
+layout_mode = 2
+
+[node name="Button6" parent="GridContainer" instance=ExtResource("1_s1ndi")]
+layout_mode = 2
+
+[node name="ChosenCharacter" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(96, 96)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -550.0
+offset_top = -136.0
+offset_right = -454.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Panel" type="Panel" parent="ChosenCharacter"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ChosenCharacter/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.5
+offset_top = -11.5
+offset_right = 26.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "EMPTY"
+
+[node name="ContinueButton" type="Button" parent="."]
+visible = false
+custom_minimum_size = Vector2(300, 80)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -100.0
+offset_right = 250.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "START WORKING!"
+
+[node name="CharacterInfo" type="VBoxContainer" parent="."]
+visible = false
+offset_left = 140.0
+offset_top = 184.0
+offset_right = 390.0
+offset_bottom = 293.0
+
+[node name="Name" type="Label" parent="CharacterInfo"]
+layout_mode = 2
+text = "Matt"
+
+[node name="Occupation" type="Label" parent="CharacterInfo"]
+layout_mode = 2
+text = "Occupation"
+
+[node name="Panel" type="Panel" parent="CharacterInfo"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3p0qi")
+
+[node name="Description" type="Label" parent="CharacterInfo"]
+layout_mode = 2
+text = "Description"
+
+[connection signal="button_up" from="ContinueButton" to="." method="_on_continue_button_button_up"]
