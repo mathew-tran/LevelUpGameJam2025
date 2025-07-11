@@ -7,7 +7,7 @@ func OnRoundUpdate(number, customText):
 	if customText != "":
 		$Label.text = customText
 	else:
-		$Label.text = "ROUND " + str(number)
+		$Label.text = "WAVE " + str(number)
 	visible = true
 	$AnimationPlayer.play("anim")
 	await $AnimationPlayer.animation_finished

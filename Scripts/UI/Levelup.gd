@@ -40,7 +40,7 @@ func GetCharacterCountString():
 func _enter_tree() -> void:
 	CharactersToUnlock = Helper.GetAllFilePaths("res://Content/CharacterPools/Common/")
 	CharactersToUnlock.shuffle()
-	HiddenMaxCharacterAmount = CharactersToUnlock.size()
+	HiddenMaxCharacterAmount = 6
 	
 func _ready() -> void:
 	Finder.GetEXPBar().OnLevelUp.connect(OnLevelup)
