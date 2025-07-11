@@ -17,7 +17,7 @@ shader_parameter/is_horizontal = false
 size = Vector2(43, 20)
 
 [node name="Money" type="Area2D"]
-collision_layer = 0
+collision_layer = 17
 collision_mask = 2
 script = ExtResource("1_sayey")
 

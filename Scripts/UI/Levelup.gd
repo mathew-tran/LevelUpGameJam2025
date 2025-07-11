@@ -18,7 +18,7 @@ var UpgradeableCharacters = []
 var CharactersToUnlock = []
 var CurrentCharacters =[]
 
-var MaxCharacterAmount = 3
+var MaxCharacterAmount = 2
 var HiddenMaxCharacterAmount = 0
 
 signal OnIncreaseCharacterAmount
@@ -50,6 +50,7 @@ func _ready() -> void:
 
 	
 func OnGameOver():
+	await get_tree().create_timer(.1).timeout
 	if visible:
 		Close()
 		

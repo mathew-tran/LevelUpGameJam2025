@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://uf5h3c2dv0a2"]
+[gd_scene load_steps=12 format=3 uid="uid://uf5h3c2dv0a2"]
 
 [ext_resource type="Script" uid="uid://cbqniscqsxqoo" path="res://Scripts/Character/BaseCharacter.gd" id="1_18plh"]
 [ext_resource type="Texture2D" uid="uid://cj0tuc0njq1l3" path="res://Art/Character/Mark.png" id="2_hanbv"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cv6pm1detf5ct" path="res://Prefabs/UI/AbilityBar.tscn" id="3_u6xj4"]
 [ext_resource type="Script" uid="uid://bd6c17ffm375y" path="res://Scripts/Components/HealthComponent.gd" id="4_fya0b"]
 [ext_resource type="PackedScene" uid="uid://bw4tawl36852h" path="res://Prefabs/UI/TalkBubble.tscn" id="6_u6xj4"]
+[ext_resource type="PackedScene" uid="uid://b05khr01365bq" path="res://Prefabs/PickupBubble.tscn" id="7_fya0b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8aybb"]
 bg_color = Color(0, 0, 0, 1)
@@ -73,6 +74,8 @@ visible = false
 position = Vector2(1, -52)
 
 [node name="Buffs" type="Node2D" parent="."]
+
+[node name="PickupBubble" parent="." instance=ExtResource("7_fya0b")]
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
 [connection signal="timeout" from="RegenTimer" to="." method="_on_regen_timer_timeout"]

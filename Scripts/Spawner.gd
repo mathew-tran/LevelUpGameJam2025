@@ -9,7 +9,7 @@ var CurrentWave : EnemyBaseWaveData
 func _ready() -> void:
 	Waves = Helper.GetAllFilePaths(WavesDirectory)
 	print(Waves)
-	await get_tree().create_timer(.3).timeout
+	await get_tree().create_timer(.5).timeout
 	SpawnNextWave()
 	
 func SpawnNextWave():

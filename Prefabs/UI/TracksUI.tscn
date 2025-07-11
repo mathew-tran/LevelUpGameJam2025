@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://dwxtp5avlfbub"]
+[gd_scene load_steps=90 format=3 uid="uid://dwxtp5avlfbub"]
 
 [ext_resource type="Script" uid="uid://dvllkpq7nonc8" path="res://Scripts/UI/TracksUI.gd" id="1_7dty6"]
 [ext_resource type="PackedScene" uid="uid://vb2kwbwkbeps" path="res://Prefabs/UI/Tracks/TrackCategory.tscn" id="1_xjvdj"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" uid="uid://dfv8adswpg0d8" path="res://Content/TrackUpgradeTypes/TrackUpgradeGainExtraPenetration.gd" id="7_ye3a6"]
 [ext_resource type="Script" uid="uid://e7vwmuen6anh" path="res://Content/TrackUpgradeTypes/TrackUpgradeFirstRerollFree.gd" id="8_c3m2p"]
 [ext_resource type="Script" uid="uid://v4dsab1xpn21" path="res://Content/TrackUpgradeTypes/TrackUpgradeGainShootOnAttacked.gd" id="8_fme0h"]
+[ext_resource type="Script" uid="uid://bsnhtdc5po0uc" path="res://Content/TrackUpgradeTypes/TrackUpgradeBasePickupRadius.gd" id="8_iunog"]
 [ext_resource type="Script" uid="uid://dtvnvw661ko6w" path="res://Content/TrackUpgradeTypes/TrackUpgradeBaseHealth.gd" id="8_nwdge"]
 [ext_resource type="Script" uid="uid://bndw1xvun2g4p" path="res://Content/TrackUpgradeTypes/TrackUpgradeBerserkMode.gd" id="9_i4ttg"]
 [ext_resource type="Script" uid="uid://cydakddlflwpa" path="res://Content/TrackUpgradeTypes/TrackUpgradeGainHealthOnMoneyPickup.gd" id="10_jindf"]
@@ -33,46 +34,38 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6fpy"]
 bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="Resource" id="Resource_da2sp"]
-script = ExtResource("4_ikhr0")
-Amount = 10.0
-metadata/_custom_type_script = "uid://w2waj35n737p"
-
 [sub_resource type="Resource" id="Resource_yojl4"]
 script = ExtResource("4_oei07")
 Amount = 10.0
 metadata/_custom_type_script = "uid://60nui5865u0y"
 
-[sub_resource type="Resource" id="Resource_c7rff"]
-script = ExtResource("6_6v5x1")
-metadata/_custom_type_script = "uid://8vb1ix46oa5p"
+[sub_resource type="Resource" id="Resource_3cnpm"]
+script = ExtResource("8_c3m2p")
+metadata/_custom_type_script = "uid://e7vwmuen6anh"
 
 [sub_resource type="Resource" id="Resource_c27l8"]
 script = ExtResource("4_ikhr0")
 Amount = 10.0
 metadata/_custom_type_script = "uid://w2waj35n737p"
 
-[sub_resource type="Resource" id="Resource_3cnpm"]
-script = ExtResource("8_c3m2p")
-metadata/_custom_type_script = "uid://e7vwmuen6anh"
-
 [sub_resource type="Resource" id="Resource_fmh6w"]
 script = ExtResource("6_xo6vh")
 metadata/_custom_type_script = "uid://cvf1yy2qyk80j"
-
-[sub_resource type="Resource" id="Resource_jpsg2"]
-script = ExtResource("9_i4ttg")
-metadata/_custom_type_script = "uid://bndw1xvun2g4p"
 
 [sub_resource type="Resource" id="Resource_0g2k7"]
 script = ExtResource("4_ikhr0")
 Amount = 10.0
 metadata/_custom_type_script = "uid://w2waj35n737p"
 
-[sub_resource type="Resource" id="Resource_iunog"]
-script = ExtResource("8_nwdge")
+[sub_resource type="Resource" id="Resource_a1pdc"]
+script = ExtResource("8_iunog")
+Amount = 50.0
+metadata/_custom_type_script = "uid://bsnhtdc5po0uc"
+
+[sub_resource type="Resource" id="Resource_da2sp"]
+script = ExtResource("4_ikhr0")
 Amount = 10.0
-metadata/_custom_type_script = "uid://dtvnvw661ko6w"
+metadata/_custom_type_script = "uid://w2waj35n737p"
 
 [sub_resource type="Resource" id="Resource_j78md"]
 script = ExtResource("10_jindf")
@@ -81,6 +74,19 @@ metadata/_custom_type_script = "uid://cydakddlflwpa"
 [sub_resource type="Resource" id="Resource_4qc8j"]
 script = ExtResource("12_0g2k7")
 metadata/_custom_type_script = "uid://tvca6t5jmgav"
+
+[sub_resource type="Resource" id="Resource_iunog"]
+script = ExtResource("8_nwdge")
+Amount = 10.0
+metadata/_custom_type_script = "uid://dtvnvw661ko6w"
+
+[sub_resource type="Resource" id="Resource_c7rff"]
+script = ExtResource("6_6v5x1")
+metadata/_custom_type_script = "uid://8vb1ix46oa5p"
+
+[sub_resource type="Resource" id="Resource_jpsg2"]
+script = ExtResource("9_i4ttg")
+metadata/_custom_type_script = "uid://bndw1xvun2g4p"
 
 [sub_resource type="Resource" id="Resource_6v5x1"]
 script = ExtResource("4_oei07")
@@ -92,22 +98,10 @@ script = ExtResource("5_jnwyr")
 Amount = 10.0
 metadata/_custom_type_script = "uid://bshasrmjy63ri"
 
-[sub_resource type="Resource" id="Resource_eamjb"]
-script = ExtResource("6_ovivv")
-metadata/_custom_type_script = "uid://c8ev8a6bjl08x"
-
 [sub_resource type="Resource" id="Resource_xo6vh"]
 script = ExtResource("5_jnwyr")
 Amount = 10.0
 metadata/_custom_type_script = "uid://bshasrmjy63ri"
-
-[sub_resource type="Resource" id="Resource_jindf"]
-script = ExtResource("6_qngum")
-metadata/_custom_type_script = "uid://bqjbylyasvoi"
-
-[sub_resource type="Resource" id="Resource_6wo2x"]
-script = ExtResource("15_eamjb")
-metadata/_custom_type_script = "uid://cshu8ljt8yifj"
 
 [sub_resource type="Resource" id="Resource_ikhr0"]
 script = ExtResource("5_jnwyr")
@@ -119,21 +113,39 @@ script = ExtResource("5_jnwyr")
 Amount = 10.0
 metadata/_custom_type_script = "uid://bshasrmjy63ri"
 
+[sub_resource type="Resource" id="Resource_6wo2x"]
+script = ExtResource("15_eamjb")
+metadata/_custom_type_script = "uid://cshu8ljt8yifj"
+
+[sub_resource type="Resource" id="Resource_eamjb"]
+script = ExtResource("6_ovivv")
+metadata/_custom_type_script = "uid://c8ev8a6bjl08x"
+
 [sub_resource type="Resource" id="Resource_i4ttg"]
 script = ExtResource("7_64fdg")
 metadata/_custom_type_script = "uid://bfg5prsn76qaj"
+
+[sub_resource type="Resource" id="Resource_jindf"]
+script = ExtResource("6_qngum")
+metadata/_custom_type_script = "uid://bqjbylyasvoi"
 
 [sub_resource type="Resource" id="Resource_jnwyr"]
 script = ExtResource("5_5dlre")
 metadata/_custom_type_script = "uid://b5d6t7yimipkx"
 
+[sub_resource type="Resource" id="Resource_ijtgi"]
+script = ExtResource("4_ikhr0")
+Amount = 10.0
+metadata/_custom_type_script = "uid://w2waj35n737p"
+
 [sub_resource type="Resource" id="Resource_qngum"]
 script = ExtResource("6_7pwmq")
 metadata/_custom_type_script = "uid://br5xo1nh65rm8"
 
-[sub_resource type="Resource" id="Resource_qmhut"]
-script = ExtResource("19_3cnpm")
-metadata/_custom_type_script = "uid://by822qjgkxcwt"
+[sub_resource type="Resource" id="Resource_5gvgr"]
+script = ExtResource("4_oei07")
+Amount = 10.0
+metadata/_custom_type_script = "uid://60nui5865u0y"
 
 [sub_resource type="Resource" id="Resource_ovivv"]
 script = ExtResource("7_gse3p")
@@ -143,9 +155,33 @@ metadata/_custom_type_script = "uid://chvhe2idf4mrt"
 script = ExtResource("7_ye3a6")
 metadata/_custom_type_script = "uid://dfv8adswpg0d8"
 
+[sub_resource type="Resource" id="Resource_4msid"]
+script = ExtResource("8_nwdge")
+Amount = 10.0
+metadata/_custom_type_script = "uid://dtvnvw661ko6w"
+
+[sub_resource type="Resource" id="Resource_sqj3j"]
+script = ExtResource("4_oei07")
+Amount = 10.0
+metadata/_custom_type_script = "uid://60nui5865u0y"
+
+[sub_resource type="Resource" id="Resource_re7f1"]
+script = ExtResource("4_oei07")
+Amount = 10.0
+metadata/_custom_type_script = "uid://60nui5865u0y"
+
 [sub_resource type="Resource" id="Resource_lnunm"]
 script = ExtResource("22_c27l8")
 metadata/_custom_type_script = "uid://ix0eo3a2mqun"
+
+[sub_resource type="Resource" id="Resource_cio5q"]
+script = ExtResource("5_jnwyr")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bshasrmjy63ri"
+
+[sub_resource type="Resource" id="Resource_qmhut"]
+script = ExtResource("19_3cnpm")
+metadata/_custom_type_script = "uid://by822qjgkxcwt"
 
 [sub_resource type="Resource" id="Resource_7pwmq"]
 script = ExtResource("5_yojl4")
@@ -156,6 +192,11 @@ metadata/_custom_type_script = "uid://3reikkrh7078"
 script = ExtResource("6_dtp4c")
 metadata/_custom_type_script = "uid://b2ls5u6lxuyb3"
 
+[sub_resource type="Resource" id="Resource_4tx45"]
+script = ExtResource("4_ikhr0")
+Amount = 10.0
+metadata/_custom_type_script = "uid://w2waj35n737p"
+
 [sub_resource type="Resource" id="Resource_ye3a6"]
 script = ExtResource("5_6dvx0")
 metadata/_custom_type_script = "uid://cp2r2qun10u1j"
@@ -164,10 +205,6 @@ metadata/_custom_type_script = "uid://cp2r2qun10u1j"
 script = ExtResource("5_yojl4")
 Amount = 10.0
 metadata/_custom_type_script = "uid://3reikkrh7078"
-
-[sub_resource type="Resource" id="Resource_1vd0j"]
-script = ExtResource("25_fmh6w")
-metadata/_custom_type_script = "uid://dvjjam3hr4404"
 
 [sub_resource type="Resource" id="Resource_gse3p"]
 script = ExtResource("8_fme0h")
@@ -178,9 +215,28 @@ script = ExtResource("5_yojl4")
 Amount = 20.0
 metadata/_custom_type_script = "uid://3reikkrh7078"
 
+[sub_resource type="Resource" id="Resource_2kisk"]
+script = ExtResource("4_ikhr0")
+Amount = 10.0
+metadata/_custom_type_script = "uid://w2waj35n737p"
+
+[sub_resource type="Resource" id="Resource_cj43w"]
+script = ExtResource("4_ikhr0")
+Amount = 10.0
+metadata/_custom_type_script = "uid://w2waj35n737p"
+
 [sub_resource type="Resource" id="Resource_1fi7c"]
 script = ExtResource("27_da2sp")
 metadata/_custom_type_script = "uid://dy0joco0ufkjv"
+
+[sub_resource type="Resource" id="Resource_1vd0j"]
+script = ExtResource("25_fmh6w")
+metadata/_custom_type_script = "uid://dvjjam3hr4404"
+
+[sub_resource type="Resource" id="Resource_x3bdy"]
+script = ExtResource("8_iunog")
+Amount = 100.0
+metadata/_custom_type_script = "uid://bsnhtdc5po0uc"
 
 [sub_resource type="Resource" id="Resource_pvoys"]
 script = ExtResource("8_nwdge")
@@ -202,6 +258,11 @@ script = ExtResource("5_yojl4")
 Amount = 10.0
 metadata/_custom_type_script = "uid://3reikkrh7078"
 
+[sub_resource type="Resource" id="Resource_v76nu"]
+script = ExtResource("8_iunog")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bsnhtdc5po0uc"
+
 [sub_resource type="Resource" id="Resource_4ry2w"]
 script = ExtResource("6_ovivv")
 metadata/_custom_type_script = "uid://c8ev8a6bjl08x"
@@ -211,10 +272,30 @@ script = ExtResource("8_nwdge")
 Amount = 10.0
 metadata/_custom_type_script = "uid://dtvnvw661ko6w"
 
+[sub_resource type="Resource" id="Resource_i3ppe"]
+script = ExtResource("8_nwdge")
+Amount = 10.0
+metadata/_custom_type_script = "uid://dtvnvw661ko6w"
+
+[sub_resource type="Resource" id="Resource_7vjue"]
+script = ExtResource("8_iunog")
+Amount = 30.0
+metadata/_custom_type_script = "uid://bsnhtdc5po0uc"
+
 [sub_resource type="Resource" id="Resource_enhls"]
 script = ExtResource("5_jnwyr")
 Amount = 50.0
 metadata/_custom_type_script = "uid://bshasrmjy63ri"
+
+[sub_resource type="Resource" id="Resource_kel2a"]
+script = ExtResource("8_nwdge")
+Amount = 10.0
+metadata/_custom_type_script = "uid://dtvnvw661ko6w"
+
+[sub_resource type="Resource" id="Resource_urfnq"]
+script = ExtResource("8_iunog")
+Amount = 100.0
+metadata/_custom_type_script = "uid://bsnhtdc5po0uc"
 
 [sub_resource type="Resource" id="Resource_6g4lu"]
 script = ExtResource("8_nwdge")
@@ -255,27 +336,27 @@ text = "(Improve in tracks by investing in different departments!)"
 
 [node name="TrackCategory" parent="VBoxContainer" instance=ExtResource("1_xjvdj")]
 layout_mode = 2
-Upgrades = Array[ExtResource("2_i6fpy")]([SubResource("Resource_da2sp"), null, SubResource("Resource_yojl4"), SubResource("Resource_c7rff"), null, SubResource("Resource_c27l8"), SubResource("Resource_3cnpm"), null, null, SubResource("Resource_fmh6w"), SubResource("Resource_jpsg2"), null, SubResource("Resource_0g2k7"), null, null, null, SubResource("Resource_iunog"), null, SubResource("Resource_j78md"), null, null, SubResource("Resource_4qc8j"), null, null, null, null, null, null, null, null])
+Upgrades = Array[ExtResource("2_i6fpy")]([null, SubResource("Resource_yojl4"), SubResource("Resource_3cnpm"), null, SubResource("Resource_c27l8"), null, null, SubResource("Resource_fmh6w"), null, SubResource("Resource_0g2k7"), null, SubResource("Resource_a1pdc"), null, null, SubResource("Resource_da2sp"), null, SubResource("Resource_j78md"), null, null, SubResource("Resource_4qc8j"), null, null, null, SubResource("Resource_iunog"), null, null, null, SubResource("Resource_c7rff"), null, SubResource("Resource_jpsg2")])
 
 [node name="TrackCategory2" parent="VBoxContainer" instance=ExtResource("1_xjvdj")]
 layout_mode = 2
 Category = 1
-Upgrades = Array[ExtResource("2_i6fpy")]([SubResource("Resource_6v5x1"), null, SubResource("Resource_c3m2p"), null, SubResource("Resource_eamjb"), null, null, SubResource("Resource_xo6vh"), null, SubResource("Resource_jindf"), SubResource("Resource_6wo2x"), SubResource("Resource_ikhr0"), null, null, null, SubResource("Resource_nwdge"), null, null, null, SubResource("Resource_i4ttg"), null, null, null, null, null, null, null, null, null, null])
+Upgrades = Array[ExtResource("2_i6fpy")]([SubResource("Resource_6v5x1"), null, SubResource("Resource_c3m2p"), null, null, null, SubResource("Resource_xo6vh"), null, null, SubResource("Resource_ikhr0"), null, null, SubResource("Resource_nwdge"), null, null, SubResource("Resource_6wo2x"), null, null, null, null, null, SubResource("Resource_eamjb"), null, null, null, SubResource("Resource_i4ttg"), null, null, null, SubResource("Resource_jindf")])
 
 [node name="TrackCategory3" parent="VBoxContainer" instance=ExtResource("1_xjvdj")]
 layout_mode = 2
 Category = 2
-Upgrades = Array[ExtResource("2_i6fpy")]([null, SubResource("Resource_jnwyr"), null, null, null, null, SubResource("Resource_qngum"), null, null, SubResource("Resource_qmhut"), null, SubResource("Resource_ovivv"), null, null, SubResource("Resource_64fdg"), null, null, null, null, null, null, null, null, null, SubResource("Resource_lnunm"), null, null, null, null, null])
+Upgrades = Array[ExtResource("2_i6fpy")]([null, SubResource("Resource_jnwyr"), null, null, SubResource("Resource_ijtgi"), null, SubResource("Resource_qngum"), null, SubResource("Resource_5gvgr"), null, SubResource("Resource_ovivv"), null, null, SubResource("Resource_64fdg"), null, null, SubResource("Resource_4msid"), null, SubResource("Resource_sqj3j"), null, null, SubResource("Resource_re7f1"), null, SubResource("Resource_lnunm"), null, null, SubResource("Resource_cio5q"), null, null, SubResource("Resource_qmhut")])
 
 [node name="TrackCategory4" parent="VBoxContainer" instance=ExtResource("1_xjvdj")]
 layout_mode = 2
 Category = 3
-Upgrades = Array[ExtResource("2_i6fpy")]([SubResource("Resource_7pwmq"), null, null, null, SubResource("Resource_5dlre"), null, null, null, SubResource("Resource_ye3a6"), null, null, null, null, SubResource("Resource_6dvx0"), SubResource("Resource_1vd0j"), null, SubResource("Resource_gse3p"), null, null, SubResource("Resource_fme0h"), null, null, null, null, null, null, null, null, SubResource("Resource_1fi7c"), null])
+Upgrades = Array[ExtResource("2_i6fpy")]([SubResource("Resource_7pwmq"), null, null, null, SubResource("Resource_5dlre"), null, SubResource("Resource_4tx45"), null, SubResource("Resource_ye3a6"), null, null, null, null, SubResource("Resource_6dvx0"), null, SubResource("Resource_gse3p"), null, null, SubResource("Resource_fme0h"), null, SubResource("Resource_2kisk"), null, null, SubResource("Resource_cj43w"), null, null, null, SubResource("Resource_1fi7c"), null, SubResource("Resource_1vd0j")])
 
 [node name="TrackCategory5" parent="VBoxContainer" instance=ExtResource("1_xjvdj")]
 layout_mode = 2
 Category = 4
-Upgrades = Array[ExtResource("2_i6fpy")]([null, SubResource("Resource_pvoys"), null, null, SubResource("Resource_nh35h"), null, null, null, SubResource("Resource_ufoaq"), null, null, SubResource("Resource_andjx"), null, null, null, null, SubResource("Resource_4ry2w"), null, null, SubResource("Resource_ibpfx"), null, null, null, SubResource("Resource_enhls"), null, null, null, null, null, SubResource("Resource_6g4lu")])
+Upgrades = Array[ExtResource("2_i6fpy")]([null, SubResource("Resource_x3bdy"), SubResource("Resource_pvoys"), null, SubResource("Resource_nh35h"), null, null, null, SubResource("Resource_ufoaq"), null, null, SubResource("Resource_andjx"), null, null, SubResource("Resource_v76nu"), null, SubResource("Resource_4ry2w"), null, null, SubResource("Resource_ibpfx"), SubResource("Resource_i3ppe"), null, SubResource("Resource_7vjue"), SubResource("Resource_enhls"), null, null, SubResource("Resource_kel2a"), null, SubResource("Resource_urfnq"), SubResource("Resource_6g4lu")])
 
 [node name="Button" type="Button" parent="."]
 custom_minimum_size = Vector2(200, 100)

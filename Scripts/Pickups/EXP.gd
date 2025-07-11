@@ -1,16 +1,15 @@
-extends Area2D
+extends Pickup
+
 
 class_name EXPPickup
 
 @export var Amount = 5
-var bMoveTowardsPlayer  = false
-var bIsUsable = true
+
 
 func _enter_tree() -> void:
 	scale = Vector2.ZERO
 	
-func _ready() -> void:	
-
+func Setup():
 	if Amount > 1000:
 		$Sprite2D.texture = load("res://Art/Pickups/EXP3.png")
 	elif Amount > 500:
@@ -20,33 +19,7 @@ func _ready() -> void:
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "scale", Vector2.ONE, .2)
 	_on_poll_timer_timeout()
-func IsFollowing():
-	return bMoveTowardsPlayer
-	
-func SetFollowing():
-	bMoveTowardsPlayer = true
-	
-func Pickup():
+
+func DoPickupAction():
 	Finder.GetGame().AddEXP(Amount)
 	Jukebox.PlayPickupSFX()
-	queue_free()
-
-func _on_body_entered(body: Node2D) -> void:
-	if body is BaseCharacter:
-		if bIsUsable == false:
-			return
-		Pickup()
-		
-		
-func _process(delta: float) -> void:
-	if bMoveTowardsPlayer:
-		var dir = (Finder.GetPlayer().LastKnownPosition - global_position).normalized()
-		global_position += dir * 500 * delta
-
-
-func _on_timer_timeout() -> void:
-	queue_free()
-
-
-func _on_poll_timer_timeout() -> void:
-	modulate.a = ($Timer.time_left / $Timer.wait_time)

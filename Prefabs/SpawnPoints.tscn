@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=3 uid="uid://whms5efeied3"]
+
+[ext_resource type="Texture2D" uid="uid://cj0tuc0njq1l3" path="res://Art/Character/Mark.png" id="1_7asqm"]
+[ext_resource type="Script" uid="uid://cugycmp0tc30h" path="res://Scripts/SpawnPoints.gd" id="1_81au3"]
+
+[node name="SpawnPoints" type="Node2D" groups=["SpawnPoints"]]
+script = ExtResource("1_81au3")
+
+[node name="SpawnPoint" type="TextureRect" parent="."]
+offset_left = -655.0
+offset_top = 610.0
+offset_right = -594.0
+offset_bottom = 671.0
+texture = ExtResource("1_7asqm")
+
+[node name="SpawnPoint2" type="TextureRect" parent="."]
+offset_left = 122.0
+offset_top = -83.0
+offset_right = 183.0
+offset_bottom = -22.0
+texture = ExtResource("1_7asqm")
+
+[node name="SpawnPoint3" type="TextureRect" parent="."]
+offset_left = 2265.0
+offset_top = -1086.0
+offset_right = 2326.0
+offset_bottom = -1025.0
+texture = ExtResource("1_7asqm")
+
+[node name="SpawnPoint4" type="TextureRect" parent="."]
+offset_left = 3305.0
+offset_top = -1094.0
+offset_right = 3366.0
+offset_bottom = -1033.0
+texture = ExtResource("1_7asqm")
+
+[node name="SpawnPoint5" type="TextureRect" parent="."]
+offset_left = 2933.0
+offset_top = 406.0
+offset_right = 2994.0
+offset_bottom = 467.0
+texture = ExtResource("1_7asqm")
+
+[node name="SpawnPoint6" type="TextureRect" parent="."]
+offset_left = 4601.0
+offset_top = 998.0
+offset_right = 4662.0
+offset_bottom = 1059.0
+texture = ExtResource("1_7asqm")
+
+[node name="SpawnPoint7" type="TextureRect" parent="."]
+offset_left = 4608.0
+offset_top = 29.0
+offset_right = 4669.0
+offset_bottom = 90.0
+texture = ExtResource("1_7asqm")
+
+[node name="SpawnPoint8" type="TextureRect" parent="."]
+offset_left = -936.0
+offset_top = -489.0
+offset_right = -875.0
+offset_bottom = -428.0
+texture = ExtResource("1_7asqm")
+
+[node name="SpawnPoint9" type="TextureRect" parent="."]
+offset_left = -997.0
+offset_top = -1209.0
+offset_right = -936.0
+offset_bottom = -1148.0
+texture = ExtResource("1_7asqm")
+
+[node name="SpawnPoint10" type="TextureRect" parent="."]
+offset_left = -1542.0
+offset_top = 1011.0
+offset_right = -1481.0
+offset_bottom = 1072.0
+texture = ExtResource("1_7asqm")

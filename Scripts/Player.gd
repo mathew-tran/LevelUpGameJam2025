@@ -8,8 +8,15 @@ var LastKnownPosition = Vector2.ZERO
 
 
 func _ready() -> void:
+	LastKnownPosition = Finder.GetSpawnPoints().GetRandomSpawnPoint()
+	$Camera2D.global_position = LastKnownPosition
 	GameData.ChosenCharacter.Create()
 	UpdateBody()
+	
+	
+
+
+	
 	
 func UpdateBody():
 	await get_tree().create_timer(.1).timeout

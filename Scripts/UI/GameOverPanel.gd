@@ -5,8 +5,10 @@ func _ready() -> void:
 	
 func OnGameOver():
 	visible = true
+	
 func _on_button_button_up() -> void:
 	get_tree().reload_current_scene()
+	
 
 
 func _on_char_select_button_button_up() -> void:

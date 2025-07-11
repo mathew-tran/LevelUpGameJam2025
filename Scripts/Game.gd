@@ -17,9 +17,10 @@ var SubStatTeamDamage : Resource
 var SubStatTeamExperience : Resource
 var SubStatTeamContactDamage : Resource
 var SubStatTeamProjectileSpeed : Resource
+var SubStatPickupRadius : Resource
 
 
-var Money = 1000
+var Money = 10
 var EnemiesKilled = 0
 
 var bCanDropMagnet = false
@@ -96,6 +97,16 @@ func Setup():
 	SubStatTeamProjectileSpeed.StatResourceRef = load("res://Content/Stats/TEAM_PROJECTILE_SPEED.tres")
 	SubStatTeamProjectileSpeed.Init()
 	
+	SubStatPickupRadius = SubStatResourceData.new()
+	SubStatPickupRadius.StatResourceRef = load("res://Content/Stats/TEAM_PICKUP_RADIUS.tres")
+	SubStatPickupRadius.Init()
+	SubStatTeamHealth.ModifiedResource.ValueUpdated.connect(OnPickupRadiusUpdated)
+
+func OnPickupRadiusUpdated(value):
+	var workers = Finder.GetWorkerGroup()
+	for worker in workers.get_children():
+		worker.UpdatePickupRadius()
+			
 func OnTeamHealthUpdated(value):
 	var workers = Finder.GetWorkerGroup()
 	for worker in workers.get_children():

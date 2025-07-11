@@ -62,6 +62,8 @@ func _ready() -> void:
 	Finder.GetEXPBar().OnLevelUp.connect(OnLevelup)
 	GiveTempInvincibility(2)
 
+func UpdatePickupRadius():
+	$PickupBubble.Update()
 	
 func OnLevelup():
 	GiveTempInvincibility(2)
