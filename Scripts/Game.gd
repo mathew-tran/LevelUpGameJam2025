@@ -5,6 +5,7 @@ class_name Game
 signal OnEXPUpdate(amount)
 signal OnGameOver
 signal OnRemoveCharFromGame(char)
+signal OnAddCharToGame(resourcePath)
 signal OnMoneyUpdate(amount)
 signal OnRoundUpdate(roundNumber, customText)
 signal OnInvestDepartment(department)
@@ -18,7 +19,7 @@ var SubStatTeamContactDamage : Resource
 var SubStatTeamProjectileSpeed : Resource
 
 
-var Money = 10
+var Money = 1000
 var EnemiesKilled = 0
 
 var bCanDropMagnet = false
@@ -127,3 +128,6 @@ func AddEXP(amount):
 	
 func RemoveCharacterFromGame(char):
 	OnRemoveCharFromGame.emit(char)
+
+func AddCharacterToGame(resPath):
+	OnAddCharToGame.emit(resPath)

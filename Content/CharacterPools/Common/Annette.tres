@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=6 format=3 uid="uid://octutniwfiqg"]
+
+[ext_resource type="Texture2D" uid="uid://gpfmgs0w15ie" path="res://Art/Character/Annette.png" id="1_4t44o"]
+[ext_resource type="Script" uid="uid://b1crlyox21yx2" path="res://Content/CharacterUpgradeData.gd" id="1_swusl"]
+[ext_resource type="PackedScene" uid="uid://dgv1cqj6t4r86" path="res://Prefabs/Projectiles/CoffeeProjectile.tscn" id="2_783t3"]
+[ext_resource type="Script" uid="uid://dadt4pa7kewb" path="res://Content/CharacterData.gd" id="2_ive2k"]
+[ext_resource type="AudioStream" uid="uid://dg02y7olabbd" path="res://Audio/Voices/voice3.wav" id="3_783t3"]
+
+[resource]
+script = ExtResource("2_ive2k")
+Name = "Annette"
+Occupation = 4
+Description = "Throws coffee around"
+Picture = ExtResource("1_4t44o")
+Voice = ExtResource("3_783t3")
+Pitch = 1.7
+WelcomePhrase = "Where's my Coffee?"
+UpgradePhrases = Array[String](["COFFEE TIME!", "NEED COFFEE?", "IM ALERT!"])
+DeathPhrase = Array[String](["..", "!!"])
+Projectile = ExtResource("2_783t3")
+Spread = 1
+AttackSpeed = 0.2
+Damage = 5
+ProjectileSpeed = 5
+Penetration = 0
+BulletSpread = 0
+ShootType = 0
+Upgrades = Array[ExtResource("1_swusl")]([])
+WeakUpgrades = Array[ExtResource("1_swusl")]([])
+metadata/_custom_type_script = "uid://dadt4pa7kewb"

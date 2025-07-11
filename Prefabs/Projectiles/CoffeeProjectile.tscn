@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgv1cqj6t4r86"]
+
+[ext_resource type="PackedScene" uid="uid://csm5aoidl1x0s" path="res://Prefabs/Projectiles/BaseProjectile.tscn" id="1_oqehg"]
+[ext_resource type="PackedScene" uid="uid://baip51uv1ao0i" path="res://Prefabs/Projectiles/AOE_CoffeeSpill.tscn" id="2_d8arw"]
+[ext_resource type="Texture2D" uid="uid://bhy8umqffjxyv" path="res://Art/Projectiles/Coffee.png" id="2_oqehg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d8arw"]
+size = Vector2(24, 20)
+
+[node name="Projectile" instance=ExtResource("1_oqehg")]
+SubProjectile = ExtResource("2_d8arw")
+SubProjectileAmount = 3
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_oqehg")
+
+[node name="CollisionShape2D" parent="." index="2"]
+shape = SubResource("RectangleShape2D_d8arw")

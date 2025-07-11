@@ -4,7 +4,6 @@ class_name BaseCharacter
 
 @export var CharacterDataRef : CharacterData
 
-signal OnCharacterDeath
 var Speed = 1
 var FollowObject = null
 
@@ -63,6 +62,7 @@ func _ready() -> void:
 	Setup(CharacterDataRef)
 	Finder.GetEXPBar().OnLevelUp.connect(OnLevelup)
 	GiveTempInvincibility(2)
+
 	
 func OnLevelup():
 	GiveTempInvincibility(2)
@@ -107,7 +107,7 @@ func Heal(amount):
 	$HealthComponent.Heal(amount)
 	
 func OnDeath():
-	OnCharacterDeath.emit()
+	Finder.GetGame().AddCharacterToGame(CharacterDataRef.resource_path)
 	
 	if Finder.GetGame().bExplodeOnDeath:
 		_on_shoot_timer_timeout()
@@ -166,6 +166,8 @@ func Setup(newData):
 	SubStatAttackRate.ModifiedResource.ValueUpdated.connect(OnAttackRateUpdate)
 	Spread = CharacterDataRef.Spread
 	$ShootTimer.wait_time = 1/SubStatAttackRate.Get().GetValue()
+	
+	Finder.GetGame().RemoveCharacterFromGame(CharacterDataRef.Name)
 	
 func OnAttackRateUpdate(rate):
 	$ShootTimer.wait_time = 1/rate

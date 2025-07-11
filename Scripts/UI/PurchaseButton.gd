@@ -36,7 +36,7 @@ func _on_button_up() -> void:
 		Finder.GetGame().OnInvestDepartment.emit(CharacterToApply.CharacterDataRef.Occupation)
 	elif is_instance_valid(CharacterToAdd):
 		CharacterToAdd.Create()
-		Finder.GetGame().RemoveCharacterFromGame(CharacterToAdd.Name)
+
 		Finder.GetGame().OnInvestDepartment.emit(CharacterToAdd.Occupation)
 	OnPurchased.emit()
 	

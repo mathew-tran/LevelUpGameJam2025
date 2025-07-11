@@ -12,6 +12,8 @@ func OnLevelup():
 	
 func OnMoneyUpdate():
 	$HBoxContainer/MoneyText.Update(Cost)
+	if Finder.GetLevelUp().CanIncreaseTeamSize() == false:
+		visible = false
 
 
 func _on_button_up() -> void:

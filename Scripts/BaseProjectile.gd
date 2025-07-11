@@ -9,6 +9,8 @@ var Penetration = 0
 
 var bStunEnemy = false
 @export var Bounces = 0
+@export var SubProjectile : PackedScene
+@export var SubProjectileAmount = -1 
 
 func _ready():
 	rotation = Direction.angle()
@@ -23,16 +25,25 @@ func Hit():
 		$BounceTimer.start()
 		return
 	if Penetration <= 0:
-		queue_free()
+		Kill()
 	else:
 		Penetration -= 1
 		if Finder.GetGame().bExtraPenetration:
 			Damage *= 1.5
 		
 func _on_live_timer_timeout() -> void:
+	Kill()
+
+func Kill():
+	if SubProjectileAmount > 0:
+		if is_instance_valid(SubProjectile):
+			for x in range(0, SubProjectileAmount):
+				var instance = SubProjectile.instantiate()
+				instance.global_position = Helper.GetRandomPositionAroundPoint(global_position, 10)
+				instance.Damage = Damage / SubProjectileAmount
+				Finder.GetSubBulletsGroup().add_child(instance)
 	queue_free()
-
-
+	
 func _on_bounce_timer_timeout() -> void:
 	var closestEnemy = Finder.GetClosestEnemy(global_position)
 	if closestEnemy:

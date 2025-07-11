@@ -9,6 +9,9 @@ func GetEXPBar() -> EXPBar:
 func GetBulletsGroup():
 	return get_tree().get_nodes_in_group("Bullets")[0]
 
+func GetSubBulletsGroup():
+	return get_tree().get_nodes_in_group("SubBullets")[0]
+	
 func GetRerollButton():
 	return get_tree().get_nodes_in_group("Reroll")[0]
 	

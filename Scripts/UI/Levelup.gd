@@ -19,6 +19,7 @@ var CharactersToUnlock = []
 var CurrentCharacters =[]
 
 var MaxCharacterAmount = 3
+var HiddenMaxCharacterAmount = 0
 
 signal OnIncreaseCharacterAmount
 signal OnLevelUpMenuOpened
@@ -26,17 +27,27 @@ signal OnLevelUpMenuOpened
 func IncreaseCharacterAmount():
 	MaxCharacterAmount += 1
 	OnIncreaseCharacterAmount.emit()
+	if MaxCharacterAmount >= HiddenMaxCharacterAmount:
+		MaxCharacterAmount = HiddenMaxCharacterAmount
 
+func CanIncreaseTeamSize():
+	return MaxCharacterAmount < HiddenMaxCharacterAmount
+	
 func GetCharacterCountString():
 	var playerAmount = Finder.GetWorkerGroup().get_children().size()
 	return  str(playerAmount) + "/" + str(MaxCharacterAmount)
+	
+func _enter_tree() -> void:
+	CharactersToUnlock = Helper.GetAllFilePaths("res://Content/CharacterPools/Common/")
+	CharactersToUnlock.shuffle()
+	HiddenMaxCharacterAmount = CharactersToUnlock.size()
 	
 func _ready() -> void:
 	Finder.GetEXPBar().OnLevelUp.connect(OnLevelup)
 	Finder.GetGame().OnGameOver.connect(OnGameOver)
 	Finder.GetGame().OnRemoveCharFromGame.connect(OnRemoveCharFromGame)
-	CharactersToUnlock = Helper.GetAllFilePaths("res://Content/CharacterPools/Common/")
-	CharactersToUnlock.shuffle()
+	Finder.GetGame().OnAddCharToGame.connect(OnAddBackCharToGame)
+
 	
 func OnGameOver():
 	if visible:
@@ -86,6 +97,7 @@ func HasMoreCharacters():
 	
 func HasFullTeam():
 	return CurrentCharacters.size() >= MaxCharacterAmount
+	
 func DetermineUpgradeState():
 	if HasUpgradeableCharacters() == false and HasFullTeam():
 			# should provide weak upgrades
@@ -170,7 +182,6 @@ func OnPurchased():
 	Close()
 	
 func OnRemoveCharFromGame(char):
-	return
 	var index = 0
 	for x in CharactersToUnlock:
 		if char.to_lower() in x.to_lower():
@@ -178,6 +189,9 @@ func OnRemoveCharFromGame(char):
 			break
 		index += 1
 	print("remaining characters" + str(CharactersToUnlock))
+	
+func OnAddBackCharToGame(resourcePath):
+	CharactersToUnlock.append(resourcePath)
 	
 func Close():
 	visible = false
