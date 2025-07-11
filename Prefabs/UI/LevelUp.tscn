@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cu8sskt8qxtpq"]
+[gd_scene load_steps=11 format=3 uid="uid://cu8sskt8qxtpq"]
 
 [ext_resource type="PackedScene" uid="uid://bevhto76bb856" path="res://Prefabs/UI/PurchaseButton.tscn" id="1_m8v2k"]
 [ext_resource type="Script" uid="uid://dlrrspdtty0hr" path="res://Scripts/UI/Levelup.gd" id="1_tee8a"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c0shcn412sqvw" path="res://Prefabs/UI/TeamSizeUI.tscn" id="7_jui30"]
 [ext_resource type="PackedScene" uid="uid://dwxtp5avlfbub" path="res://Prefabs/UI/TracksUI.tscn" id="8_jui30"]
 [ext_resource type="Texture2D" uid="uid://fttaamrnpfhj" path="res://Art/UI/TickOnBig.png" id="9_1r3e5"]
+[ext_resource type="PackedScene" uid="uid://750jspop8us0" path="res://Prefabs/UI/CharacterShowingContainer.tscn" id="10_jya8m"]
 
 [node name="Levelup" type="Panel" groups=["Levelup"]]
 process_mode = 3
@@ -84,6 +85,13 @@ offset_top = 574.0
 offset_right = -963.0
 offset_bottom = 614.0
 grow_horizontal = 0
+
+[node name="CharacterShowingContainer" parent="." instance=ExtResource("10_jya8m")]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 126.0
+offset_right = 106.0
+offset_bottom = 564.0
 
 [node name="Tracks" parent="." instance=ExtResource("8_jui30")]
 visible = false

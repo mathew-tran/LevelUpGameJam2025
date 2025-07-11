@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://dwxtp5avlfbub"]
+[gd_scene load_steps=73 format=3 uid="uid://dwxtp5avlfbub"]
 
 [ext_resource type="Script" uid="uid://dvllkpq7nonc8" path="res://Scripts/UI/TracksUI.gd" id="1_7dty6"]
 [ext_resource type="PackedScene" uid="uid://vb2kwbwkbeps" path="res://Prefabs/UI/Tracks/TrackCategory.tscn" id="1_xjvdj"]
@@ -182,6 +182,45 @@ metadata/_custom_type_script = "uid://3reikkrh7078"
 script = ExtResource("27_da2sp")
 metadata/_custom_type_script = "uid://dy0joco0ufkjv"
 
+[sub_resource type="Resource" id="Resource_pvoys"]
+script = ExtResource("8_nwdge")
+Amount = 10.0
+metadata/_custom_type_script = "uid://dtvnvw661ko6w"
+
+[sub_resource type="Resource" id="Resource_nh35h"]
+script = ExtResource("5_jnwyr")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bshasrmjy63ri"
+
+[sub_resource type="Resource" id="Resource_ufoaq"]
+script = ExtResource("5_jnwyr")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bshasrmjy63ri"
+
+[sub_resource type="Resource" id="Resource_andjx"]
+script = ExtResource("5_yojl4")
+Amount = 10.0
+metadata/_custom_type_script = "uid://3reikkrh7078"
+
+[sub_resource type="Resource" id="Resource_4ry2w"]
+script = ExtResource("6_ovivv")
+metadata/_custom_type_script = "uid://c8ev8a6bjl08x"
+
+[sub_resource type="Resource" id="Resource_ibpfx"]
+script = ExtResource("8_nwdge")
+Amount = 10.0
+metadata/_custom_type_script = "uid://dtvnvw661ko6w"
+
+[sub_resource type="Resource" id="Resource_enhls"]
+script = ExtResource("5_jnwyr")
+Amount = 50.0
+metadata/_custom_type_script = "uid://bshasrmjy63ri"
+
+[sub_resource type="Resource" id="Resource_6g4lu"]
+script = ExtResource("8_nwdge")
+Amount = 100.0
+metadata/_custom_type_script = "uid://dtvnvw661ko6w"
+
 [node name="Tracks" type="Panel"]
 custom_minimum_size = Vector2(1152, 648)
 anchors_preset = 15
@@ -194,9 +233,9 @@ script = ExtResource("1_7dty6")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 87.0
+offset_left = 51.0
 offset_top = 94.0
-offset_right = 875.0
+offset_right = 839.0
 offset_bottom = 599.0
 theme_override_constants/separation = 20
 metadata/_edit_group_ = true
@@ -232,6 +271,11 @@ Upgrades = Array[ExtResource("2_i6fpy")]([null, SubResource("Resource_jnwyr"), n
 layout_mode = 2
 Category = 3
 Upgrades = Array[ExtResource("2_i6fpy")]([SubResource("Resource_7pwmq"), null, null, null, SubResource("Resource_5dlre"), null, null, null, SubResource("Resource_ye3a6"), null, null, null, null, SubResource("Resource_6dvx0"), SubResource("Resource_1vd0j"), null, SubResource("Resource_gse3p"), null, null, SubResource("Resource_fme0h"), null, null, null, null, null, null, null, null, SubResource("Resource_1fi7c"), null])
+
+[node name="TrackCategory5" parent="VBoxContainer" instance=ExtResource("1_xjvdj")]
+layout_mode = 2
+Category = 4
+Upgrades = Array[ExtResource("2_i6fpy")]([null, SubResource("Resource_pvoys"), null, null, SubResource("Resource_nh35h"), null, null, null, SubResource("Resource_ufoaq"), null, null, SubResource("Resource_andjx"), null, null, null, null, SubResource("Resource_4ry2w"), null, null, SubResource("Resource_ibpfx"), null, null, null, SubResource("Resource_enhls"), null, null, null, null, null, SubResource("Resource_6g4lu")])
 
 [node name="Button" type="Button" parent="."]
 custom_minimum_size = Vector2(200, 100)

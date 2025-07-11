@@ -25,7 +25,7 @@ func Setup(character : BaseCharacter, bUseNext = true):
 	
 	$Label.text = nextUpgrade.GetUpgradeName()
 	$TextureRect.texture = character.CharacterDataRef.Picture
-	$Level.text = "LV" + str(character.CharacterLevel)
+	$Level.text = "LV" + str(character.CharacterLevel + 1)
 	$Name.text = character.CharacterDataRef.Name + " " +  character.CharacterDataRef.GetOccupationString()
 	$Name.modulate = CharacterData.GetDepartmentColor(character.CharacterDataRef.Occupation)
 	

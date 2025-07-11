@@ -41,7 +41,7 @@ func Kill():
 				var instance = SubProjectile.instantiate()
 				instance.global_position = Helper.GetRandomPositionAroundPoint(global_position, 10)
 				instance.Damage = Damage / SubProjectileAmount
-				Finder.GetSubBulletsGroup().add_child(instance)
+				Finder.GetSubBulletsGroup().call_deferred("add_child",instance)
 	queue_free()
 	
 func _on_bounce_timer_timeout() -> void:

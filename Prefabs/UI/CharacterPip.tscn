@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmnohjcebk0t7"]
+
+[ext_resource type="Texture2D" uid="uid://gpfmgs0w15ie" path="res://Art/Character/Annette.png" id="1_t0kfl"]
+[ext_resource type="Script" uid="uid://c0hd57q1gotgs" path="res://Scripts/UI/CharacterPip.gd" id="2_3b3wb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3b3wb"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="TextureRect" type="TextureRect"]
+custom_minimum_size = Vector2(20, 20)
+offset_right = 20.0
+offset_bottom = 20.0
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("1_t0kfl")
+expand_mode = 2
+stretch_mode = 4
+script = ExtResource("2_3b3wb")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(32, 5)
+layout_mode = 0
+offset_top = 21.0
+offset_right = 32.0
+offset_bottom = 26.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3b3wb")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 40.0
+offset_bottom = 28.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+text = "Lv1"

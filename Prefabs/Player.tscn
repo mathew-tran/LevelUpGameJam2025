@@ -4,6 +4,21 @@
 [ext_resource type="PackedScene" uid="uid://uf5h3c2dv0a2" path="res://Prefabs/Characters/BaseCharacter.tscn" id="1_x3d5u"]
 [ext_resource type="Resource" uid="uid://octutniwfiqg" path="res://Content/CharacterPools/Common/Annette.tres" id="3_b43ah"]
 
+[sub_resource type="Animation" id="Animation_shmu5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_b43ah"]
 resource_name = "death"
 length = 0.23
@@ -18,21 +33,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1.305, 1.305), Vector2(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_shmu5"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera2D:zoom")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_shmu5"]

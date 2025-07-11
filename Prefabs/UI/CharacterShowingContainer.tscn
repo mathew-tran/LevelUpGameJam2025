@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://750jspop8us0"]
+
+[ext_resource type="Script" uid="uid://g3m2fr4g5as2" path="res://Scripts/UI/CharacterShowingContainer.gd" id="1_pjx2k"]
+
+[node name="CharacterShowingContainer" type="GridContainer"]
+offset_left = 17.0
+offset_top = 112.0
+offset_right = 102.0
+offset_bottom = 550.0
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 20
+columns = 2
+script = ExtResource("1_pjx2k")
+metadata/_edit_group_ = true

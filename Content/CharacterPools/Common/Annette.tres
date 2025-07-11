@@ -1,10 +1,78 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=6 format=3 uid="uid://octutniwfiqg"]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=22 format=3 uid="uid://octutniwfiqg"]
 
 [ext_resource type="Texture2D" uid="uid://gpfmgs0w15ie" path="res://Art/Character/Annette.png" id="1_4t44o"]
 [ext_resource type="Script" uid="uid://b1crlyox21yx2" path="res://Content/CharacterUpgradeData.gd" id="1_swusl"]
 [ext_resource type="PackedScene" uid="uid://dgv1cqj6t4r86" path="res://Prefabs/Projectiles/CoffeeProjectile.tscn" id="2_783t3"]
 [ext_resource type="Script" uid="uid://dadt4pa7kewb" path="res://Content/CharacterData.gd" id="2_ive2k"]
 [ext_resource type="AudioStream" uid="uid://dg02y7olabbd" path="res://Audio/Voices/voice3.wav" id="3_783t3"]
+[ext_resource type="Script" uid="uid://bqa6hwpbpw3x0" path="res://Content/UpgradeTypes/CharacterUpgradeBaseAttack.gd" id="4_h8fx6"]
+[ext_resource type="Script" uid="uid://civl0ns7ngbc6" path="res://Content/UpgradeTypes/CharacterUpgradeBaseAttackRate.gd" id="5_r7jky"]
+[ext_resource type="Script" uid="uid://b068slgsi0qfb" path="res://Content/UpgradeTypes/CharacterUpgradeTeamHealth.gd" id="7_h8fx6"]
+
+[sub_resource type="Resource" id="Resource_5s5wu"]
+script = ExtResource("4_h8fx6")
+Amount = 20.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_bi4vh"]
+script = ExtResource("5_r7jky")
+AttackRateIncrease = 30.0
+metadata/_custom_type_script = "uid://civl0ns7ngbc6"
+
+[sub_resource type="Resource" id="Resource_pxqgi"]
+script = ExtResource("5_r7jky")
+AttackRateIncrease = 50.0
+metadata/_custom_type_script = "uid://civl0ns7ngbc6"
+
+[sub_resource type="Resource" id="Resource_y4823"]
+script = ExtResource("4_h8fx6")
+Amount = 30.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_kvhl8"]
+script = ExtResource("4_h8fx6")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_2vw1v"]
+script = ExtResource("4_h8fx6")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_xwbds"]
+script = ExtResource("4_h8fx6")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_fwlyk"]
+script = ExtResource("5_r7jky")
+AttackRateIncrease = 10.0
+metadata/_custom_type_script = "uid://civl0ns7ngbc6"
+
+[sub_resource type="Resource" id="Resource_recmg"]
+script = ExtResource("4_h8fx6")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_rq8m2"]
+script = ExtResource("4_h8fx6")
+Amount = 200.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_r7jky"]
+script = ExtResource("4_h8fx6")
+Amount = 10.0
+metadata/_custom_type_script = "uid://bqa6hwpbpw3x0"
+
+[sub_resource type="Resource" id="Resource_gfs5j"]
+script = ExtResource("5_r7jky")
+AttackRateIncrease = 10.0
+metadata/_custom_type_script = "uid://civl0ns7ngbc6"
+
+[sub_resource type="Resource" id="Resource_wbrfu"]
+script = ExtResource("7_h8fx6")
+Amount = 2.0
+metadata/_custom_type_script = "uid://b068slgsi0qfb"
 
 [resource]
 script = ExtResource("2_ive2k")
@@ -25,6 +93,6 @@ ProjectileSpeed = 5
 Penetration = 0
 BulletSpread = 0
 ShootType = 0
-Upgrades = Array[ExtResource("1_swusl")]([])
-WeakUpgrades = Array[ExtResource("1_swusl")]([])
+Upgrades = Array[ExtResource("1_swusl")]([SubResource("Resource_5s5wu"), SubResource("Resource_bi4vh"), SubResource("Resource_pxqgi"), SubResource("Resource_y4823"), SubResource("Resource_kvhl8"), SubResource("Resource_2vw1v"), SubResource("Resource_xwbds"), SubResource("Resource_fwlyk"), SubResource("Resource_recmg"), SubResource("Resource_rq8m2")])
+WeakUpgrades = Array[ExtResource("1_swusl")]([SubResource("Resource_r7jky"), SubResource("Resource_gfs5j"), SubResource("Resource_wbrfu")])
 metadata/_custom_type_script = "uid://dadt4pa7kewb"

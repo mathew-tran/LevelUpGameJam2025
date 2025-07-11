@@ -167,6 +167,7 @@ func Setup(newData):
 	Spread = CharacterDataRef.Spread
 	$ShootTimer.wait_time = 1/SubStatAttackRate.Get().GetValue()
 	
+	await get_tree().process_frame
 	Finder.GetGame().RemoveCharacterFromGame(CharacterDataRef.Name)
 	
 func OnAttackRateUpdate(rate):
