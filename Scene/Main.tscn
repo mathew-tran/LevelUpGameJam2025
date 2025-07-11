@@ -59,7 +59,6 @@ visible = false
 
 [node name="PowerupPanel" parent="CanvasLayer" instance=ExtResource("11_4qtod")]
 visible = false
-scale = Vector2(1e-05, 1e-05)
 
 [node name="KillsCount" parent="CanvasLayer" instance=ExtResource("11_i0sg4")]
 

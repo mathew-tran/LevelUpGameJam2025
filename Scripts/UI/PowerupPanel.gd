@@ -4,6 +4,7 @@ func _ready() -> void:
 	Finder.GetGame().OnPowerupGained.connect(OnPowerupGained)
 	
 func OnPowerupGained(department, text):
+	$AudioStreamPlayer.play()
 	$HBoxContainer/TextureRect.self_modulate = CharacterData.GetDepartmentColor(department)
 	$HBoxContainer/Label.text = text
 	visible = true
