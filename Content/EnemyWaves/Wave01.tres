@@ -24,7 +24,7 @@ metadata/_custom_type_script = "uid://bqsegjg1rqs3m"
 [resource]
 script = ExtResource("2_l5v21")
 EnemyWavePairings = Array[ExtResource("1_u8h2j")]([SubResource("Resource_l0poy"), SubResource("Resource_0evdo"), SubResource("Resource_u8h2j")])
-bIsBossWave = false
+WaveFormat = 0
 WaveType = 5
 TimeBetweenSpawn = 0.1
 metadata/_custom_type_script = "uid://u601p82tca2h"

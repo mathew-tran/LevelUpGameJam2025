@@ -66,6 +66,7 @@ func _enter_tree() -> void:
 func _ready() -> void:
 	Jukebox.PlayMusic(JukeboxPlayer.MUSIC_TYPE.FIGHT)
 	Slomo(1,.001)
+	get_tree().paused = false
 	
 
 func Setup():

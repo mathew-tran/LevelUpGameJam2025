@@ -1,5 +1,6 @@
 extends Node2D
 
+class_name Spawner
 @export_dir var WavesDirectory
 
 var Waves = []

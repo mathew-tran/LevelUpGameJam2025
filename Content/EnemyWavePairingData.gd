@@ -8,7 +8,8 @@ enum ENEMY_TYPE {
 	FAST_A,
 	MINIBOSS,
 	MEDIUM_A,
-	MINIBOSS_2
+	MINIBOSS_2,
+	FINAL_BOSS
 }
 @export var EnemyTypeToSpawn : ENEMY_TYPE
 @export var AmountToSpawn = 20
@@ -28,3 +29,5 @@ func GetEnemyPath():
 			return "res://Prefabs/Enemies/EnemyComputer.tscn"
 		ENEMY_TYPE.MINIBOSS_2:
 			return "res://Prefabs/Enemies/EnemyCalculator.tscn"
+		ENEMY_TYPE.FINAL_BOSS:
+			return "res://Prefabs/Enemies/EnemyBlueScreen.tscn"

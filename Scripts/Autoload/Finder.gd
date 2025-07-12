@@ -6,6 +6,9 @@ func GetPlayer() -> Player:
 func GetSpawnPoints():
 	return get_tree().get_nodes_in_group("SpawnPoints")[0]
 	
+func GetSpawner() -> Spawner:
+	return get_tree().get_nodes_in_group("Spawner")[0]
+	
 func GetEXPBar() -> EXPBar:
 	return get_tree().get_nodes_in_group("EXPBar")[0]
 	

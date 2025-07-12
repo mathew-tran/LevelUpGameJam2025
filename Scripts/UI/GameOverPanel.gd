@@ -4,6 +4,8 @@ func _ready() -> void:
 	Finder.GetGame().OnGameOver.connect(OnGameOver)
 	
 func OnGameOver():
+	var wavesSurvived = Finder.GetSpawner().Round - 1
+	$WavesText.text = "You have survived " + str(wavesSurvived) + " waves."
 	visible = true
 	
 func _on_button_button_up() -> void:

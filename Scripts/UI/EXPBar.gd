@@ -31,7 +31,7 @@ func _process(delta: float) -> void:
 		Jukebox.PlayXPSFX(lerp(1.0, 2.5, value))
 		if EXP >= MaxEXP:
 			EXP = 0
-			MaxEXP *= 1.2
+			MaxEXP *= 1.1
 			if MaxEXP >= 4000:
 				MaxEXP = 4000
 			if Level >= 80:

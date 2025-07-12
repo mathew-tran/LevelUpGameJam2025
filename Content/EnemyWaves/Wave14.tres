@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="EnemyWaveData" load_steps=7 format=3 uid="uid://xwmpfesp437l"]
+
+[ext_resource type="Script" uid="uid://bqsegjg1rqs3m" path="res://Content/EnemyWavePairingData.gd" id="1_qx2up"]
+[ext_resource type="Script" uid="uid://u601p82tca2h" path="res://Content/EnemyWaveData.gd" id="2_glu7e"]
+
+[sub_resource type="Resource" id="Resource_880lr"]
+script = ExtResource("1_qx2up")
+EnemyTypeToSpawn = 4
+AmountToSpawn = 20
+metadata/_custom_type_script = "uid://bqsegjg1rqs3m"
+
+[sub_resource type="Resource" id="Resource_j6u12"]
+script = ExtResource("1_qx2up")
+EnemyTypeToSpawn = 2
+AmountToSpawn = 20
+metadata/_custom_type_script = "uid://bqsegjg1rqs3m"
+
+[sub_resource type="Resource" id="Resource_fj7tr"]
+script = ExtResource("1_qx2up")
+EnemyTypeToSpawn = 0
+AmountToSpawn = 20
+metadata/_custom_type_script = "uid://bqsegjg1rqs3m"
+
+[sub_resource type="Resource" id="Resource_41abo"]
+script = ExtResource("1_qx2up")
+EnemyTypeToSpawn = 6
+AmountToSpawn = 1
+metadata/_custom_type_script = "uid://bqsegjg1rqs3m"
+
+[resource]
+script = ExtResource("2_glu7e")
+EnemyWavePairings = Array[ExtResource("1_qx2up")]([SubResource("Resource_880lr"), SubResource("Resource_j6u12"), SubResource("Resource_fj7tr"), SubResource("Resource_41abo")])
+WaveFormat = 2
+WaveType = 0
+TimeBetweenSpawn = -1.0
+metadata/_custom_type_script = "uid://u601p82tca2h"

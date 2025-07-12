@@ -31,7 +31,8 @@ func DropEXPOrbMoveFromXtoY(amount, position, nextPosition, time = 0.2):
 	var tween = get_tree().create_tween()
 	tween.tween_property(instance, "global_position", nextPosition, time)
 	await tween.finished
-	instance.bIsUsable = true
+	if is_instance_valid(instance):
+		instance.bIsUsable = true
 	
 func GetRandomPositionAroundPoint(pos, distance):
 	var direction = Vector2.RIGHT

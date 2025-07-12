@@ -2,17 +2,23 @@ extends EnemyBaseWaveData
 
 class_name EnemyWaveData
 
+enum WAVE_FORMAT {
+	REGULAR,
+	MINIBOSS,
+	BOSS
+}
 @export var EnemyWavePairings : Array[EnemyWavePairingData]
-@export var bIsBossWave = false
+@export var WaveFormat : WAVE_FORMAT
 @export var WaveType : WAVE_TYPE
 @export var TimeBetweenSpawn = -1.0
 
 func CreateEnemies():
-	if bIsBossWave:
+	if WaveFormat == WAVE_FORMAT.MINIBOSS:
 		Jukebox.ChangeFightMusic(load("res://Audio/Music/bosstheme (1).ogg"))
-	else:
+	elif WaveFormat == WAVE_FORMAT.REGULAR:
 		Jukebox.ChangeFightMusic(load("res://Audio/Music/level25-battle (1).ogg"))
-		
+	else:
+		Jukebox.ChangeFightMusic(load("res://Audio/Music/Finalboss (1) (1).ogg"))
 	var enemyCount = 0
 	for wave in EnemyWavePairings:
 		enemyCount += wave.AmountToSpawn
@@ -41,6 +47,10 @@ func CanContinue():
 	return Finder.GetEnemyGroup().get_child_count() > 0
 	
 func GetWaveText():
-	if bIsBossWave:
+	if WaveFormat == WAVE_FORMAT.MINIBOSS:
 		return "BOSS WAVE"
+	elif WaveFormat == WAVE_FORMAT.REGULAR:
+		return ""
+	else:
+		return "FINAL BOSS WAVE"
 	return ""

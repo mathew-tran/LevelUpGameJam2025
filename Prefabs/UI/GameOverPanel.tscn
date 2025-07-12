@@ -38,12 +38,14 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -200.0
-offset_top = -144.0
-offset_right = 200.0
-offset_bottom = -24.0
+offset_left = -123.0
+offset_top = -149.0
+offset_right = 277.0
+offset_bottom = -29.0
 grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(0.6, 0.6)
+metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="Button"]
 layout_mode = 1
@@ -70,12 +72,14 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -200.0
-offset_top = -282.0
-offset_right = 200.0
-offset_bottom = -162.0
+offset_left = -117.0
+offset_top = -236.0
+offset_right = 283.0
+offset_bottom = -116.0
 grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(0.6, 0.6)
+metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="CharSelectButton"]
 layout_mode = 1
@@ -93,6 +97,21 @@ theme_override_font_sizes/font_size = 30
 text = "CHARACTER SELECT"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="WavesText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.5
+offset_top = -11.5
+offset_right = 105.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "You have survived 0 waves."
 
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
 [connection signal="button_up" from="CharSelectButton" to="." method="_on_char_select_button_button_up"]

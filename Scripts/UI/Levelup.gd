@@ -55,6 +55,8 @@ func OnGameOver():
 		Close()
 		
 func OnLevelup():
+	if Finder.GetEXPBar().Level % 5 == 0:
+		Finder.GetGame().AddMoney(1)
 	Setup()
 	if Finder.GetGame().bHealOnLevelup:
 		for child in Finder.GetWorkerGroup().get_children():
