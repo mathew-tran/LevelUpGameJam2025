@@ -34,7 +34,7 @@ autostart = true
 shape = SubResource("RectangleShape2D_t60cr")
 
 [node name="BounceTimer" type="Timer" parent="."]
-wait_time = 0.03
+wait_time = 0.1
 one_shot = true
 
 [connection signal="timeout" from="LiveTimer" to="." method="_on_live_timer_timeout"]

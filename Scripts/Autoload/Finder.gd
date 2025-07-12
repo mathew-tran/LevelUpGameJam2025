@@ -39,7 +39,8 @@ func GetEXP() -> EXPBar:
 func GetEnemyGroup():
 	return get_tree().get_nodes_in_group("EnemyGroup")[0]
 
-func GetClosestEnemy(fromPosition):
+
+func GetClosestEnemy(fromPosition, range = 500):
 	var enemies = GetEnemyGroup().get_children()
 	if enemies.size() > 0:
 		var closestEnemy = enemies[0]
@@ -47,10 +48,13 @@ func GetClosestEnemy(fromPosition):
 		for index in range(0, enemies.size()):
 			var distanceToEnemy = enemies[index].global_position.distance_to(fromPosition)
 			if distanceToEnemy < closestDistance:
-				closestDistance = distanceToEnemy
-				closestEnemy = enemies[index]
+				if distanceToEnemy <= range:
+					closestDistance = distanceToEnemy
+					closestEnemy = enemies[index]
 			else:
 				pass
+		if closestDistance > range:
+			return null
 		return closestEnemy
 	return null
 

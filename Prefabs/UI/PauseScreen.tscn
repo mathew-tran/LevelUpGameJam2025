@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c0shcn412sqvw" path="res://Prefabs/UI/TeamSizeUI.tscn" id="3_ydsgm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qgdva"]
-bg_color = Color(0, 0, 0, 0.796078)
+bg_color = Color(0, 0.130237, 0.264174, 1)
 
 [node name="PauseScreen" type="Panel"]
 process_mode = 3

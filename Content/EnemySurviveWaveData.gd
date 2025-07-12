@@ -13,6 +13,8 @@ func CreateEnemies():
 		while Finder.GetGame().IsTimerDone() == false:
 			var index = 0
 			await Finder.GetGame().get_tree().create_timer(PollTime).timeout
+			if Finder.GetEnemyGroup() == null:
+				return
 			while index < len(EnemiesToSpawn) and Finder.GetEnemyGroup().get_child_count() < EnemyLimit:
 				var enemyClass =  load(EnemiesToSpawn[index].GetEnemyPath())
 				var positions = MakeSpawnPositions(EnemiesToSpawn[index].AmountToSpawn, WaveFormation)

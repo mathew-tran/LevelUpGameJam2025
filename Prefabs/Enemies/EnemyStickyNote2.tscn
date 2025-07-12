@@ -10,7 +10,7 @@ radius = 17.5642
 radius = 17.0294
 
 [node name="BaseEnemy" instance=ExtResource("1_ytsrl")]
-Speed = 70
+Speed = 150
 Damage = 4
 EXPToDrop = 65
 

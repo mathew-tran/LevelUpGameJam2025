@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://cq0pg18wpqef1"]
+[gd_scene load_steps=18 format=3 uid="uid://cq0pg18wpqef1"]
 
 [ext_resource type="Script" uid="uid://dokag847w5cfs" path="res://Scripts/Game.gd" id="1_togfq"]
 [ext_resource type="PackedScene" uid="uid://d1demcer6jenb" path="res://Prefabs/Player.tscn" id="1_xhtwi"]
 [ext_resource type="Texture2D" uid="uid://p5ou6v6eb8gl" path="res://Art/tilemap/Levelup25-titlemapdresampled.png" id="2_i0sg4"]
 [ext_resource type="PackedScene" uid="uid://dxmvkm2aj3lpq" path="res://Prefabs/Spawner.tscn" id="4_vm4ek"]
+[ext_resource type="PackedScene" uid="uid://tiga6duwpsat" path="res://Prefabs/Objectives/ObjectiveMemoryExtract.tscn" id="5_sc4dx"]
 [ext_resource type="PackedScene" uid="uid://wxay2kx6dg3m" path="res://Prefabs/UI/EXPBar.tscn" id="6_aan6j"]
 [ext_resource type="PackedScene" uid="uid://cu8sskt8qxtpq" path="res://Prefabs/UI/LevelUp.tscn" id="7_hueuk"]
 [ext_resource type="PackedScene" uid="uid://davv3kxe782ay" path="res://Prefabs/UI/GameOverPanel.tscn" id="8_6a8me"]
@@ -267,6 +268,27 @@ layer_3/tile_data = PackedInt32Array(-1441754, 1310720, 1, -1376218, 1310720, 2,
 [node name="EnemyGroup" type="Node2D" parent="." groups=["EnemyGroup"]]
 
 [node name="EffectGroup" type="Node2D" parent="." groups=["EffectGroup"]]
+
+[node name="MemoryExtractObjective" parent="." instance=ExtResource("5_sc4dx")]
+position = Vector2(3478, 933)
+
+[node name="MemoryExtractObjective2" parent="." instance=ExtResource("5_sc4dx")]
+position = Vector2(4800, -1595)
+
+[node name="MemoryExtractObjective3" parent="." instance=ExtResource("5_sc4dx")]
+position = Vector2(1195, -529)
+
+[node name="MemoryExtractObjective4" parent="." instance=ExtResource("5_sc4dx")]
+position = Vector2(-1720, -1157)
+
+[node name="MemoryExtractObjective5" parent="." instance=ExtResource("5_sc4dx")]
+position = Vector2(1303, 926)
+
+[node name="MemoryExtractObjective6" parent="." instance=ExtResource("5_sc4dx")]
+position = Vector2(3966, -813)
+
+[node name="MemoryExtractObjective7" parent="." instance=ExtResource("5_sc4dx")]
+position = Vector2(1509, -1682)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

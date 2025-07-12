@@ -45,7 +45,7 @@ func Kill():
 	queue_free()
 	
 func _on_bounce_timer_timeout() -> void:
-	var closestEnemy = Finder.GetClosestEnemy(global_position)
+	var closestEnemy = Finder.GetClosestEnemy(global_position, 99999)
 	if closestEnemy:
 		Direction = (closestEnemy.global_position - global_position).normalized()
 		rotation = Direction.angle()
