@@ -21,6 +21,7 @@ Finder="*res://Scripts/Autoload/Finder.gd"
 Helper="*res://Scripts/Autoload/Helper.gd"
 Jukebox="*res://Prefabs/Autoload/Jukebox.tscn"
 GameData="*res://Scripts/Autoload/GameData.gd"
+InfoPopup="*res://Prefabs/UI/InfoPopup.tscn"
 
 [display]
 

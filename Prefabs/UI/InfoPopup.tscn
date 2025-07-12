@@ -1,0 +1,78 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1jvvi08w4si3"]
+
+[ext_resource type="Script" uid="uid://ccs6xexcoofmj" path="res://Scripts/InfoGamePopup.gd" id="1_4x68a"]
+[ext_resource type="Texture2D" uid="uid://dyc6newsjc7yy" path="res://Art/Character/Jim.png" id="2_ivd3e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ivd3e"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+process_mode = 3
+layer = 5
+script = ExtResource("1_4x68a")
+
+[node name="Popup" type="Panel" parent="."]
+process_mode = 3
+z_index = 1000
+z_as_relative = false
+custom_minimum_size = Vector2(1152, 648)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ivd3e")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Popup"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -259.0
+offset_top = -300.0
+offset_right = 259.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Popup/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "INFO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Popup/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+text = "Did you know you can do X?"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Popup/VBoxContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("2_ivd3e")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="Popup"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -124.0
+offset_right = 100.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "CONTINUE"
+
+[connection signal="button_up" from="Popup/Button" to="." method="_on_button_button_up"]

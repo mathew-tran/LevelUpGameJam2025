@@ -9,8 +9,11 @@ func _ready() -> void:
 	get_tree().paused = false
 	Setup()
 	Jukebox.PlayMusic(JukeboxPlayer.MUSIC_TYPE.SHOP)
+	
 	if GameData.ChosenCharacter:
 		OnClicked(GameData.ChosenCharacter)
+		
+
 
 func Setup():
 	for child in CharacterButtonContainer.get_children():

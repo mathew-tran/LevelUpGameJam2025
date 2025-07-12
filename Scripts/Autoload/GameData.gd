@@ -5,6 +5,8 @@ var CharactersYouWonWith : Array[CharacterData]
 
 var Data = {}
 
+var bFirstTimeGame = true
+var bFirstLevelup = true
 func AddData(key, value):
 	if Data.has(key):
 		Data[key] += value

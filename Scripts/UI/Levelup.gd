@@ -66,6 +66,14 @@ func OnLevelup():
 			child.Heal(2)
 
 func Setup():
+
+	if GameData.bFirstLevelup:
+		await get_tree().create_timer(.5).timeout
+		var data = {}
+		data["message"] = "Click this button to increase your team size!"
+		data["img"] = load("res://Art/ExampleImg/Helpr.png")
+		InfoPopup.ShowPopup(data)
+		GameData.bFirstLevelup = false
 	OnLevelUpMenuOpened.emit()
 	if get_tree().paused == false:
 		get_tree().paused = true

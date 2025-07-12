@@ -20,7 +20,7 @@ var SubStatTeamProjectileSpeed : Resource
 var SubStatPickupRadius : Resource
 
 
-var Money = 10
+var Money = 0
 var EnemiesKilled = 0
 
 var bCanDropMagnet = false
@@ -89,6 +89,7 @@ func _ready() -> void:
 	get_tree().paused = false
 	SetGameState(GAME_STATE.PlAYING)
 	GameData.Data.clear()
+	AddMoney(10)
 	
 
 func Setup():
