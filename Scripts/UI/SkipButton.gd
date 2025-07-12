@@ -13,7 +13,7 @@ func _on_button_up() -> void:
 	Finder.GetGame().AddMoney(MoneyToGain)
 	Finder.GetLevelUp().Close()
 	Jukebox.PlaySFXMenu(load("res://Audio/SFX/MenuSelect.wav"))
-
+	GameData.AddData("Skips", 1)
 
 func _on_mouse_entered() -> void:
 	Jukebox.PlaySFXMenu(load("res://Audio/SFX/Menuhover.wav"))

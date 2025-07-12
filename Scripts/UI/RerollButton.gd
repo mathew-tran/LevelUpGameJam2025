@@ -23,6 +23,7 @@ func _on_button_up() -> void:
 		Finder.GetGame().RemoveMoney(RerollCost)
 		RerollCost += 2
 		OnMoneyUpdate()
+		GameData.AddData("Rerolls", 1)
 
 
 func _on_mouse_entered() -> void:

@@ -34,9 +34,10 @@ func _on_button_up() -> void:
 	if is_instance_valid(UpgradeToMake):
 		UpgradeToMake.Apply(CharacterToApply)
 		Finder.GetGame().OnInvestDepartment.emit(CharacterToApply.CharacterDataRef.Occupation)
+		GameData.AddData("Coworker Upgrades", 1)
 	elif is_instance_valid(CharacterToAdd):
 		CharacterToAdd.Create()
-
+		GameData.AddData("Coworker Hires", 1)
 		Finder.GetGame().OnInvestDepartment.emit(CharacterToAdd.Occupation)
 	OnPurchased.emit()
 	

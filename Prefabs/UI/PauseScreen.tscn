@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cf3ytmgwd434w"]
+[gd_scene load_steps=6 format=3 uid="uid://cf3ytmgwd434w"]
 
 [ext_resource type="Script" uid="uid://bstvik02v4me8" path="res://Scripts/UI/PauseScreen.gd" id="1_qmmm4"]
 [ext_resource type="PackedScene" uid="uid://750jspop8us0" path="res://Prefabs/UI/CharacterShowingContainer.tscn" id="2_qgdva"]
 [ext_resource type="PackedScene" uid="uid://c0shcn412sqvw" path="res://Prefabs/UI/TeamSizeUI.tscn" id="3_ydsgm"]
+[ext_resource type="PackedScene" uid="uid://dfppsl41k3rjh" path="res://Prefabs/StatsPanel.tscn" id="4_ddnqf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qgdva"]
 bg_color = Color(0, 0.130237, 0.264174, 1)
@@ -59,6 +60,20 @@ offset_left = 85.0
 offset_top = 56.0
 offset_right = 154.0
 offset_bottom = 96.0
+
+[node name="StatsPanel" parent="." instance=ExtResource("4_ddnqf")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 0.0
+offset_bottom = 200.0
+grow_horizontal = 0
+grow_vertical = 2
 
 [connection signal="button_up" from="VBoxContainer/ResumeButton" to="." method="_on_resume_button_button_up"]
 [connection signal="button_up" from="VBoxContainer/CharacterSelect" to="." method="_on_character_select_button_up"]

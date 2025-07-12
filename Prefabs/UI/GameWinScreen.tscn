@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b81qpi3u20v7m"]
+[gd_scene load_steps=5 format=3 uid="uid://b81qpi3u20v7m"]
 
 [ext_resource type="Script" uid="uid://b54j06hpssyjt" path="res://Scripts/UI/GameWinScreen.gd" id="1_u1fyv"]
+[ext_resource type="PackedScene" uid="uid://dfppsl41k3rjh" path="res://Prefabs/StatsPanel.tscn" id="2_886e7"]
 [ext_resource type="AudioStream" uid="uid://t3trxky512m0" path="res://Audio/Music/victory (1).ogg" id="2_dmyh4"]
 [ext_resource type="PackedScene" uid="uid://b6emkq8s8ug1l" path="res://Prefabs/UI/CharacterPipEnding.tscn" id="3_dmyh4"]
 
@@ -15,9 +16,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -319.0
+offset_left = -542.0
 offset_top = -222.0
-offset_right = 320.0
+offset_right = 97.0
 offset_bottom = -53.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -33,13 +34,26 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -95.5
+offset_left = -318.5
 offset_top = 74.5
-offset_right = 104.5
+offset_right = -118.5
 offset_bottom = 154.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "PLAY AGAIN"
+
+[node name="StatsPanel" parent="CanvasLayer" instance=ExtResource("2_886e7")]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 0.0
+offset_bottom = 200.0
+grow_horizontal = 0
+grow_vertical = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_dmyh4")
@@ -51,9 +65,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 181.0
+offset_left = -42.0
 offset_top = 309.0
-offset_right = 981.0
+offset_right = 758.0
 offset_bottom = 370.0
 grow_horizontal = 2
 grow_vertical = 2

@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfppsl41k3rjh"]
+
+[ext_resource type="Script" uid="uid://b2nk1wf1nt630" path="res://Scripts/StatsPanel.gd" id="1_4vucd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hchqu"]
+
+[node name="StatsPanel" type="Panel"]
+process_mode = 3
+custom_minimum_size = Vector2(400, 400)
+offset_left = 50.0
+offset_top = 154.0
+offset_right = 250.0
+offset_bottom = 254.0
+script = ExtResource("1_4vucd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 5.0
+offset_right = 386.0
+offset_bottom = 391.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "STATS"
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 5)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hchqu")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 350)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer2"]
+layout_mode = 2
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

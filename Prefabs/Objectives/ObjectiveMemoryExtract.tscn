@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://tiga6duwpsat"]
+[gd_scene load_steps=11 format=3 uid="uid://tiga6duwpsat"]
 
 [ext_resource type="Script" uid="uid://ckyceknvserjl" path="res://Scripts/Objectives/MemoryExtractObjective.gd" id="1_evbu2"]
 [ext_resource type="Texture2D" uid="uid://dymtvehsdpmr2" path="res://Art/UI/SpawnCircle.png" id="1_yjdfc"]
 [ext_resource type="PackedScene" uid="uid://cptds02dqtiqe" path="res://Prefabs/MemoryDrive.tscn" id="2_yjdfc"]
+[ext_resource type="AudioStream" uid="uid://dj7dgs5sa8knp" path="res://Audio/SFX/pickup.wav" id="4_lbg07"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tc1q2"]
 radius = 88.0
@@ -95,6 +96,10 @@ theme_override_styles/background = SubResource("StyleBoxFlat_drrns")
 theme_override_styles/fill = SubResource("StyleBoxFlat_lbg07")
 max_value = 1.0
 show_percentage = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_lbg07")
+pitch_scale = 0.6
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="PollTimer" to="." method="_on_poll_timer_timeout"]

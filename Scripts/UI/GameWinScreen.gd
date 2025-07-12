@@ -6,6 +6,7 @@ func _ready() -> void:
 	$AudioStreamPlayer.play()
 	Jukebox.PlayMusic(JukeboxPlayer.MUSIC_TYPE.NONE)
 	Populate()
+	$CanvasLayer/StatsPanel.Update()
 
 func _on_button_button_up() -> void:
 	get_tree().change_scene_to_packed(load("res://Prefabs/UI/CharacterSelect/CharacterSelectScreen.tscn"))

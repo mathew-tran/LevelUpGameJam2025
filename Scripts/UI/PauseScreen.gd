@@ -7,6 +7,7 @@ func _input(event: InputEvent) -> void:
 			$CharacterShowingContainer.OnLevelUpMenuOpened()
 			$TeamSizeUI.Update()
 			get_tree().paused = true
+			$StatsPanel.Update()
 		else:
 			Close()
 			

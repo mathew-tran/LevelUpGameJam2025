@@ -30,8 +30,9 @@ func _process(delta: float) -> void:
 		EXPCache -= amountToRemove
 		Jukebox.PlayXPSFX(lerp(1.0, 2.5, value))
 		if EXP >= MaxEXP:
+			GameData.AddData("Levels Gained", 1)
 			EXP = 0
-			MaxEXP *= 1.3
+			MaxEXP *= 1.2
 			if MaxEXP >= 4000:
 				MaxEXP = 4000
 			if Level >= 80:

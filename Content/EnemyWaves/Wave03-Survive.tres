@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemySurviveWaveData" load_steps=5 format=3 uid="uid://com2wq0x84nii"]
+[gd_resource type="Resource" script_class="EnemySurviveWaveData" load_steps=6 format=3 uid="uid://com2wq0x84nii"]
 
 [ext_resource type="Script" uid="uid://bqsegjg1rqs3m" path="res://Content/EnemyWavePairingData.gd" id="1_y2ula"]
 [ext_resource type="Script" uid="uid://cx61gu3iskisd" path="res://Content/EnemySurviveWaveData.gd" id="2_h23jq"]
@@ -11,15 +11,21 @@ metadata/_custom_type_script = "uid://bqsegjg1rqs3m"
 
 [sub_resource type="Resource" id="Resource_qypcm"]
 script = ExtResource("1_y2ula")
+EnemyTypeToSpawn = 1
+AmountToSpawn = 30
+metadata/_custom_type_script = "uid://bqsegjg1rqs3m"
+
+[sub_resource type="Resource" id="Resource_y2ula"]
+script = ExtResource("1_y2ula")
 EnemyTypeToSpawn = 2
 AmountToSpawn = 2
 metadata/_custom_type_script = "uid://bqsegjg1rqs3m"
 
 [resource]
 script = ExtResource("2_h23jq")
-SurviveTimeLimit = 60.0
+SurviveTimeLimit = 20.0
 PollTime = 1
-EnemyLimit = 20
-EnemiesToSpawn = Array[ExtResource("1_y2ula")]([SubResource("Resource_our2j"), SubResource("Resource_qypcm")])
+EnemyLimit = 80
+EnemiesToSpawn = Array[ExtResource("1_y2ula")]([SubResource("Resource_our2j"), SubResource("Resource_qypcm"), SubResource("Resource_y2ula")])
 WaveFormation = 0
 metadata/_custom_type_script = "uid://cx61gu3iskisd"

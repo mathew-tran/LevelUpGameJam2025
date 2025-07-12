@@ -8,6 +8,7 @@ func SetupBuff():
 	pass
 	
 func ApplyBuff(char : BaseCharacter):
+	GameData.AddData("Buffs Applied", 1)
 	CharRef = char
 	$Timer.start()
 	$AnimationPlayer.play("anim")

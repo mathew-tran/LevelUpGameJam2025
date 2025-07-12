@@ -22,6 +22,7 @@ func _on_poll_timer_timeout() -> void:
 			$Timer.start()
 			$AnimationPlayer.play("anim")
 		$Label.text = "EXTRACTING..."
+		$AudioStreamPlayer.play()
 	else:
 		$Timer.stop()
 		$AnimationPlayer.pause()
@@ -36,5 +37,6 @@ func _on_timer_timeout() -> void:
 	if TimeLeft <= 0:
 		bHasBeenCompleted = true
 		$MemoryDrive.DestroyMemory()
+		GameData.AddData("Data Extracted", 1)
 		queue_free()
 		

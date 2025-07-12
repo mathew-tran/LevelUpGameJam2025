@@ -35,6 +35,7 @@ func _on_timer_timeout() -> void:
 	if CurrentWave.CanContinue() == false:
 		$Timer.stop()		
 		if Waves.size() > 0:
+			GameData.AddData("Waves Completed", 1)
 			var amount = Round + 6 + randi() % 10
 			if amount >= 100:
 				amount = 100

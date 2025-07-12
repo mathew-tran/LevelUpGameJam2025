@@ -8,6 +8,7 @@ func Setup():
 	scale = Vector2.ONE * lerp(1,4, clamp(Amount, 1, 20)/20)
 	
 func DoPickupAction():
+	GameData.AddData("Money Picked up", 1)
 	Finder.GetGame().AddMoney(Amount)
 	Jukebox.PlayPickupSFX()
 	if Finder.GetGame().bGainHealthWhenMoneyPickedUp:

@@ -57,6 +57,10 @@ script = ExtResource("4_ikhr0")
 Amount = 10.0
 metadata/_custom_type_script = "uid://w2waj35n737p"
 
+[sub_resource type="Resource" id="Resource_jpsg2"]
+script = ExtResource("9_i4ttg")
+metadata/_custom_type_script = "uid://bndw1xvun2g4p"
+
 [sub_resource type="Resource" id="Resource_a1pdc"]
 script = ExtResource("8_iunog")
 Amount = 50.0
@@ -84,10 +88,6 @@ metadata/_custom_type_script = "uid://dtvnvw661ko6w"
 script = ExtResource("6_6v5x1")
 metadata/_custom_type_script = "uid://8vb1ix46oa5p"
 
-[sub_resource type="Resource" id="Resource_jpsg2"]
-script = ExtResource("9_i4ttg")
-metadata/_custom_type_script = "uid://bndw1xvun2g4p"
-
 [sub_resource type="Resource" id="Resource_6v5x1"]
 script = ExtResource("4_oei07")
 Amount = 5.0
@@ -108,14 +108,14 @@ script = ExtResource("5_jnwyr")
 Amount = 10.0
 metadata/_custom_type_script = "uid://bshasrmjy63ri"
 
+[sub_resource type="Resource" id="Resource_6wo2x"]
+script = ExtResource("15_eamjb")
+metadata/_custom_type_script = "uid://cshu8ljt8yifj"
+
 [sub_resource type="Resource" id="Resource_nwdge"]
 script = ExtResource("5_jnwyr")
 Amount = 10.0
 metadata/_custom_type_script = "uid://bshasrmjy63ri"
-
-[sub_resource type="Resource" id="Resource_6wo2x"]
-script = ExtResource("15_eamjb")
-metadata/_custom_type_script = "uid://cshu8ljt8yifj"
 
 [sub_resource type="Resource" id="Resource_eamjb"]
 script = ExtResource("6_ovivv")
@@ -141,6 +141,10 @@ metadata/_custom_type_script = "uid://w2waj35n737p"
 [sub_resource type="Resource" id="Resource_qngum"]
 script = ExtResource("6_7pwmq")
 metadata/_custom_type_script = "uid://br5xo1nh65rm8"
+
+[sub_resource type="Resource" id="Resource_qmhut"]
+script = ExtResource("19_3cnpm")
+metadata/_custom_type_script = "uid://by822qjgkxcwt"
 
 [sub_resource type="Resource" id="Resource_5gvgr"]
 script = ExtResource("4_oei07")
@@ -179,14 +183,14 @@ script = ExtResource("5_jnwyr")
 Amount = 10.0
 metadata/_custom_type_script = "uid://bshasrmjy63ri"
 
-[sub_resource type="Resource" id="Resource_qmhut"]
-script = ExtResource("19_3cnpm")
-metadata/_custom_type_script = "uid://by822qjgkxcwt"
-
 [sub_resource type="Resource" id="Resource_7pwmq"]
 script = ExtResource("5_yojl4")
 Amount = 10.0
 metadata/_custom_type_script = "uid://3reikkrh7078"
+
+[sub_resource type="Resource" id="Resource_1vd0j"]
+script = ExtResource("25_fmh6w")
+metadata/_custom_type_script = "uid://dvjjam3hr4404"
 
 [sub_resource type="Resource" id="Resource_5dlre"]
 script = ExtResource("6_dtp4c")
@@ -228,10 +232,6 @@ metadata/_custom_type_script = "uid://w2waj35n737p"
 [sub_resource type="Resource" id="Resource_1fi7c"]
 script = ExtResource("27_da2sp")
 metadata/_custom_type_script = "uid://dy0joco0ufkjv"
-
-[sub_resource type="Resource" id="Resource_1vd0j"]
-script = ExtResource("25_fmh6w")
-metadata/_custom_type_script = "uid://dvjjam3hr4404"
 
 [sub_resource type="Resource" id="Resource_x3bdy"]
 script = ExtResource("8_iunog")
@@ -336,22 +336,22 @@ text = "(Improve in tracks by investing in different departments!)"
 
 [node name="TrackCategory" parent="VBoxContainer" instance=ExtResource("1_xjvdj")]
 layout_mode = 2
-Upgrades = Array[ExtResource("2_i6fpy")]([null, SubResource("Resource_yojl4"), SubResource("Resource_3cnpm"), null, SubResource("Resource_c27l8"), null, null, SubResource("Resource_fmh6w"), null, SubResource("Resource_0g2k7"), null, SubResource("Resource_a1pdc"), null, null, SubResource("Resource_da2sp"), null, SubResource("Resource_j78md"), null, null, SubResource("Resource_4qc8j"), null, null, null, SubResource("Resource_iunog"), null, null, null, SubResource("Resource_c7rff"), null, SubResource("Resource_jpsg2")])
+Upgrades = Array[ExtResource("2_i6fpy")]([null, SubResource("Resource_yojl4"), SubResource("Resource_3cnpm"), null, SubResource("Resource_c27l8"), null, null, SubResource("Resource_fmh6w"), null, SubResource("Resource_0g2k7"), SubResource("Resource_jpsg2"), null, SubResource("Resource_a1pdc"), null, null, SubResource("Resource_da2sp"), null, SubResource("Resource_j78md"), null, null, SubResource("Resource_4qc8j"), null, null, null, SubResource("Resource_iunog"), null, null, null, null, SubResource("Resource_c7rff")])
 
 [node name="TrackCategory2" parent="VBoxContainer" instance=ExtResource("1_xjvdj")]
 layout_mode = 2
 Category = 1
-Upgrades = Array[ExtResource("2_i6fpy")]([SubResource("Resource_6v5x1"), null, SubResource("Resource_c3m2p"), null, null, null, SubResource("Resource_xo6vh"), null, null, SubResource("Resource_ikhr0"), null, null, SubResource("Resource_nwdge"), null, null, SubResource("Resource_6wo2x"), null, null, null, null, null, SubResource("Resource_eamjb"), null, null, null, SubResource("Resource_i4ttg"), null, null, null, SubResource("Resource_jindf")])
+Upgrades = Array[ExtResource("2_i6fpy")]([SubResource("Resource_6v5x1"), null, SubResource("Resource_c3m2p"), null, null, null, SubResource("Resource_xo6vh"), null, null, SubResource("Resource_ikhr0"), null, SubResource("Resource_6wo2x"), null, SubResource("Resource_nwdge"), null, null, null, null, null, null, null, SubResource("Resource_eamjb"), null, null, null, SubResource("Resource_i4ttg"), null, null, null, SubResource("Resource_jindf")])
 
 [node name="TrackCategory3" parent="VBoxContainer" instance=ExtResource("1_xjvdj")]
 layout_mode = 2
 Category = 2
-Upgrades = Array[ExtResource("2_i6fpy")]([null, SubResource("Resource_jnwyr"), null, null, SubResource("Resource_ijtgi"), null, SubResource("Resource_qngum"), null, SubResource("Resource_5gvgr"), null, SubResource("Resource_ovivv"), null, null, SubResource("Resource_64fdg"), null, null, SubResource("Resource_4msid"), null, SubResource("Resource_sqj3j"), null, null, SubResource("Resource_re7f1"), null, SubResource("Resource_lnunm"), null, null, SubResource("Resource_cio5q"), null, null, SubResource("Resource_qmhut")])
+Upgrades = Array[ExtResource("2_i6fpy")]([null, SubResource("Resource_jnwyr"), null, null, SubResource("Resource_ijtgi"), null, SubResource("Resource_qngum"), null, SubResource("Resource_qmhut"), SubResource("Resource_5gvgr"), null, SubResource("Resource_ovivv"), null, null, SubResource("Resource_64fdg"), null, null, SubResource("Resource_4msid"), null, SubResource("Resource_sqj3j"), null, null, SubResource("Resource_re7f1"), null, SubResource("Resource_lnunm"), null, null, SubResource("Resource_cio5q"), null, null])
 
 [node name="TrackCategory4" parent="VBoxContainer" instance=ExtResource("1_xjvdj")]
 layout_mode = 2
 Category = 3
-Upgrades = Array[ExtResource("2_i6fpy")]([SubResource("Resource_7pwmq"), null, null, null, SubResource("Resource_5dlre"), null, SubResource("Resource_4tx45"), null, SubResource("Resource_ye3a6"), null, null, null, null, SubResource("Resource_6dvx0"), null, SubResource("Resource_gse3p"), null, null, SubResource("Resource_fme0h"), null, SubResource("Resource_2kisk"), null, null, SubResource("Resource_cj43w"), null, null, null, SubResource("Resource_1fi7c"), null, SubResource("Resource_1vd0j")])
+Upgrades = Array[ExtResource("2_i6fpy")]([SubResource("Resource_7pwmq"), null, null, null, SubResource("Resource_1vd0j"), SubResource("Resource_5dlre"), null, SubResource("Resource_4tx45"), null, SubResource("Resource_ye3a6"), null, null, null, null, SubResource("Resource_6dvx0"), null, SubResource("Resource_gse3p"), null, null, SubResource("Resource_fme0h"), null, SubResource("Resource_2kisk"), null, null, SubResource("Resource_cj43w"), null, null, null, SubResource("Resource_1fi7c"), null])
 
 [node name="TrackCategory5" parent="VBoxContainer" instance=ExtResource("1_xjvdj")]
 layout_mode = 2

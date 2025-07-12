@@ -88,6 +88,7 @@ func _ready() -> void:
 	Slomo(1,.001)
 	get_tree().paused = false
 	SetGameState(GAME_STATE.PlAYING)
+	GameData.Data.clear()
 	
 
 func Setup():
@@ -148,12 +149,14 @@ func Slomo(amount, time):
 func AddMoney(amount):
 	Money += amount
 	OnMoneyUpdate.emit()
+	GameData.AddData("Money Gained", amount)
 	
 func GetMoney():
 	return Money
 	
 func RemoveMoney(amount):
 	Money -= amount
+	GameData.AddData("Money Spent", amount)
 	OnMoneyUpdate.emit()
 	
 func AddEXP(amount):

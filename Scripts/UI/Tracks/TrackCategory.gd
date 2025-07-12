@@ -27,6 +27,7 @@ func OnInvestDepartment(department):
 func Increment():
 	if Index < MaxIndex:
 		UpgradeContainer.get_child(Index).Activate()
+		GameData.AddData("Track Levels Gained", 1)
 		Index += 1
 		$Level.text = str(Index) 
 		if Index >= MaxIndex:
@@ -51,4 +52,5 @@ func Update():
 func _on_button_button_up() -> void:
 	Finder.GetGame().RemoveMoney($Level/Button.UpgradeCost)
 	Jukebox.PlaySFXMenu(load("res://Audio/SFX/levelup25-purchase.wav"))
+	GameData.AddData("Track Purchases", 1)
 	Increment()

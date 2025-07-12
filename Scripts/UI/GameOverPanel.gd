@@ -8,6 +8,7 @@ func OnGameOver():
 	$WavesText.text = "You have survived " + str(wavesSurvived) + " waves."
 	visible = true
 	Finder.GetGame().SetGameState(Game.GAME_STATE.FINISHED)
+	$StatsPanel.Update()
 	
 func _on_button_button_up() -> void:
 	get_tree().reload_current_scene()

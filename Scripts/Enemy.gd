@@ -17,6 +17,7 @@ func _ready() -> void:
 	$HealthComponent.OnTakeDamage.connect(OnTakeDamage)
 	
 func OnTakeDamage(amount):
+	GameData.AddData("Damage Given", amount)
 	$AnimationPlayer.stop()
 	$AnimationPlayer.play("hit")
 	var damageClass = load("res://Prefabs/UI/DamageText.tscn")
@@ -34,12 +35,14 @@ func OnTakeDamage(amount):
 			Stun()
 	
 func Stun():
+	GameData.AddData("Enemies Stunned", 1)
 	bIsStunned = true
 	$StunTimer.start()
 	modulate = Color.SKY_BLUE
 	
 func OnDeath():
 	Helper.DropEXPOrb(EXPToDrop, global_position)
+	GameData.AddData("Enemies Killed", 1)
 	if Helper.Roll(MoneyDropChance, 100):
 		var moneyInstance = load("res://Prefabs/Pickups/Money.tscn").instantiate()
 		moneyInstance.global_position = Helper.GetRandomPositionAroundPoint(global_position,100)

@@ -87,6 +87,9 @@ func OnTakeDamage(_amount):
 	$Healthbar.value = float($HealthComponent.CurrentHealth) / float($HealthComponent.MaxHealth)
 	if _amount > 0:
 		Jukebox.PlayerHurtSFX()
+		
+	if _amount > 0:
+		GameData.AddData("Damage Taken", _amount)
 	
 	if Finder.GetGame().bShootOnHurt:
 		if _amount > 0:
@@ -106,8 +109,10 @@ func OnTakeDamage(_amount):
 			
 func Heal(amount):
 	$HealthComponent.Heal(amount)
+	GameData.AddData("Damage Healed", 1)
 	
 func OnDeath():
+	GameData.AddData("Coworkers resigned", 1)
 	Finder.GetGame().AddCharacterToGame(CharacterDataRef.resource_path)
 	
 	if Finder.GetGame().bExplodeOnDeath:
@@ -126,7 +131,7 @@ func OnDeath():
 	instance.data = data
 	Finder.GetEffectGroup().add_child(instance)
 	
-	var expAmount = (CharacterLevel + 1) * 50
+	var expAmount = (CharacterLevel + 1) * 100
 	var increments = 360 / (CharacterLevel + 6)
 	for x in range(0, CharacterLevel + 6):
 		var spawnPosition = Helper.GetPositionAroundPoint(global_position, 400, increments * x)
@@ -208,9 +213,12 @@ func _on_shoot_timer_timeout() -> void:
 			amountOfTimesToShoot += 2
 			delay = .12
 		
+		
 		for shootAmount in range(0, amountOfTimesToShoot):
-			var enemy = Finder.GetClosestEnemy(global_position)
+			
+			var enemy = Finder.GetClosestEnemy(global_position, 800)
 			if enemy:
+				GameData.AddData("Projectiles Shot", 1)
 				for angle in GetBulletAngles(Spread):
 					if is_instance_valid(SubStatDamage) == false:
 						return
@@ -266,6 +274,7 @@ func _process(delta: float) -> void:
 				if bTakeDamage:
 					$HealthComponent.TakeDamage(area.Damage)
 				area.TakeDamage(GetContactDamage())
+				GameData.AddData("Damage Given (Contact Damage)", GetContactDamage())
 				$HitTimer.start()	
 	var followObjectPosition = get_global_mouse_position()
 	if FollowObject:

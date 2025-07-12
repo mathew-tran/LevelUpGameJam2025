@@ -49,7 +49,8 @@ func _process(delta: float) -> void:
 	if bMoveTowardsPlayer:
 		var dir = (Finder.GetPlayer().LastKnownPosition - global_position).normalized()
 		if Finder.GetPlayer().LastKnownPosition.distance_to(global_position) < 32:
-			Pickup()
+			if bIsUsable:
+				Pickup()
 		global_position += dir * 500 * delta
 		rotation_degrees += delta * 100
 		
