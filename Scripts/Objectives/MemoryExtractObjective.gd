@@ -33,7 +33,7 @@ func _on_poll_timer_timeout() -> void:
 func _on_timer_timeout() -> void:
 	if bHasBeenCompleted:
 		return
-	TimeLeft -=1
+	TimeLeft -= $Timer.wait_time
 	if TimeLeft <= 0:
 		bHasBeenCompleted = true
 		$MemoryDrive.DestroyMemory()

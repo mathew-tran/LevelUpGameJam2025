@@ -34,6 +34,9 @@ func Setup():
 	await get_tree().process_frame
 	OnSetup.emit()
 	
+func SetHealth():
+	CurrentHealth = MaxHealth
+	
 func Heal(amount):
 	if CurrentState == STATE.DEAD:
 		return

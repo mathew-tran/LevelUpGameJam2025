@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsy0jf8xbbxoi"]
+
+[ext_resource type="Script" uid="uid://dabg7tf7nupsh" path="res://Scripts/UI/DifficultySelect.gd" id="1_wav33"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wav33"]
+bg_color = Color(1.92523e-07, 0.637013, 0.950389, 1)
+
+[node name="HBoxContainer" type="Panel"]
+custom_minimum_size = Vector2(0, 50)
+offset_left = 22.0
+offset_top = -54.0
+offset_right = 465.0
+offset_bottom = -14.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wav33")
+script = ExtResource("1_wav33")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -221.5
+offset_top = -50.0
+offset_right = 219.5
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "DIFFICULTY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_top = 6.0
+offset_right = 442.0
+offset_bottom = 46.0
+alignment = 1
+
+[node name="EasyButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "EASY"
+
+[node name="MediumButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "MEDIUM"
+
+[node name="DifficultButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "HARD"
+
+[connection signal="button_up" from="HBoxContainer/EasyButton" to="." method="_on_easy_button_button_up"]
+[connection signal="button_up" from="HBoxContainer/MediumButton" to="." method="_on_medium_button_button_up"]
+[connection signal="button_up" from="HBoxContainer/DifficultButton" to="." method="_on_difficult_button_button_up"]

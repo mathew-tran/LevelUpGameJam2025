@@ -13,6 +13,9 @@ var bIsStunned = false
 
 var Velocity=  Vector2.ZERO
 func _ready() -> void:
+	$HealthComponent.MaxHealth *= Finder.GetGame().SubStatEnemyHealthMultiplier.Get().GetValue()
+	print(str($HealthComponent.MaxHealth) + "MAX")
+	$HealthComponent.SetHealth()
 	$HealthComponent.OnDeath.connect(OnDeath)
 	$HealthComponent.OnTakeDamage.connect(OnTakeDamage)
 	

@@ -95,7 +95,6 @@ func Setup():
 			
 	print(UPGRADE_STATE.keys()[CurrentUpgradeState] + " was selected")
 	if GameData.bFirstLevelup:
-		await get_tree().create_timer(.5).timeout
 		var data = {}
 		data["message"] = "Click this button to increase your team size!"
 		data["img"] = load("res://Art/ExampleImg/Helpr.png")

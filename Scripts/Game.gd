@@ -19,6 +19,8 @@ var SubStatTeamContactDamage : Resource
 var SubStatTeamProjectileSpeed : Resource
 var SubStatPickupRadius : Resource
 
+var SubStatEnemyHealthMultiplier : Resource
+
 
 var Money = 0
 var EnemiesKilled = 0
@@ -125,7 +127,19 @@ func Setup():
 	SubStatPickupRadius.StatResourceRef = load("res://Content/Stats/TEAM_PICKUP_RADIUS.tres")
 	SubStatPickupRadius.Init()
 	SubStatTeamHealth.ModifiedResource.ValueUpdated.connect(OnPickupRadiusUpdated)
-
+	
+	SubStatEnemyHealthMultiplier = SubStatResourceData.new()
+	SubStatEnemyHealthMultiplier.StatResourceRef = load("res://Content/Stats/ENEMY_HEALTH_MULTIPLIER.tres")
+	SubStatEnemyHealthMultiplier.Init()
+	match GameData.Difficulty:
+		GameData.DIFFICULTY.EASY:
+			SubStatEnemyHealthMultiplier.ModifiedResource.FlatValue = .75
+		GameData.DIFFICULTY.MEDIUM:
+			SubStatEnemyHealthMultiplier.ModifiedResource.FlatValue = 1.00
+		GameData.DIFFICULTY.HARD:
+			SubStatEnemyHealthMultiplier.ModifiedResource.FlatValue = 1.25
+	
+	print(SubStatEnemyHealthMultiplier.Get().GetValue())
 func OnPickupRadiusUpdated(value):
 	var workers = Finder.GetWorkerGroup()
 	for worker in workers.get_children():
