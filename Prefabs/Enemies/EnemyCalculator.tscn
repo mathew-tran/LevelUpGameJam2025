@@ -24,7 +24,7 @@ position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_mw0md")
 
 [node name="HealthComponent" parent="." index="2"]
-MaxHealth = 1200
+MaxHealth = 10000
 
 [node name="Timer" parent="." index="4"]
 wait_time = 3.0

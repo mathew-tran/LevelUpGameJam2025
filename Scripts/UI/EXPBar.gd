@@ -6,7 +6,7 @@ var EXPCache = 0
 var GameRef : Game
 
 var EXP = 0
-var MaxEXP = 100
+var MaxEXP = 150
 var Level = 0
 
 signal OnLevelUp
@@ -31,7 +31,7 @@ func _process(delta: float) -> void:
 		Jukebox.PlayXPSFX(lerp(1.0, 2.5, value))
 		if EXP >= MaxEXP:
 			EXP = 0
-			MaxEXP *= 1.1
+			MaxEXP *= 1.3
 			if MaxEXP >= 4000:
 				MaxEXP = 4000
 			if Level >= 80:

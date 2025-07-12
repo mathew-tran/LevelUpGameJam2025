@@ -23,25 +23,28 @@ func SpawnNextWave():
 		print(newWave.resource_path + " START")
 		$Timer.start()
 	else:
-		print("Game Over!")
-		Waves = Helper.GetAllFilePaths(WavesDirectory)
-		SpawnNextWave()
+		var charactersWonWith : Array[CharacterData]
+		for worker in Finder.GetWorkerGroup().get_children():
+			charactersWonWith.append(worker.CharacterDataRef)
+		GameData.CharactersYouWonWith = charactersWonWith
+		get_tree().change_scene_to_packed(load("res://Prefabs/UI/GameWinScreen.tscn"))
 		
 
 
 func _on_timer_timeout() -> void:
 	if CurrentWave.CanContinue() == false:
 		$Timer.stop()		
-		var amount = Round + 6 + randi() % 10
-		if amount >= 100:
-			amount = 100
-		var expPerOrb = (Round + 1) * 10
-		var increments = 360 / amount
-		for x in range(0, amount):
-			await get_tree().create_timer(.1).timeout
-			var spawnPosition = Helper.GetPositionAroundPoint(Finder.GetPlayer().GetPlayerPosition(), 200,
-			increments * x)
-			await Helper.DropEXPOrbMoveFromXtoY(expPerOrb, global_position, spawnPosition, .05)
+		if Waves.size() > 0:
+			var amount = Round + 6 + randi() % 10
+			if amount >= 100:
+				amount = 100
+			var expPerOrb = (Round + 1) * 10
+			var increments = 360 / amount
+			for x in range(0, amount):
+				await get_tree().create_timer(.1).timeout
+				var spawnPosition = Helper.GetPositionAroundPoint(Finder.GetPlayer().GetPlayerPosition(), 200,
+				increments * x)
+				await Helper.DropEXPOrbMoveFromXtoY(expPerOrb, global_position, spawnPosition, .05)
 		
 		SpawnNextWave()
 		

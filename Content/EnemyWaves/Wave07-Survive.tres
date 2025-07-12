@@ -17,7 +17,7 @@ metadata/_custom_type_script = "uid://bqsegjg1rqs3m"
 
 [resource]
 script = ExtResource("2_qypcm")
-SurviveTimeLimit = 30.0
+SurviveTimeLimit = 60.0
 PollTime = 1
 EnemyLimit = 20
 EnemiesToSpawn = Array[ExtResource("1_our2j")]([SubResource("Resource_our2j"), SubResource("Resource_qypcm")])

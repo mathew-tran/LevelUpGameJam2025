@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemySurviveWaveData" load_steps=4 format=3 uid="uid://blq8hd217e5cj"]
+
+[ext_resource type="Script" uid="uid://bqsegjg1rqs3m" path="res://Content/EnemyWavePairingData.gd" id="1_gcwmj"]
+[ext_resource type="Script" uid="uid://cx61gu3iskisd" path="res://Content/EnemySurviveWaveData.gd" id="2_3tp0w"]
+
+[sub_resource type="Resource" id="Resource_4egcs"]
+script = ExtResource("1_gcwmj")
+EnemyTypeToSpawn = 2
+AmountToSpawn = 50
+metadata/_custom_type_script = "uid://bqsegjg1rqs3m"
+
+[resource]
+script = ExtResource("2_3tp0w")
+SurviveTimeLimit = 45.0
+PollTime = 3
+EnemyLimit = 100
+EnemiesToSpawn = Array[ExtResource("1_gcwmj")]([SubResource("Resource_4egcs")])
+WaveFormation = 0
+metadata/_custom_type_script = "uid://cx61gu3iskisd"

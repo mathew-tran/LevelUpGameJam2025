@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6emkq8s8ug1l"]
+
+[ext_resource type="Texture2D" uid="uid://gpfmgs0w15ie" path="res://Art/Character/Annette.png" id="1_a3o10"]
+[ext_resource type="Script" uid="uid://bpt6slcd2iqa6" path="res://Scripts/UI/CharacterPipEnding.gd" id="2_a3o10"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3b3wb"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="TextureRect" type="TextureRect"]
+custom_minimum_size = Vector2(61, 61)
+offset_right = 30.0
+offset_bottom = 30.0
+texture = ExtResource("1_a3o10")
+expand_mode = 2
+stretch_mode = 4
+script = ExtResource("2_a3o10")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(32, 5)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 55.0
+offset_right = 33.0
+offset_bottom = 60.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3b3wb")
