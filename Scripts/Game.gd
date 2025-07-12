@@ -46,6 +46,26 @@ var bStunExtraDamage = true
 var bExtraMoneyDrop = false
 var bExtraMoneyOnSkip = false
 
+enum GAME_STATE {
+	PlAYING,
+	LEVELUP,
+	FINISHED
+}
+
+var CurrentState = GAME_STATE.PlAYING
+
+func SetGameState(state : GAME_STATE):
+	CurrentState = state
+	
+func IsInGame():
+	return CurrentState == GAME_STATE.PlAYING
+	
+func IsLevellingUp():
+	return CurrentState == GAME_STATE.LEVELUP
+
+func IsGameFinished():
+	return CurrentState == GAME_STATE.FINISHED
+	
 func BroadcastEnemyKilled():
 	EnemiesKilled += 1
 	OnEnemiesKilled.emit()
@@ -67,6 +87,7 @@ func _ready() -> void:
 	Jukebox.PlayMusic(JukeboxPlayer.MUSIC_TYPE.FIGHT)
 	Slomo(1,.001)
 	get_tree().paused = false
+	SetGameState(GAME_STATE.PlAYING)
 	
 
 func Setup():

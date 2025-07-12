@@ -55,6 +55,9 @@ func OnGameOver():
 		Close()
 		
 func OnLevelup():
+	if Finder.GetGame().IsGameFinished():
+		return
+	Finder.GetGame().SetGameState(Game.GAME_STATE.LEVELUP)
 	if Finder.GetEXPBar().Level % 5 == 0:
 		Finder.GetGame().AddMoney(1)
 	Setup()
@@ -201,6 +204,7 @@ func Close():
 	Cleanup()
 	get_tree().paused = false
 	Jukebox.PlayMusic(JukeboxPlayer.MUSIC_TYPE.FIGHT)
+	Finder.GetGame().SetGameState(Game.GAME_STATE.PlAYING)
 
 
 func _on_button_button_up() -> void:

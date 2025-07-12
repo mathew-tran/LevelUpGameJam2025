@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var ContinueButton = $ContinueButton
 var CharData : CharacterData
 func _ready() -> void:
+	get_tree().paused = false
 	Setup()
 	Jukebox.PlayMusic(JukeboxPlayer.MUSIC_TYPE.SHOP)
 	if GameData.ChosenCharacter:
