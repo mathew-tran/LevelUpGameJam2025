@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_ivmlv")
-FlatValue = 120.0
+FlatValue = 3500.0
 MaxClampValue = -1.0
 MinClampValue = 0.0
 PostPend = ""

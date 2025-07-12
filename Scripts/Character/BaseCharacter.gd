@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends CharacterBody2D
 
 class_name BaseCharacter
 
@@ -7,7 +7,6 @@ class_name BaseCharacter
 var Speed = 1
 var FollowObject = null
 
-var Velocity = Vector2.ZERO
 var Damage = 10
 var SubStatAttackRate : Resource
 
@@ -35,6 +34,7 @@ var ShootType : CharacterData.SHOOT_TYPE
 var bDoubleDamage = false
 
 var StunChance = 0
+var LastDirection = Vector2.ZERO
 
 func SayDeathPhrase():
 	Speak(CharacterDataRef.DeathPhrase.pick_random())
@@ -281,16 +281,16 @@ func _process(delta: float) -> void:
 		followObjectPosition = FollowObject.global_position
 		
 
+	velocity *= .8
 	
 	if global_position.distance_to(followObjectPosition) > 50:
-		Velocity = Vector2.ZERO
+		
 		var dir = (followObjectPosition - global_position).normalized()
-		Velocity += dir * Speed * delta
-		$Sprite2D.flip_h = Velocity.x <= 0
-	else:
-		pass
+		LastDirection = dir
 	
-	move_and_collide(Velocity)
+	velocity += LastDirection * Speed * delta
+	$Sprite2D.flip_h = velocity.x <= 0
+	move_and_slide()
 	
 
 func Activate():
